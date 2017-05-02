@@ -1,6 +1,6 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
-![Hyena][Hyena.jpg]
+[![Hyena][Hyena.jpg]]
 当鬣狗集体捕获猎物时，它们就会一拥而上，同时撕咬猎物的肚子、颈部、四肢及全身各处。为了防备狮子前来掠夺它们的食物，整个族群的斑鬣狗就一起狼吞虎咽地分享这份大餐。鬣狗是效率极高的食肉动物，短短数十分钟内，猎物便只剩下骨头。
 
 ## TODO
@@ -73,4 +73,4 @@ isCountDown()       :是否在倒计时中
 [CountDownButton.java]: https://github.com/zapailaohei/Hyena/blob/master/hyenalibrary/src/main/java/com/akita/hyena/view/button/CountDownButton.java
 [HScrollTextView.java]: https://github.com/zapailaohei/Hyena/blob/master/hyenalibrary/src/main/java/com/akita/hyena/view/textview/HScrollTextView.java
 
-[使用说明][http://www.jianshu.com/p/27e627c8521f]
+[使用说明]:http://www.jianshu.com/p/27e627c8521f
