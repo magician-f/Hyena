@@ -11,13 +11,13 @@ import android.util.AttributeSet;
  * 邮箱 378741819@qq.com
  * Created by Akita on 2017/5/2.
  */
-public class HScrollingTextView extends AppCompatTextView {
+public class HScrollTextView extends AppCompatTextView {
 
-    public HScrollingTextView(Context context) {
+    public HScrollTextView(Context context) {
         super(context,null);
     }
 
-    public HScrollingTextView(Context context, AttributeSet attrs) {
+    public HScrollTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
