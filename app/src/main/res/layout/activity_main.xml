@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.test.hyena.MainActivity">
 
-    <com.akita.hyena.button.CountDownButton
+    <com.akita.hyena.view.button.CountDownButton
         android:id="@+id/btn1"
         android:layout_width="120dp"
         android:layout_height="40dp"

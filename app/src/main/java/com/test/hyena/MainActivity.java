@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.akita.hyena.button.CountDownButton;
+import com.akita.hyena.view.button.CountDownButton;
 
 public class MainActivity extends AppCompatActivity {
 

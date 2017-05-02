@@ -1,4 +1,4 @@
-package com.akita.hyena.button;
+package com.akita.hyena.view.button;
 
 import android.content.Context;
 import android.os.CountDownTimer;
@@ -119,7 +119,7 @@ public class CountDownButton extends AppCompatButton {
      *
      * @return true：是 false：否
      */
-    private boolean isCountDown() {
+    public boolean isCountDown() {
         return mCountDownTimer != null;
     }
 
