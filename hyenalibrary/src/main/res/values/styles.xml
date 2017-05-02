@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 带清除的输入框 -->
+    <declare-styleable name="ClearEditTextStyle">
+        <attr name="drawable_close" format="reference" />
+    </declare-styleable>
+
+</resources>

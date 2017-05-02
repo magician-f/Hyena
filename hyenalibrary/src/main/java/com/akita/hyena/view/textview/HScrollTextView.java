@@ -22,6 +22,11 @@ public class HScrollTextView extends AppCompatTextView {
         init();
     }
 
+    public HScrollTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
     private void init(){
         //设置跑马灯
         setEllipsize(TextUtils.TruncateAt.MARQUEE);

@@ -1,10 +1,9 @@
 package com.test.hyena;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import com.akita.hyena.view.button.CountDownButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,12 +11,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final CountDownButton btn1 = (CountDownButton) findViewById(R.id.btn1);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn1.onStart();
-            }
-        });
+    }
+
+    public void 自定义View(View v) {
+        startActivity(new Intent(this, ViewActivity.class));
     }
 }
