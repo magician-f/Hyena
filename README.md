@@ -1,6 +1,6 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
-[![language][languageSvg]][language] [![release][releaseSvg]][release] [![api][apiSvg]][api]
+[language][languageSvg] [release][releaseSvg] [![api][apiSvg]][api]
 
 ![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
@@ -72,9 +72,7 @@ isCountDown()       :是否在倒计时中
 ```
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
-[language]:
 [releaseSvg]:https://img.shields.io/github/release/KnifeStone/Hyena.svg
-[release]:
 [apiSvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
 
