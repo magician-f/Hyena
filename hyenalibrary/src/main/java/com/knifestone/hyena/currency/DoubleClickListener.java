@@ -1,14 +1,14 @@
-package com.knifestone.hyena.callback;
+package com.knifestone.hyena.currency;
 
 import android.view.View;
 
 /**
- * 简介:防止双击 点击监听
+ * 简介:防止双击监听
  * GitHub https://github.com/zapailaohei
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/3.
  */
-public abstract class NoDoubleClickListener implements View.OnClickListener {
+public abstract class DoubleClickListener implements View.OnClickListener {
 
     /**
      * 双击判定 延迟时间
@@ -23,9 +23,9 @@ public abstract class NoDoubleClickListener implements View.OnClickListener {
     /**
      * 配置
      *
-     * @param DelayTime 延迟时间
+     * @param DelayTime 间隔时间
      */
-    public static void config(long DelayTime) {
+    public static void init(long DelayTime) {
         if (DelayTime > 0) {
             MIN_CLICK_DELAY_TIME = DelayTime;
         }

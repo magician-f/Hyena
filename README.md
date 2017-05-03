@@ -1,6 +1,6 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
-[![language][languageSvg]]() [![release][releaseSvg]]() [![api][apiSvg]][api]
+[![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 
 ![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
@@ -10,7 +10,7 @@
 以快速开发为基础核心，整合：
 A、常用的自定义View
 B、Base类
-C、耦合性低的功能实现
+C、通用
 D、词典
 ```
 0
@@ -51,7 +51,7 @@ dependencies {
     app:drawable_close="@drawable/..." />
 ```
 
-* ### 倒计时按钮→[CountDownButton.java][CountDownButton.java]→[使用说明][使用说明]
+* ### 倒计时按钮 [CountDownButton.java][CountDownButton.java] [使用说明][使用说明]
 
 ```
 onStart()           :开始倒计时（默认总时长60s、默认计时间隔1s
@@ -61,7 +61,7 @@ onStop()            :结束倒计时
 isCountDown()       :是否在倒计时中
 ```
 
-* ### 横向跑马灯控件→[MarqueeTextView.java][MarqueeTextView.java]
+* ### 横向跑马灯控件 [MarqueeTextView.java][MarqueeTextView.java]
 
 ```
 <!-- 直接尝用即可 -->
@@ -71,8 +71,19 @@ isCountDown()       :是否在倒计时中
     android:text="..."/>
 ```
 
+# C、通用
+
+* ### 防止双击监听 [DoubleClickListener.java][DoubleClickListener.java]
+
+```
+static void init(long DelayTime)        :静态方法（配置双击间隔时间
+static boolean checkDoubleClick()       :静态方法（手动检测是否双击
+abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，替换onClick(View v)
+```
+
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
-[releaseSvg]:https://img.shields.io/github/release/KnifeStone/Hyena.svg
+[jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
+[jitPack]:https://jitpack.io/#KnifeStone/Hyena
 [apiSvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
 
@@ -81,5 +92,7 @@ isCountDown()       :是否在倒计时中
 [ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
 [CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
 [MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
+[DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
+
 
 [使用说明]:http://www.jianshu.com/p/27e627c8521f
