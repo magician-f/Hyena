@@ -40,7 +40,7 @@ dependencies {
 
 ## A、自定义View
 
-* ### 带清除的输入框→[ClearEditText.java][ClearEditText.java]
+* ### 带清除的输入框   >   [ClearEditText.java][ClearEditText.java]
 
 ```
 <!-- 直接尝用即可 drawable_close不设置会有个默认黑色的图标 -->
@@ -50,7 +50,7 @@ dependencies {
     app:drawable_close="@drawable/..." />
 ```
 
-* ### 倒计时按钮 [CountDownButton.java][CountDownButton.java]    [详细说明][CountDownButton.blog]
+* ### 倒计时按钮 >   [CountDownButton.java][CountDownButton.java]    >> [详细说明][CountDownButton.blog]
 
 ```
 onStart()           :开始倒计时（默认总时长60s、默认计时间隔1s
@@ -60,7 +60,7 @@ onStop()            :结束倒计时
 isCountDown()       :是否在倒计时中
 ```
 
-* ### 横向跑马灯控件 [MarqueeTextView.java][MarqueeTextView.java]  [详细说明][MarqueeTextView.blog]
+* ### 横向跑马灯控件   >   [MarqueeTextView.java][MarqueeTextView.java]  >> [详细说明][MarqueeTextView.blog]
 
 ```
 <!-- 直接尝用即可 -->
@@ -72,7 +72,7 @@ isCountDown()       :是否在倒计时中
 
 # C、通用
 
-* ### 防止双击监听 [DoubleClickListener.java][DoubleClickListener.java]
+* ### 防止双击监听   >   [DoubleClickListener.java][DoubleClickListener.java]
 
 ```
 static void init(long DelayTime)        :静态方法（配置双击间隔时间
@@ -80,7 +80,7 @@ static boolean checkDoubleClick()       :静态方法（手动检测是否双击
 abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，替换onClick(View v)
 ```
 
-* ### 文本变化监听适配器 [TextWatcherAdapter.java][TextWatcherAdapter.java]
+* ### 文本变化监听适配器   >   [TextWatcherAdapter.java][TextWatcherAdapter.java]
 
 ```
 editText.addTextChangedListener(new TextWatcherAdapter() {
@@ -103,6 +103,7 @@ editText.addTextChangedListener(new TextWatcherAdapter() {
 [CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
 [MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
 [DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
+[TextWatcherAdapter.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/TextWatcherAdapter.java
 
 
 [CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
