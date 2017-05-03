@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.akita.hyena.view.button.CountDownButton;
+import com.knifestone.hyena.view.button.CountDownButton;
 
 /**
  * 简介:
