@@ -30,7 +30,7 @@ allprojects {
 ```
 dependencies {
         compile 'com.android.support:appcompat-v7:25.3.0'
-        compile 'com.github.zapailaohei:Hyena:v0.2.0'
+        compile 'com.github.KnifeStone:Hyena:v0.3.0'
 }
 ```
 
@@ -42,7 +42,7 @@ dependencies {
 
 ```
 <!-- 直接尝用即可 drawable_close不设置会有个默认黑色的图标 -->
-<com.akita.hyena.view.edittext.ClearEditText
+<com.knifestone.hyena.view.edittext.ClearEditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:drawable_close="@drawable/..." />
@@ -62,14 +62,14 @@ isCountDown()       :是否在倒计时中
 
 ```
 <!-- 直接尝用即可 -->
-<com.akita.hyena.view.textview.HScrollTextView
+<com.knifestone.hyena.view.textview.HScrollTextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
 ```
-[Hyena.jpg]:https://github.com/zapailaohei/Hyena/blob/master/images/Hyena.jpg
-[UpdateLog.md]: https://github.com/zapailaohei/Hyena/blob/master/UpdateLog.md
-[ClearEditText.java]: https://github.com/zapailaohei/Hyena/blob/master/hyenalibrary/src/main/java/com/akita/hyena/view/edittext/ClearEditText.java
-[CountDownButton.java]: https://github.com/zapailaohei/Hyena/blob/master/hyenalibrary/src/main/java/com/akita/hyena/view/button/CountDownButton.java
-[HScrollTextView.java]: https://github.com/zapailaohei/Hyena/blob/master/hyenalibrary/src/main/java/com/akita/hyena/view/textview/HScrollTextView.java
+[Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
+[UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
+[ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
+[CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
+[HScrollTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/HScrollTextView.java
 
 [使用说明]:http://www.jianshu.com/p/27e627c8521f
