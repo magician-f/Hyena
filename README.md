@@ -80,6 +80,17 @@ static boolean checkDoubleClick()       :静态方法（手动检测是否双击
 abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，替换onClick(View v)
 ```
 
+* ### 文本变化监听适配器 [TextWatcherAdapter.java][TextWatcherAdapter.java]
+
+```
+editText.addTextChangedListener(new TextWatcherAdapter() {
+        @Override
+        public void afterTextChanged(Editable editable) {
+            //选择性实现需要的方法
+        }
+    });
+```
+
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
 [jitPack]:https://jitpack.io/#KnifeStone/Hyena

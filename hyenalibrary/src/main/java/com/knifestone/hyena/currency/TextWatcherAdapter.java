@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 /**
- * 简介:监听EditText变化监听类适配器(选择性重写需要的方法
+ * 简介:文本变化监听适配器
  * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/3.
