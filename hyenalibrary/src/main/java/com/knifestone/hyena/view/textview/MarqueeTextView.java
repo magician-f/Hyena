@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 
 /**
  * 简介:横向跑马灯
- * GitHub https://github.com/zapailaohei
+ * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/2.
  */

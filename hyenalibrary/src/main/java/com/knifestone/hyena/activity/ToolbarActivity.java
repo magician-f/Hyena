@@ -10,7 +10,7 @@ import com.knifestone.hyena.R;
 
 /**
  * 简介:自带工具栏Activity
- * GitHub https://github.com/zapailaohei
+ * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/3.
  */

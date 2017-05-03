@@ -19,11 +19,18 @@ public class ViewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
-        final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
-        countDownButton.setOnClickListener(new View.OnClickListener() {
+        final CountDownButton countDownButton1 = (CountDownButton) findViewById(R.id.countDownButton1);
+        countDownButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                countDownButton.onStart();
+                countDownButton1.onStart();
+            }
+        });
+        final CountDownButton countDownButton2 = (CountDownButton) findViewById(R.id.countDownButton2);
+        countDownButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownButton2.onStart(100000,8000);
             }
         });
     }

@@ -32,7 +32,7 @@ allprojects {
 dependencies {
     //根据实际引用的版本自行调整版本号
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.github.KnifeStone:Hyena:v0.4.0'
+    compile 'com.github.KnifeStone:Hyena:0.4.0'
 }
 ```
 
@@ -60,7 +60,7 @@ onStop()            :结束倒计时
 isCountDown()       :是否在倒计时中
 ```
 
-* ### 横向跑马灯控件 [MarqueeTextView.java][MarqueeTextView.java]
+* ### 横向跑马灯控件 [MarqueeTextView.java][MarqueeTextView.java]  [详细说明][MarqueeTextView.blog]
 
 ```
 <!-- 直接尝用即可 -->
@@ -95,3 +95,4 @@ abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，�
 
 
 [CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
+[MarqueeTextView.blog]:http://www.jianshu.com/p/af2d636b110e

@@ -11,7 +11,7 @@ import android.util.AttributeSet;
  * 简介:倒计时按钮
  * GitHub https://github.com/zapailaohei
  * 邮箱 378741819@qq.com
- * Created by KnifeStone on 2017/4/28.
+ * Created by Akita on 2017/4/28.
  */
 public class CountDownButton extends AppCompatButton {
 
