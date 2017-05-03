@@ -13,7 +13,7 @@ B、Base类
 C、通用
 D、词典
 ```
-0
+
 ### 使用
 
 #### Step 1. 添加jitpack库到你的构建文件
@@ -33,7 +33,7 @@ allprojects {
 dependencies {
     //根据实际引用的版本自行调整版本号
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.github.KnifeStone:Hyena:v0.3.0'
+    compile 'com.github.KnifeStone:Hyena:v0.4.0'
 }
 ```
 
@@ -51,7 +51,7 @@ dependencies {
     app:drawable_close="@drawable/..." />
 ```
 
-* ### 倒计时按钮 [CountDownButton.java][CountDownButton.java] [使用说明][使用说明]
+* ### 倒计时按钮 [CountDownButton.java][CountDownButton.java]    [使用说明][使用说明]
 
 ```
 onStart()           :开始倒计时（默认总时长60s、默认计时间隔1s
