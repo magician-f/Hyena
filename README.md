@@ -1,5 +1,7 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
+[![auc][aucsvg]][auc] [![build][buildsvg]][build] [![api][apisvg]][api] [![License][licensesvg]][license]
+
 ![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
 ## TODO
@@ -11,7 +13,7 @@ B、Base类
 C、耦合性低的功能实现
 D、词典
 ```
-
+0
 ### 使用
 
 #### Step 1. 添加jitpack库到你的构建文件
@@ -59,18 +61,45 @@ onStop()            :结束倒计时
 isCountDown()       :是否在倒计时中
 ```
 
-* ### 横向跑马灯控件→[HScrollTextView.java][HScrollTextView.java]
+* ### 横向跑马灯控件→[MarqueeTextView.java][MarqueeTextView.java]
 
 ```
 <!-- 直接尝用即可 -->
-<com.knifestone.hyena.view.textview.HScrollTextView
+<com.knifestone.hyena.view.textview.MarqueeTextView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+    android:text="..."/>
 ```
+
+[aucsvg]: https://img.shields.io/badge/AndroidUtilCode-v1.4.1-blue.svg
+[auc]: https://github.com/Blankj/AndroidUtilCode
+
+[buildsvg]: https://travis-ci.org/Blankj/AndroidUtilCode.svg?branch=master
+[build]: https://travis-ci.org/Blankj/AndroidUtilCode
+
+[apisvg]: https://img.shields.io/badge/API-15+-blue.svg
+[api]: https://android-arsenal.com/api?level=15
+
+[jianshusvg]: https://img.shields.io/badge/简书-Blankj-brightgreen.svg
+[jianshu]: http://www.jianshu.com/u/46702d5c6978
+
+[weibosvg]: https://img.shields.io/badge/weibo-__Blankj-brightgreen.svg
+[weibo]: http://weibo.com/3076228982
+
+[blogsvg]: https://img.shields.io/badge/Blog-Blankj-brightgreen.svg
+[blog]: http://blankj.com
+
+[qq0groupsvg]: https://img.shields.io/badge/QQ0群(满)-74721490-fba7f9.svg
+[qq0group]: https://shang.qq.com/wpa/qunwpa?idkey=62baf2c3ec6b0863155b0c7a10c71bba2608cb0b6532fc18515835e54c69bdd3
+
+[qq1groupsvg]: https://img.shields.io/badge/QQ1群-25206533-fba7f9.svg
+[qq1group]: https://shang.qq.com/wpa/qunwpa?idkey=d906789f84484465e2736f7b524366b4c23afeda38733d5c7b10fc3f6e406e9b
+
+
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
 [ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
 [CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
-[HScrollTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/HScrollTextView.java
+[MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
 
 [使用说明]:http://www.jianshu.com/p/27e627c8521f

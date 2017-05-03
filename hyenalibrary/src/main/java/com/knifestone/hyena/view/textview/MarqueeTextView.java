@@ -9,20 +9,20 @@ import android.util.AttributeSet;
  * 简介:横向跑马灯
  * GitHub https://github.com/zapailaohei
  * 邮箱 378741819@qq.com
- * Created by Akita on 2017/5/2.
+ * Created by KnifeStone on 2017/5/2.
  */
-public class HScrollTextView extends AppCompatTextView {
+public class MarqueeTextView extends AppCompatTextView {
 
-    public HScrollTextView(Context context) {
+    public MarqueeTextView(Context context) {
         super(context,null);
     }
 
-    public HScrollTextView(Context context, AttributeSet attrs) {
+    public MarqueeTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HScrollTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MarqueeTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
