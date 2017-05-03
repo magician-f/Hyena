@@ -72,7 +72,9 @@ isCountDown()       :是否在倒计时中
 ```
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
+[language]:
 [releaseSvg]:https://img.shields.io/github/release/KnifeStone/Hyena.svg
+[release]:
 [apiSvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
 
