@@ -1,6 +1,6 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
-[![language][languageSvg]][language] [![release][releaseSvg][release] [![api][apiSvg]][api]
+[![language][languageSvg]][language] [![release][releaseSvg]][release] [![api][apiSvg]][api]
 
 ![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
