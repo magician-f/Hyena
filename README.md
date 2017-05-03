@@ -1,6 +1,6 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
-[![auc][aucsvg]][auc] [![build][buildsvg]][build] [![api][apisvg]][api] [![License][licensesvg]][license]
+[![auc][aucsvg]][auc] [![api][apisvg]][api] [![][qqgroupsvg]][]
 
 ![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
@@ -71,29 +71,13 @@ isCountDown()       :是否在倒计时中
     android:text="..."/>
 ```
 
-[aucsvg]: https://img.shields.io/badge/AndroidUtilCode-v1.4.1-blue.svg
-[auc]: https://github.com/Blankj/AndroidUtilCode
-
-[buildsvg]: https://travis-ci.org/Blankj/AndroidUtilCode.svg?branch=master
-[build]: https://travis-ci.org/Blankj/AndroidUtilCode
+[aucsvg]: https://img.shields.io/badge/Hyena-v0.3.0-blue.svg
+[auc]: https://github.com/KnifeStone/Hyena
 
 [apisvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
 
-[jianshusvg]: https://img.shields.io/badge/简书-Blankj-brightgreen.svg
-[jianshu]: http://www.jianshu.com/u/46702d5c6978
-
-[weibosvg]: https://img.shields.io/badge/weibo-__Blankj-brightgreen.svg
-[weibo]: http://weibo.com/3076228982
-
-[blogsvg]: https://img.shields.io/badge/Blog-Blankj-brightgreen.svg
-[blog]: http://blankj.com
-
-[qq0groupsvg]: https://img.shields.io/badge/QQ0群(满)-74721490-fba7f9.svg
-[qq0group]: https://shang.qq.com/wpa/qunwpa?idkey=62baf2c3ec6b0863155b0c7a10c71bba2608cb0b6532fc18515835e54c69bdd3
-
-[qq1groupsvg]: https://img.shields.io/badge/QQ1群-25206533-fba7f9.svg
-[qq1group]: https://shang.qq.com/wpa/qunwpa?idkey=d906789f84484465e2736f7b524366b4c23afeda38733d5c7b10fc3f6e406e9b
+[qqgroupsvg]: https://img.shields.io/badge/QQ群-479585883-fba7f9.svg
 
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
