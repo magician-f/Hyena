@@ -1,6 +1,6 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
-[![auc][aucsvg]][auc] [![api][apisvg]][api] [![][qqgroupsvg]][]
+[![language][languageSvg]][] [![release][releaseSvg][] [![api][apiSvg]][api]
 
 ![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
@@ -71,14 +71,10 @@ isCountDown()       :是否在倒计时中
     android:text="..."/>
 ```
 
-[aucsvg]: https://img.shields.io/badge/Hyena-v0.3.0-blue.svg
-[auc]: https://github.com/KnifeStone/Hyena
-
-[apisvg]: https://img.shields.io/badge/API-15+-blue.svg
+[languageSvg]:https://img.shields.io/badge/language-java-blue.svg
+[releaseSvg]:https://img.shields.io/github/release/KnifeStone/Hyena.svg
+[apiSvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
-
-[qqgroupsvg]: https://img.shields.io/badge/QQ群-479585883-fba7f9.svg
-
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
