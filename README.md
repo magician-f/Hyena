@@ -29,8 +29,9 @@ allprojects {
 
 ```
 dependencies {
-        compile 'com.android.support:appcompat-v7:25.3.0'
-        compile 'com.github.KnifeStone:Hyena:v0.3.0'
+    //根据实际引用的版本自行调整版本号
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.github.KnifeStone:Hyena:v0.3.0'
 }
 ```
 
