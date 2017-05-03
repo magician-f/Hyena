@@ -1,9 +1,8 @@
 # Hyena 鬣狗快速开发库 [更新日志][UpdateLog.md]
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
-
-![Hyena][Hyena.jpg]
 <br/> Start Hyena 加入QQ交流群479585883
+
 ## TODO
 
 ```
@@ -51,7 +50,7 @@ dependencies {
     app:drawable_close="@drawable/..." />
 ```
 
-* ### 倒计时按钮 [CountDownButton.java][CountDownButton.java]    [使用说明][使用说明]
+* ### 倒计时按钮 [CountDownButton.java][CountDownButton.java]    [详细说明][CountDownButton.blog]
 
 ```
 onStart()           :开始倒计时（默认总时长60s、默认计时间隔1s
@@ -95,4 +94,4 @@ abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，�
 [DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
 
 
-[使用说明]:http://www.jianshu.com/p/27e627c8521f
+[CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
