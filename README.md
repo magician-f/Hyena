@@ -31,7 +31,7 @@ allprojects {
 ```
 //根据实际引用的版本自行调整版本号
 compile 'com.android.support:appcompat-v7:25.3.0'
-compile 'com.github.KnifeStone:Hyena:0.5.0'
+compile 'com.github.KnifeStone:Hyena:最新版本'//如0.7.0
 ```
 
 ## 自定义View
