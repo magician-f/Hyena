@@ -5,10 +5,12 @@
 
 ## 说明 > [更新日志][UpdateLog.md]
 
-###### 常用的自定义View
-###### Base类
-###### 通用
-###### 词典
+Hyena鬣狗快速开发库整合：
+
+* 常用的自定义View
+* Base类
+* 通用
+* 词典
 
 ## 如何使用
 
@@ -84,6 +86,19 @@ editText.addTextChangedListener(new TextWatcherAdapter() {
     });
 ```
 
+## 词典
+
+* ###### 混淆 >[proguard-rules.pro][proguard-rules.pro]
+
+```
+release {
+    minifyEnabled true      //开启混淆
+    shrinkResources true    //打开资源压缩（去除没有引用的资源）
+    zipAlignEnabled true    //zipAlign可以让安装包中的资源按4字节对齐，这样可以减少应用在运行时的内存消耗。
+    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+}
+```
+
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
 [jitPack]:https://jitpack.io/#KnifeStone/Hyena
@@ -97,6 +112,7 @@ editText.addTextChangedListener(new TextWatcherAdapter() {
 [MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
 [DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
 [TextWatcherAdapter.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/TextWatcherAdapter.java
+[proguard-rules.pro]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
 
 
 [CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
