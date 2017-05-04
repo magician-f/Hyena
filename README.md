@@ -5,13 +5,10 @@
 
 ## 说明 > [更新日志][UpdateLog.md]
 
-```
-以快速开发为基础核心，整合：
-A、常用的自定义View
-B、Base类
-C、通用
-D、词典
-```
+###### 常用的自定义View
+###### Base类
+###### 通用
+###### 词典
 
 ## 如何使用
 
@@ -29,9 +26,9 @@ allprojects {
 ###### Step 2. 添加依赖关系
 
 ```
-    //根据实际引用的版本自行调整版本号
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.github.KnifeStone:Hyena:0.4.0'
+//根据实际引用的版本自行调整版本号
+compile 'com.android.support:appcompat-v7:25.3.0'
+compile 'com.github.KnifeStone:Hyena:0.5.0'
 ```
 
 ## 自定义View
