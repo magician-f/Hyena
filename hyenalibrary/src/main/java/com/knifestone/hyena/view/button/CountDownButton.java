@@ -5,6 +5,7 @@ import android.os.CountDownTimer;
 import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.View;
 
 
 /**
@@ -14,6 +15,8 @@ import android.util.AttributeSet;
  * Created by Akita on 2017/4/28.
  */
 public class CountDownButton extends AppCompatButton {
+
+    View s;
 
     //默认总时长
     private int mMillisInFutureDefault = 60 * 1000;

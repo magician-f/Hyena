@@ -70,6 +70,8 @@
     public *;
 }
 # 自定配置区 ################### 分割线
+# 不混淆鬣狗
+-keep class com.knifestone.hyena.** {*;}
 #实体类
 #-keep class 实体类所在包.** { *; }
 #与js交互的类

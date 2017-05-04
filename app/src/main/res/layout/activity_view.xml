@@ -29,4 +29,11 @@
         android:layout_height="wrap_content"
         android:hint="带清除的输入框（默认drawable_close）" />
 
+    <com.knifestone.hyena.view.edittext.EyesEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawable_visibility="@drawable/..."
+        app:drawable_visibility_off="@drawable/..."
+        android:hint="带眼睛的输入框" />
+
 </LinearLayout>

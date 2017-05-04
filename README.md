@@ -1,7 +1,8 @@
 # Hyena 鬣狗快速开发库
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
-<br/> Start Hyena 加入QQ交流群479585883
+<br/>
+* Start Hyena 加入QQ交流群479585883
 
 ## 说明 > [更新日志][UpdateLog.md]
 
@@ -34,6 +35,17 @@ compile 'com.github.KnifeStone:Hyena:0.5.0'
 ```
 
 ## 自定义View
+
+* ###### 带眼睛的输入框 > [EyesEditText.java][EyesEditText.java]
+
+```
+<!-- 直接尝用即可 drawable_visibility/drawable_visibility_off 不设置有design风格默认值 -->
+<com.knifestone.hyena.view.edittext.EyesEditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:drawable_visibility="@drawable/..."
+    app:drawable_visibility_off="@drawable/..." />
+```
 
 * ###### 带清除的输入框 > [ClearEditText.java][ClearEditText.java]
 
@@ -88,15 +100,17 @@ editText.addTextChangedListener(new TextWatcherAdapter() {
 
 ## 词典
 
-* ###### 混淆 >[proguard-rules.pro][proguard-rules.pro]
+* ###### 混淆 > [proguard-rules.pro][proguard-rules.pro]
 
 ```
+//Step 1.开启混淆
 release {
     minifyEnabled true      //开启混淆
     shrinkResources true    //打开资源压缩（去除没有引用的资源）
     zipAlignEnabled true    //zipAlign可以让安装包中的资源按4字节对齐，这样可以减少应用在运行时的内存消耗。
     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 }
+//Step 2.proguard-rules.pro 里面的代码直接复制使用
 ```
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
@@ -107,6 +121,7 @@ release {
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
+[EyesEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/EyesEditText.java
 [ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
 [CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
 [MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java

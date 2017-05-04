@@ -6,4 +6,10 @@
         <attr name="drawable_close" format="reference" />
     </declare-styleable>
 
+    <!-- 带眼睛的输入框 -->
+    <declare-styleable name="EyesEditTextStyle">
+        <attr name="drawable_visibility" format="reference" />
+        <attr name="drawable_visibility_off" format="reference" />
+    </declare-styleable>
+
 </resources>
