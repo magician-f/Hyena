@@ -1,39 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.test.hyena.MainActivity">
+    tools:context="com.test.hyena.ViewActivity">
 
-    <com.knifestone.hyena.view.button.CountDownButton
-        android:id="@+id/countDownButton1"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="默认（60秒倒计时 间隔1秒）" />
-
-    <com.knifestone.hyena.view.button.CountDownButton
-        android:id="@+id/countDownButton2"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="100秒倒计时 间隔8秒" />
-
-    <com.knifestone.hyena.view.textview.MarqueeTextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hyena 鬣狗快速开发库：当鬣狗集体捕获猎物时，它们就会一拥而上，同时撕咬猎物的肚子、颈部、四肢及全身各处。为了防备狮子前来掠夺它们的食物，整个族群的斑鬣狗就一起狼吞虎咽地分享这份大餐。鬣狗是效率极高的食肉动物，短短数十分钟内，猎物便只剩下骨头。HScrollTextView 横向跑马灯控件。发廊的味道，跑马灯的感觉" />
+        android:orientation="vertical">
 
-    <com.knifestone.hyena.view.edittext.ClearEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="带清除的输入框（默认drawable_close）" />
+        <LinearLayout style="@style/LayoutShapeDefault">
 
-    <com.knifestone.hyena.view.edittext.EyesEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:drawable_visibility="@drawable/..."
-        app:drawable_visibility_off="@drawable/..."
-        android:hint="带眼睛的输入框" />
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
+                android:text="CountDownButton 倒计时按钮" />
 
-</LinearLayout>
+            <com.knifestone.hyena.view.button.CountDownButton
+                android:id="@+id/countDownButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="默认（60秒倒计时 间隔1秒）" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
+                android:text="MarqueeTextView 跑马灯" />
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="当鬣狗集体捕获猎物时，它们就会一拥而上，同时撕咬猎物的肚子、颈部、四肢及全身各处。为了防备狮子前来掠夺它们的食物，整个族群的斑鬣狗就一起狼吞虎咽地分享这份大餐。"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
+                android:text="ClearEditText 带清除输入框" />
+
+            <com.knifestone.hyena.view.edittext.ClearEditText
+                style="@style/EditTextDefault"
+                android:hint="默认的"
+                android:text="默认的" />
+
+            <com.knifestone.hyena.view.edittext.ClearEditText
+                style="@style/EditTextDefault"
+                android:hint="跟随焦点"
+                android:text="跟随焦点"
+                app:drawable_follow_focus="true" />
+
+            <com.knifestone.hyena.view.edittext.ClearEditText
+                style="@style/EditTextDefault"
+                android:hint="自定着色"
+                android:text="自定着色"
+                app:drawable_tint="@color/colorAccent" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
+                android:text="EyesEditText 带眼睛输入框" />
+
+            <com.knifestone.hyena.view.edittext.EyesEditText
+                style="@style/EditTextDefault"
+                android:hint="默认的"
+                android:inputType="textPassword"
+                android:text="默认的" />
+
+            <com.knifestone.hyena.view.edittext.EyesEditText
+                style="@style/EditTextDefault"
+                android:hint="自定着色"
+                android:inputType="textVisiblePassword"
+                app:drawable_tint="@color/colorAccent"
+                android:text="自定着色" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

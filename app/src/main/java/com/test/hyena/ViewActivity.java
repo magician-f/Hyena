@@ -19,19 +19,18 @@ public class ViewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
-        final CountDownButton countDownButton1 = (CountDownButton) findViewById(R.id.countDownButton1);
-        countDownButton1.setOnClickListener(new View.OnClickListener() {
+        final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
+        countDownButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                countDownButton1.onStart();
+                //开始倒计时（默认总时长6*1000、默认计时间隔1000
+                countDownButton.onStart();
+                //开始倒计时（自定义总时长、默认计时间隔1000
+//                countDownButton.onStart(millisInFuture);
+                //开始倒计时（自定义总时长、自定义计时间隔
+//                countDownButton.onStart(millisInFuture,countDownInterval);
             }
         });
-        final CountDownButton countDownButton2 = (CountDownButton) findViewById(R.id.countDownButton2);
-        countDownButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                countDownButton2.onStart(100000,8000);
-            }
-        });
+//        countDownButton.onStop();//手动取消
     }
 }

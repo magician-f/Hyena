@@ -1,17 +1,15 @@
 # Hyena 鬣狗快速开发库
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
-<br/>
-* Start Hyena 加入QQ交流群479585883
 
-## 说明 > [更新日志][UpdateLog.md]
+###### Start Hyena 加入QQ交流群479585883
 
-Hyena鬣狗快速开发库整合：
+## 说明 | [更新日志][UpdateLog.md] | [demo.apk](https://www.pgyer.com/72qN)
 
-* 常用的自定义View
-* Base类
-* 通用
-* 词典
+以快速构建新项目为和，定位小巧精悍，不依赖第三方
+整合`常用的自定义View`、`Base类`、`通用`、`词典`
+确保提供的内容都是简单，精致的
+发扬开源精神，欢迎加入
 
 ## 如何使用
 
@@ -29,25 +27,28 @@ allprojects {
 ###### Step 2. 添加依赖关系
 
 ```
-//根据实际引用的版本自行调整版本号
-compile 'com.android.support:appcompat-v7:25.3.0'
-compile 'com.github.KnifeStone:Hyena:最新版本'//如0.7.0
+dependencies {
+    //根据实际引用的版本自行调整版本号
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.github.KnifeStone:Hyena:最新版本'//如0.8.0
+}
 ```
 
 ## 自定义View
 
-* ###### 带眼睛的输入框 > [EyesEditText.java][EyesEditText.java]
+* ###### 带眼睛的输入框 | [EyesEditText.java][EyesEditText.java]
 
 ```
 <!-- 直接尝用即可 drawable_visibility/drawable_visibility_off 不设置有design风格默认值 -->
 <com.knifestone.hyena.view.edittext.EyesEditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:inputType="textPassword"
     app:drawable_visibility="@drawable/..."
     app:drawable_visibility_off="@drawable/..." />
 ```
 
-* ###### 带清除的输入框 > [ClearEditText.java][ClearEditText.java]
+* ###### 带清除的输入框 | [ClearEditText.java][ClearEditText.java] | [详细说明][ClearEditText.blog]
 
 ```
 <!-- 直接尝用即可 drawable_close不设置会有个默认黑色的图标 -->
@@ -57,17 +58,10 @@ compile 'com.github.KnifeStone:Hyena:最新版本'//如0.7.0
     app:drawable_close="@drawable/..." />
 ```
 
-* ###### 倒计时按钮 > [CountDownButton.java][CountDownButton.java] > [详细说明][CountDownButton.blog]
+* ###### 倒计时按钮 | [CountDownButton.java][CountDownButton.java] | [示例代码][CountDownButton.md]
 
-```
-onStart()           :开始倒计时（默认总时长60s、默认计时间隔1s
-onStart(long)       :开始倒计时（自定义总时长、默认计时间隔
-onStart(long,long)  :开始倒计时（自定义总时长、自定义计时间隔
-onStop()            :结束倒计时
-isCountDown()       :是否在倒计时中
-```
 
-* ###### 横向跑马灯控件 > [MarqueeTextView.java][MarqueeTextView.java] > [详细说明][MarqueeTextView.blog]
+* ###### 横向跑马灯控件 | [MarqueeTextView.java][MarqueeTextView.java] | [详细说明][MarqueeTextView.blog]
 
 ```
 <!-- 直接尝用即可 -->
@@ -79,7 +73,7 @@ isCountDown()       :是否在倒计时中
 
 ## 通用
 
-* ###### 防止双击监听 > [DoubleClickListener.java][DoubleClickListener.java]
+* ###### 防止双击监听 | [DoubleClickListener.java][DoubleClickListener.java]
 
 ```
 static void init(long DelayTime)        :静态方法（配置双击间隔时间
@@ -87,7 +81,7 @@ static boolean checkDoubleClick()       :静态方法（手动检测是否双击
 abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，替换onClick(View v)
 ```
 
-* ###### 文本变化监听适配器 > [TextWatcherAdapter.java][TextWatcherAdapter.java]
+* ###### 文本变化监听适配器 | [TextWatcherAdapter.java][TextWatcherAdapter.java]
 
 ```
 editText.addTextChangedListener(new TextWatcherAdapter() {
@@ -100,7 +94,7 @@ editText.addTextChangedListener(new TextWatcherAdapter() {
 
 ## 词典
 
-* ###### 混淆 > [proguard-rules.pro][proguard-rules.pro]
+* ###### 混淆 | [proguard-rules.pro][proguard-rules.pro]
 
 ```
 //Step 1.开启混淆
@@ -130,5 +124,6 @@ release {
 [proguard-rules.pro]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
 
 
-[CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
+[ClearEditText.blog]:http://www.jianshu.com/p/9bcb4111ab3a
+[CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
 [MarqueeTextView.blog]:http://www.jianshu.com/p/af2d636b110e

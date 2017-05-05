@@ -19,6 +19,7 @@
 
         <activity
             android:name=".ViewActivity"
+            android:windowSoftInputMode="stateHidden"
             android:label="自定义View" />
     </application>
 
