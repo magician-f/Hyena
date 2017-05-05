@@ -4,12 +4,14 @@
 
 ###### Start Hyena 加入QQ交流群479585883
 
-## 说明 | [更新日志][UpdateLog.md] | [demo.apk](https://www.pgyer.com/72qN)
+## 说明 | [更新日志][UpdateLog.md] | [demo.apk][demo.apk]
 
-以快速构建新项目为和，定位小巧精悍，不依赖第三方
-整合`常用的自定义View`、`Base类`、`通用`、`词典`
-确保提供的内容都是简单，精致的
-发扬开源精神，欢迎加入
+像[AndroidUtilCode][AndroidUtilCode]这样优秀的库替我管理了工具类，大大提高了我工作的效率，现在工具类终于解放了双手，这得益于[AndroidUtilCode][AndroidUtilCode]，每当构建新项目，只需要一行代码就可以把需要的工具类引用进来，而且这个库还保持着活跃的更新，更多的人在参与进去，开源的力量让[AndroidUtilCode][AndroidUtilCode]变得愈加强大，也使更多的android开发者收益，再次感谢。
+
+[Hyena鬣狗快速开发库][Hyena]也是借鉴了前辈的思路，想成为一个简单好用，保持活力，受大家喜欢的开源库。
+核心为`快速开发`，定位`小巧精悍`，内容`简单精致`，整合`常用的自定义View`、`Base类`、`通用`、`词典`
+
+发扬开源社区精神，欢迎大家的`commits` `issues` `start`
 
 ## 如何使用
 
@@ -58,7 +60,7 @@ dependencies {
     app:drawable_close="@drawable/..." />
 ```
 
-* ###### 倒计时按钮 | [CountDownButton.java][CountDownButton.java] | [示例代码][CountDownButton.md]
+* ###### 倒计时按钮 | [使用示例][CountDownButton.md] | [介绍文章][CountDownButton.blog]
 
 
 * ###### 横向跑马灯控件 | [MarqueeTextView.java][MarqueeTextView.java] | [详细说明][MarqueeTextView.blog]
@@ -113,17 +115,22 @@ release {
 [apiSvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
 
+[Hyena]:https://github.com/KnifeStone/Hyena
+[AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
+[demo.apk]:https://www.pgyer.com/72qN
+
+
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
 [EyesEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/EyesEditText.java
 [ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
-[CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
 [MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
 [DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
 [TextWatcherAdapter.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/TextWatcherAdapter.java
 [proguard-rules.pro]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
 
+[CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
 
 [ClearEditText.blog]:http://www.jianshu.com/p/9bcb4111ab3a
-[CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
+[CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
 [MarqueeTextView.blog]:http://www.jianshu.com/p/af2d636b110e

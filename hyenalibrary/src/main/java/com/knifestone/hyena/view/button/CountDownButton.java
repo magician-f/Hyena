@@ -16,8 +16,6 @@ import android.view.View;
  */
 public class CountDownButton extends AppCompatButton {
 
-    View s;
-
     //默认总时长
     private int mMillisInFutureDefault = 60 * 1000;
     //默认计时间隔
