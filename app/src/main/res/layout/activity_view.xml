@@ -45,7 +45,8 @@
                 android:text="ClearEditText 带清除输入框" />
 
             <com.knifestone.hyena.view.edittext.ClearEditText
-                style="@style/EditTextDefault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="默认的"
                 android:text="默认的" />
 

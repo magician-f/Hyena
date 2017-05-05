@@ -4,7 +4,7 @@
 
 ###### Start Hyena 加入QQ交流群479585883
 
-## 说明 | [更新日志][UpdateLog.md] | [demo.apk][demo.apk]
+## 说明 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
 像[AndroidUtilCode][AndroidUtilCode]这样优秀的库替我管理了工具类，大大提高了我工作的效率，现在工具类终于解放了双手，这得益于[AndroidUtilCode][AndroidUtilCode]，每当构建新项目，只需要一行代码就可以把需要的工具类引用进来，而且这个库还保持着活跃的更新，更多的人在参与进去，开源的力量让[AndroidUtilCode][AndroidUtilCode]变得愈加强大，也使更多的android开发者收益，再次感谢。
 
@@ -50,28 +50,11 @@ dependencies {
     app:drawable_visibility_off="@drawable/..." />
 ```
 
-* ###### 带清除的输入框 | [ClearEditText.java][ClearEditText.java] | [详细说明][ClearEditText.blog]
-
-```
-<!-- 直接尝用即可 drawable_close不设置会有个默认黑色的图标 -->
-<com.knifestone.hyena.view.edittext.ClearEditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:drawable_close="@drawable/..." />
-```
+* ###### 带清除的输入框 | [使用示例][ClearEditText.md]
 
 * ###### 倒计时按钮 | [使用示例][CountDownButton.md]
 
-
-* ###### 横向跑马灯控件 | [MarqueeTextView.java][MarqueeTextView.java] | [详细说明][MarqueeTextView.blog]
-
-```
-<!-- 直接尝用即可 -->
-<com.knifestone.hyena.view.textview.MarqueeTextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="..."/>
-```
+* ###### 横向跑马灯控件 | [使用示例][MarqueeTextView.md]
 
 ## 通用
 
@@ -118,19 +101,16 @@ release {
 [Hyena]:https://github.com/KnifeStone/Hyena
 [AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
 [蒲公英下载地址]:https://www.pgyer.com/72qN
-[demo.apk]:https://github.com/KnifeStone/Hyena/blob/master/app/app-release.apk
 
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
 [EyesEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/EyesEditText.java
-[ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
-[MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
 [DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
 [TextWatcherAdapter.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/TextWatcherAdapter.java
 [proguard-rules.pro]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
 
+[ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/ClearEditText.md
+[MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
 [CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
 
-[ClearEditText.blog]:http://www.jianshu.com/p/9bcb4111ab3a
-[MarqueeTextView.blog]:http://www.jianshu.com/p/af2d636b110e
