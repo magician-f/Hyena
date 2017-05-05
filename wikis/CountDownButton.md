@@ -1,4 +1,4 @@
-###### [CountDownButton.java][CountDownButton.java]
+###### [CountDownButton.java][CountDownButton.java] | [介绍文章][CountDownButton.blog]
 
 ###### Step 1. xml中使用
 
@@ -33,5 +33,5 @@ isCountDown()       :是否在倒计时中
 ```
 
 [CountDownButton.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/button/CountDownButton.java
-
+[CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
 

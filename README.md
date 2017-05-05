@@ -60,7 +60,7 @@ dependencies {
     app:drawable_close="@drawable/..." />
 ```
 
-* ###### 倒计时按钮 | [使用示例][CountDownButton.md] | [介绍文章][CountDownButton.blog]
+* ###### 倒计时按钮 | [使用示例][CountDownButton.md]
 
 
 * ###### 横向跑马灯控件 | [MarqueeTextView.java][MarqueeTextView.java] | [详细说明][MarqueeTextView.blog]
@@ -117,7 +117,8 @@ release {
 
 [Hyena]:https://github.com/KnifeStone/Hyena
 [AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
-[demo.apk]:https://www.pgyer.com/72qN
+[蒲公英下载地址]:https://www.pgyer.com/72qN
+[demo.apk]:https://github.com/KnifeStone/Hyena/blob/master/app/app-release.apk
 
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
@@ -132,5 +133,4 @@ release {
 [CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
 
 [ClearEditText.blog]:http://www.jianshu.com/p/9bcb4111ab3a
-[CountDownButton.blog]:http://www.jianshu.com/p/27e627c8521f
 [MarqueeTextView.blog]:http://www.jianshu.com/p/af2d636b110e
