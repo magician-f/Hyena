@@ -1,13 +1,13 @@
 package com.test.hyena;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
+import com.r0adkll.slidr.Slidr;
+import com.test.hyena.base.BaseToolbarActivity;
 
 /**
  * 简介:
@@ -15,12 +15,17 @@ import com.knifestone.hyena.view.button.CountDownButton;
  * 邮箱 378741819@qq.com
  * Created by Akita on 2017/5/2.
  */
-public class ViewActivity extends AppCompatActivity {
+public class ViewActivity extends BaseToolbarActivity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view);
+    protected int getContentView() {
+        return R.layout.activity_view;
+    }
+
+    @Override
+    protected void initView() {
+        Slidr.attach(this);
+        initDefault("常用View");
         final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
         countDownButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,5 +49,10 @@ public class ViewActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+
     }
 }

@@ -27,5 +27,5 @@
 ```
 
 [file]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
-[blog]:http://www.jianshu.com/u/6e6858f18e58
+[blog]: http://www.jianshu.com/p/6e93bc14b18f
 

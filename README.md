@@ -1,4 +1,4 @@
-# Hyena 鬣狗快速开发库
+# Hyena 鬣狗 高效、精准，为快速开发而生。
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 

@@ -23,8 +23,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -33,7 +38,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-
+    //https://github.com/r0adkll/Slidr
+    compile 'com.r0adkll:slidableactivity:2.0.5'
 //    compile 'com.github.KnifeStone:Hyena:0.7.0'
     compile project(':hyenalibrary')
+//    compile(name: 'hyenalibrary', ext: 'aar')
 }
