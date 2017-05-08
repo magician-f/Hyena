@@ -23,14 +23,8 @@ public class ViewActivity extends AppCompatActivity {
         countDownButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //开始倒计时（默认总时长6*1000、默认计时间隔1000
                 countDownButton.onStart();
-                //开始倒计时（自定义总时长、默认计时间隔1000
-//                countDownButton.onStart(millisInFuture);
-                //开始倒计时（自定义总时长、自定义计时间隔
-//                countDownButton.onStart(millisInFuture,countDownInterval);
             }
         });
-//        countDownButton.onStop();//手动取消
     }
 }

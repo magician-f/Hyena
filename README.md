@@ -38,23 +38,13 @@ dependencies {
 
 ## 自定义View
 
-* ###### 带眼睛的输入框 | [EyesEditText.java][EyesEditText.java]
+* ###### [使用示例] | [EyesEditText.md]带眼睛的输入框
 
-```
-<!-- 直接尝用即可 drawable_visibility/drawable_visibility_off 不设置有design风格默认值 -->
-<com.knifestone.hyena.view.edittext.EyesEditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:inputType="textPassword"
-    app:drawable_visibility="@drawable/..."
-    app:drawable_visibility_off="@drawable/..." />
-```
+* ###### [使用示例] | [ClearEditText.md]带清除的输入框
 
-* ###### 带清除的输入框 | [使用示例][ClearEditText.md]
+* ###### [使用示例] | [CountDownButton.md]倒计时按钮
 
-* ###### 倒计时按钮 | [使用示例][CountDownButton.md]
-
-* ###### 横向跑马灯控件 | [使用示例][MarqueeTextView.md]
+* ###### [使用示例] | [MarqueeTextView.md]横向跑马灯控件
 
 ## 通用
 
@@ -105,11 +95,11 @@ release {
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
-[EyesEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/EyesEditText.java
 [DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
 [TextWatcherAdapter.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/TextWatcherAdapter.java
 [proguard-rules.pro]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
 
+[EyesEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EyesEditText.md
 [ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/ClearEditText.md
 [MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
 [CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
