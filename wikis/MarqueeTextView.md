@@ -1,4 +1,4 @@
-###### [MarqueeTextView.java][MarqueeTextView.java] | [介绍文章][MarqueeTextView.blog]
+###### [TextWatcherAdapter.md][file] | [介绍文章][blog]
 
 ###### 开袋即食
 
@@ -10,6 +10,6 @@
     android:textSize="16sp" />
 ```
 
-[MarqueeTextView.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
-[MarqueeTextView.blog]:http://www.jianshu.com/p/af2d636b110e
+[file]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/textview/MarqueeTextView.java
+[blog]:http://www.jianshu.com/p/af2d636b110e
 

@@ -1,4 +1,4 @@
-###### [ClearEditText.java][ClearEditText.java] | [介绍文章][ClearEditText.blog]
+###### [ClearEditText.md][file] | [介绍文章][blog]
 
 ###### 开袋即食
 
@@ -26,6 +26,6 @@
 <attr name="drawable_follow_focus" format="boolean" />
 ```
 
-[ClearEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
-[ClearEditText.blog]:http://www.jianshu.com/u/6e6858f18e58
+[file]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/ClearEditText.java
+[blog]:http://www.jianshu.com/u/6e6858f18e58
 

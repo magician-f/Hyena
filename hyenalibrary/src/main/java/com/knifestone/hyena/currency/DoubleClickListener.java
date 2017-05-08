@@ -23,11 +23,11 @@ public abstract class DoubleClickListener implements View.OnClickListener {
     /**
      * 配置
      *
-     * @param DelayTime 间隔时间
+     * @param delayTime 间隔时间
      */
-    public static void init(long DelayTime) {
-        if (DelayTime > 0) {
-            MIN_CLICK_DELAY_TIME = DelayTime;
+    public static void init(long delayTime) {
+        if (delayTime > 0) {
+            MIN_CLICK_DELAY_TIME = delayTime;
         }
     }
 

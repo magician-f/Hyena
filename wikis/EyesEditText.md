@@ -1,4 +1,4 @@
-###### [EyesEditText.java][EyesEditText.java] | [介绍文章][EyesEditText.blog]
+###### [EyesEditText.md][file] | [介绍文章][blog]
 
 ###### 开袋即食
 
@@ -29,6 +29,6 @@
 <attr name="drawable_follow_focus" format="boolean" />
 ```
 
-[EyesEditText.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/EyesEditText.java
-[EyesEditText.blog]: http://www.jianshu.com/p/cc0d0ff63ae1
+[file]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/view/edittext/EyesEditText.java
+[blog]: http://www.jianshu.com/p/cc0d0ff63ae1
 

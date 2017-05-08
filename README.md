@@ -48,39 +48,13 @@ dependencies {
 
 ## 通用
 
-* ###### 防止双击监听 | [DoubleClickListener.java][DoubleClickListener.java]
+* ###### [使用示例][DoubleClickListener.md] | 防止双击监听
 
-```
-static void init(long DelayTime)        :静态方法（配置双击间隔时间
-static boolean checkDoubleClick()       :静态方法（手动检测是否双击
-abstract void onNoDoubleClick(View v)   :当作View.OnClickListener来使用，替换onClick(View v)
-```
-
-* ###### 文本变化监听适配器 | [TextWatcherAdapter.java][TextWatcherAdapter.java]
-
-```
-editText.addTextChangedListener(new TextWatcherAdapter() {
-        @Override
-        public void afterTextChanged(Editable editable) {
-            //选择性实现需要的方法
-        }
-    });
-```
+* ###### [使用示例][TextWatcherAdapter.md] | 文本变化监听适配器
 
 ## 词典
 
-* ###### 混淆 | [proguard-rules.pro][proguard-rules.pro]
-
-```
-//Step 1.开启混淆
-release {
-    minifyEnabled true      //开启混淆
-    shrinkResources true    //打开资源压缩（去除没有引用的资源）
-    zipAlignEnabled true    //zipAlign可以让安装包中的资源按4字节对齐，这样可以减少应用在运行时的内存消耗。
-    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-}
-//Step 2.proguard-rules.pro 里面的代码直接复制使用
-```
+* ###### [使用示例][proguard-rules.md] | 混淆
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
@@ -95,12 +69,14 @@ release {
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
-[DoubleClickListener.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/DoubleClickListener.java
-[TextWatcherAdapter.java]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/TextWatcherAdapter.java
-[proguard-rules.pro]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
 
 [EyesEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EyesEditText.md
 [ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/ClearEditText.md
 [MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
 [CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
+
+[DoubleClickListener.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/DoubleClickListener.md
+[TextWatcherAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/TextWatcherAdapter.md
+
+[proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/proguard-rules.md
 

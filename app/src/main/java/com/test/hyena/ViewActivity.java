@@ -3,6 +3,8 @@ package com.test.hyena;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
@@ -24,6 +26,22 @@ public class ViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 countDownButton.onStart();
+            }
+        });
+        countDownButton.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }
