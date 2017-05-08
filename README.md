@@ -38,13 +38,13 @@ dependencies {
 
 ## 自定义View
 
-* ###### [使用示例] | [EyesEditText.md]带眼睛的输入框
+* ###### [使用示例][EyesEditText.md] | 带眼睛的输入框
 
-* ###### [使用示例] | [ClearEditText.md]带清除的输入框
+* ###### [使用示例][ClearEditText.md] | 带清除的输入框
 
-* ###### [使用示例] | [CountDownButton.md]倒计时按钮
+* ###### [使用示例][CountDownButton.md] | 倒计时按钮
 
-* ###### [使用示例] | [MarqueeTextView.md]横向跑马灯控件
+* ###### [使用示例][MarqueeTextView.md] | 横向跑马灯控件
 
 ## 通用
 
