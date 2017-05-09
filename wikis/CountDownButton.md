@@ -1,4 +1,4 @@
-###### [CountDownButton.md][file] | [介绍文章][blog]
+###### [CountDownButton.java][file] | [介绍文章][blog]
 
 ###### Step 1. xml中使用
 

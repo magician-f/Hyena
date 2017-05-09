@@ -1,4 +1,4 @@
-package com.knifestone.hyena.activity;
+package com.knifestone.hyena.base;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
@@ -32,7 +32,7 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
     @Override
     protected void setContentView() {
-        setContentView(bindView());
+        setContentView(bindLayout());
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
@@ -43,30 +43,24 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
         //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
-        LayoutInflater.from(this).inflate(getContentView(), viewContent);
+        LayoutInflater.from(this).inflate(getContentLayout(), viewContent);
     }
 
-    protected void initToolbarDefault(@StringRes int id) {
-        initDefault(getString(id));
+    protected void initToolbar() {
+        setTitle(getTitle());
+        setToolbarLeftButton(0, null);
     }
 
-    protected void initDefault(String title) {
+    protected void initToolbar(@StringRes int id) {
+        initToolbar(getString(id));
+    }
+
+    protected void initToolbar(String title) {
         setTitle(title);
-        setTopLeftButton(0, null);
+        setToolbarLeftButton(0, null);
     }
 
-    protected void setTitle(String title) {
-        if (TextUtils.isEmpty(title)) {
-            return;
-        }
-        if (tvTitle != null) {
-            tvTitle.setText(title);
-        } else {
-            toolbar.setTitle(title);
-        }
-    }
-
-    protected void setTopLeftButton(@DrawableRes int iconResId, OnClickListener onClickListener) {
+    protected void setToolbarLeftButton(@DrawableRes int iconResId, OnClickListener onClickListener) {
         this.onClickListenerTopLeft = onClickListener;
         if (iconResId != 0) {
             toolbar.setNavigationIcon(iconResId);
@@ -83,20 +77,36 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         });
     }
 
-    protected void setTopRightButton(String menuStr, OnClickListener onClickListener) {
+    protected void setToolbarRightButton(String menuStr, OnClickListener onClickListener) {
         this.rightStr = menuStr;
         this.onClickListenerTopRight = onClickListener;
     }
 
-    protected void setTopRightButton(int menuResId, OnClickListener onClickListener) {
+    protected void setToolbarRightButton(int menuResId, OnClickListener onClickListener) {
         this.rightResId = menuResId;
         this.onClickListenerTopRight = onClickListener;
     }
 
     @Override
+    public void setTitle(CharSequence title) {
+        if (TextUtils.isEmpty(title)) {
+            return;
+        }
+        if (tvTitle != null) {
+            tvTitle.setText(title);
+            return;
+        }
+        if (toolbar != null) {
+            toolbar.setTitle(title);
+            return;
+        }
+        super.setTitle(title);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (rightResId != 0 || !TextUtils.isEmpty(rightStr)) {
-            getMenuInflater().inflate(R.menu.activity_base_toolbar, menu);
+            getMenuInflater().inflate(R.menu.menu_base_toolbar, menu);
         }
         return true;
     }
@@ -115,15 +125,14 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_right) {
             onClickListenerTopRight.onClick();
-            // true 告诉系统我们自己处理了点击事件
             return true;
         }
         return false;
     }
 
-    protected abstract int bindView();
+    protected abstract int bindLayout();
 
-    protected abstract int getContentView();
+    protected abstract int getContentLayout();
 
     public interface OnClickListener {
         void onClick();

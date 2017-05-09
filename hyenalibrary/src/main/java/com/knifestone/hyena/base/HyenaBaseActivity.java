@@ -1,4 +1,4 @@
-package com.knifestone.hyena.activity;
+package com.knifestone.hyena.base;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,11 +28,6 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
      * 标签（打印的时候可以用
      */
     protected String TAG;
-
-    /**
-     * 初始化完成Flag
-     */
-    protected boolean mInitFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,14 +70,14 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 快速设置监听
+     * 快速setOnClickListener
      */
     protected void setOnClickListener(int viewId, View.OnClickListener listener) {
         setOnClickListener(findViewById(viewId), listener);
     }
 
     /**
-     * 快速设置监听
+     * 快速setOnClickListener
      */
     protected void setOnClickListener(View view, View.OnClickListener listener) {
         if (view != null && listener != null) {
@@ -91,7 +86,7 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 快速打印log
+     * 快速log.d
      */
     protected void logD(String msg) {
         if (!TextUtils.isEmpty(msg)) {

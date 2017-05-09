@@ -2,15 +2,25 @@ package com.test.hyena;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.knifestone.hyena.base.HyenaBaseActivity;
+
+public class MainActivity extends HyenaBaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void setContentView() {
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+
     }
 
     public void 自定义View(View v) {

@@ -1,4 +1,4 @@
-###### [ClearEditText.md][file] | [介绍文章][blog]
+###### [ClearEditText.java][file] | [介绍文章][blog]
 
 ###### 开袋即食
 

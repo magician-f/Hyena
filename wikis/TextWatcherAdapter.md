@@ -1,4 +1,4 @@
-###### [TextWatcherAdapter.md][file] | [介绍文章][blog]
+###### [TextWatcherAdapter.java][file] | [介绍文章][blog]
 
 ```
 //设置addTextChangedListener

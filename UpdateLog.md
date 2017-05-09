@@ -1,4 +1,11 @@
 
+#### 14/05/09
+
+* 新增Base类-HyenaBaseActivity
+* 新增Base类-HyenaToolbarActivity
+* 新增推荐类库-AndroidUtilCode
+* 新增推荐类库-Slidr
+
 #### 17/05/08
 
 * 更新EyesEditText的文档说明

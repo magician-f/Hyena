@@ -1,4 +1,4 @@
-###### [proguard-rules.md][file] | [介绍文章][blog]
+###### [proguard-rules.pro][file] | [介绍文章][blog]
 
 ```
 //Step 1.开启混淆

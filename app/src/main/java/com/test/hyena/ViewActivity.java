@@ -6,8 +6,7 @@ import android.text.TextWatcher;
 import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
-import com.r0adkll.slidr.Slidr;
-import com.test.hyena.base.BaseToolbarActivity;
+import com.test.hyena.base.ToolbarActivity;
 
 /**
  * 简介:
@@ -15,17 +14,16 @@ import com.test.hyena.base.BaseToolbarActivity;
  * 邮箱 378741819@qq.com
  * Created by Akita on 2017/5/2.
  */
-public class ViewActivity extends BaseToolbarActivity {
+public class ViewActivity extends ToolbarActivity {
 
     @Override
-    protected int getContentView() {
+    protected int getContentLayout() {
         return R.layout.activity_view;
     }
 
     @Override
     protected void initView() {
-        Slidr.attach(this);
-        initDefault("常用View");
+        initToolbar();
         final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
         countDownButton.setOnClickListener(new View.OnClickListener() {
             @Override

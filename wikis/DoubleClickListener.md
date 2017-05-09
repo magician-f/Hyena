@@ -1,4 +1,4 @@
-###### [DoubleClickListener.md][file] | [介绍文章][blog]
+###### [DoubleClickListener.java][file] | [介绍文章][blog]
 
 ```
 //初始化 双击间隔判定 默认400
