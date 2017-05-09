@@ -44,7 +44,6 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
      */
     protected abstract void setContentView();
 
-
     /**
      * 初始化视图
      */
@@ -58,7 +57,7 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
     /**
      * 跳转到目标Activity
      */
-    protected void startActivity(Class<?> cl) {
+    public void startActivity(Class<?> cl) {
         startActivity(new Intent(this, cl));
     }
 

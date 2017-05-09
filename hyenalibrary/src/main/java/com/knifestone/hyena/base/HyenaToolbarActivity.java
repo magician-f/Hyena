@@ -21,7 +21,7 @@ import com.knifestone.hyena.R;
  */
 public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
-    private Toolbar toolbar;
+    protected Toolbar toolbar;
     protected FrameLayout viewContent;
     private TextView tvTitle;
     private OnClickListener onClickListenerTopLeft;
@@ -32,19 +32,26 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
     @Override
     protected void setContentView() {
-        setContentView(bindLayout());
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        viewContent = (FrameLayout) findViewById(R.id.viewContent);
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        //初始化设置 Toolbar
-        setSupportActionBar(toolbar);
-        if (tvTitle != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (bindLayout()!=0) {
+            setContentView(bindLayout());
+            toolbar = (Toolbar) findViewById(R.id.toolbar);
+            viewContent = (FrameLayout) findViewById(R.id.viewContent);
+            tvTitle = (TextView) findViewById(R.id.tvTitle);
+            //初始化设置 Toolbar
+            setSupportActionBar(toolbar);
+            if (tvTitle != null) {
+                getSupportActionBar().setDisplayShowTitleEnabled(false);
+            }
+            //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
+            LayoutInflater.from(this).inflate(getContentLayout(), viewContent);
+        }else{
+            setContentView(getContentLayout());
         }
-        //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
-        LayoutInflater.from(this).inflate(getContentLayout(), viewContent);
     }
+
+    protected abstract int bindLayout();
+
+    protected abstract int getContentLayout();
 
     protected void initToolbar() {
         setTitle(getTitle());
@@ -129,10 +136,6 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         }
         return false;
     }
-
-    protected abstract int bindLayout();
-
-    protected abstract int getContentLayout();
 
     public interface OnClickListener {
         void onClick();
