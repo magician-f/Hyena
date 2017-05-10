@@ -28,7 +28,7 @@ allprojects {
 dependencies {
     //根据实际引用的版本自行调整版本号
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.github.KnifeStone:Hyena:最新版本'//如0.9.0
+    compile 'com.github.KnifeStone:Hyena:最新版本'//如1.0.0
 }
 ```
 
@@ -117,17 +117,26 @@ release {
 
 ## 推荐类库
 
-* 工具类库 | [AndroidUtilCode][AndroidUtilCode]
+* ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
 
-工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率，每当构建新项目，只需要一行代码就可以使用这得益于AndroidUtilCode，而且更多的人在参与进去，开源的力量让AndroidUtilCode变得愈加强大。
-
+```
 推荐星数 ★★★★★
+工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率，每当构建新项目，只需要一行代码就可以使用这得益于AndroidUtilCode，而且更多的人在参与进去，开源的力量让AndroidUtilCode变得愈加强大。
+```
 
-* 滑动退出 | [Slidr][Slidr]
+* ###### multidex | [dex分包][multidex]
 
-轻松添加滑动到Activity的功能。
-
+```
 推荐星数 ★★★★
+Google提供的android-support-multidex.jar
+```
+
+* ###### 滑动退出 | [Slidr][Slidr]
+
+```
+推荐星数 ★★★★
+轻松添加滑动到Activity的功能
+```
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
@@ -140,6 +149,7 @@ release {
 
 [AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
 [Slidr]:https://github.com/r0adkll/Slidr
+[multidex]:http://blog.csdn.net/gaozhan_csdn/article/details/51992100
 
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg

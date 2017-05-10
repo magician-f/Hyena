@@ -3,6 +3,7 @@
 
 * 新增鬣狗Logo
 * 新增通用-InputFilterAdapter
+* 新增推荐类库-multidex
 
 #### 17/05/09
 
