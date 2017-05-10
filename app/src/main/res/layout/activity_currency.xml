@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.test.hyena.ui.ViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
+                android:text="InputFilterAdapter 输入过滤适配器" />
+
+            <EditText
+                android:id="@+id/etIFA1"
+                style="@style/EditTextDefault"
+                android:hint="过滤数字和中文" />
+
+            <EditText
+                android:id="@+id/etIFA2"
+                style="@style/EditTextDefault"
+                android:hint="反过滤数字和中文" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

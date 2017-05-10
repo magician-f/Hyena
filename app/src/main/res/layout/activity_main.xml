@@ -4,12 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.test.hyena.MainActivity">
+    tools:context="com.test.hyena.ui.MainActivity">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="自定义View"
         android:onClick="自定义View"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通用"
+        android:onClick="通用"/>
 
 </LinearLayout>

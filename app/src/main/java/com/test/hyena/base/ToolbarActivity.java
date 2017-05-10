@@ -16,6 +16,7 @@ public abstract class ToolbarActivity extends HyenaToolbarActivity {
     protected void setContentView() {
         super.setContentView();
         Slidr.attach(this);
+        initToolbar();
     }
 
     @Override

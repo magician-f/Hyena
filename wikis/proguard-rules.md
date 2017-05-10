@@ -12,5 +12,5 @@ release {
 ```
 
 [file]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/proguard-rules.pro
-[blog]:http://www.jianshu.com/u/6e6858f18e58
+[blog]:http://www.jianshu.com/p/c703290fe971
 

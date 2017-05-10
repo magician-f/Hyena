@@ -1,4 +1,4 @@
-package com.test.hyena;
+package com.test.hyena.ui;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -6,13 +6,14 @@ import android.text.TextWatcher;
 import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
+import com.test.hyena.R;
 import com.test.hyena.base.ToolbarActivity;
 
 /**
  * 简介:
- * GitHub https://github.com/zapailaohei
+ * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
- * Created by Akita on 2017/5/2.
+ * Created by KnifeStone on 2017/5/2.
  */
 public class ViewActivity extends ToolbarActivity {
 
@@ -23,7 +24,6 @@ public class ViewActivity extends ToolbarActivity {
 
     @Override
     protected void initView() {
-        initToolbar();
         final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
         countDownButton.setOnClickListener(new View.OnClickListener() {
             @Override

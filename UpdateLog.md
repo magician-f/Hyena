@@ -1,5 +1,10 @@
 
-#### 14/05/09
+#### 17/05/10
+
+* 新增鬣狗Logo
+* 新增通用-InputFilterAdapter
+
+#### 17/05/09
 
 * 新增Base类-HyenaBaseActivity
 * 新增Base类-HyenaToolbarActivity
