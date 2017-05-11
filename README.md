@@ -6,7 +6,7 @@
 
 ## 说明 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
-[Hyena鬣狗快速开发库][Hyena]核心为`快速开发`，定位`小巧精悍`，内容`简单精致`，整合`常用View`、`Base类`、`通用`、`词典`、`推荐类库`
+[Hyena鬣狗快速开发库][Hyena]核心为`快速开发`，定位`小巧精悍`，内容`简单精致`，整合`常用View`、`推荐类库`、`通用`、`词典`、`Base类`
 
 
 ## 如何使用
@@ -69,11 +69,32 @@ isCountDown()       | 是否在倒计时中
     .../>
 ```
 
-## Base类
+## 推荐类库
 
-* ###### HyenaBaseActivity | [使用示例][HyenaBaseActivity.md]
+* ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
 
-* ###### HyenaToolbarActivity | [使用示例][HyenaToolbarActivity.md]
+```
+工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率.
+```
+
+* ###### 黄油刀 | [butterknife][butterknife] & 好基友 | [zelezny][zelezny]
+
+```
+依赖注入框架，减少大量的findViewById以及setOnClickListener代码
+```
+
+* ###### dex分包 | [multidex][multidex]
+
+```
+Google提供的android-support-multidex.jar
+解决方法65536瓶颈
+```
+
+* ###### 滑动退出 | [Slidr][Slidr]
+
+```
+轻松添加滑动到Activity的功能
+```
 
 ## 通用
 
@@ -115,32 +136,12 @@ release {
 }
 ```
 
-## 推荐类库
+## Base类
 
-* ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
+* ###### HyenaBaseActivity | [使用示例][HyenaBaseActivity.md]
 
-```
-工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率.
-```
+* ###### HyenaBaseActivity | [使用示例][HyenaBaseActivity.md]
 
-* ###### 黄油刀 | [butterknife][butterknife] & 一键生成插件 | [zelezny][zelezny]
-
-```
-依赖注入框架，减少大量的findViewById以及setOnClickListener代码
-```
-
-* ###### multidex | [dex分包][multidex]
-
-```
-Google提供的android-support-multidex.jar
-解决方法65536瓶颈
-```
-
-* ###### 滑动退出 | [Slidr][Slidr]
-
-```
-轻松添加滑动到Activity的功能
-```
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
@@ -167,7 +168,7 @@ Google提供的android-support-multidex.jar
 [CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
 
 [HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
-[HyenaToolbarActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaToolbarActivity.md
+[HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
 
 [InputFilterAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/InputFilterAdapter.md
 [DoubleClickListener.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/DoubleClickListener.md
