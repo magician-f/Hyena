@@ -1,6 +1,6 @@
 package com.test.hyena.base;
 
-import com.knifestone.hyena.base.HyenaToolbarActivity;
+import com.knifestone.hyena.base.HyenaActivity;
 import com.r0adkll.slidr.Slidr;
 import com.test.hyena.R;
 
@@ -10,7 +10,7 @@ import com.test.hyena.R;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/8.
  */
-public abstract class ToolbarActivity extends HyenaToolbarActivity {
+public abstract class ToolbarActivity extends HyenaActivity {
 
     @Override
     protected void setContentView() {

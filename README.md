@@ -34,7 +34,7 @@ dependencies {
 
 ## 常用View
 
-* ###### [EyesEditText.md][EyesEditText.md] | 带眼睛的输入框
+* ###### 带眼睛的输入框 | [EyesEditText.md][EyesEditText.md]
 
 ```
 app:drawable_tint="@color/..."                  | icon着色
@@ -43,7 +43,7 @@ app:drawable_visibility="@drawable/..."         | 明文图标
 app:drawable_visibility_off="@drawable/..."     | 密文图标
 ```
 
-* ###### [ClearEditText.md][ClearEditText.md] | 带清除的输入框
+* ###### 带清除的输入框 | [ClearEditText.md][ClearEditText.md]
 
 ```
 app:drawable_tint="@color/..."                  | icon着色
@@ -51,7 +51,7 @@ app:drawable_follow_focus="true|false"          | 跟随焦点
 app:drawable_clear="@drawable/..."              | 图标
 ```
 
-* ###### [CountDownButton.md][CountDownButton.md] | 倒计时按钮
+* ###### 倒计时按钮 | [CountDownButton.md][CountDownButton.md]
 
 ```
 onStart()           | 开始倒计时（默认总时长60s、默认计时间隔1s
@@ -61,7 +61,7 @@ onStop()            | 结束倒计时
 isCountDown()       | 是否在倒计时中
 ```
 
-* ###### [MarqueeTextView.md][MarqueeTextView.md] | 横向跑马灯控件
+* ###### 横向跑马灯控件 | [MarqueeTextView.md][MarqueeTextView.md]
 
 ```
 //开袋即食
@@ -71,13 +71,13 @@ isCountDown()       | 是否在倒计时中
 
 ## Base类
 
-* ###### [使用示例][HyenaBaseActivity.md] | HyenaBaseActivity
+* ###### HyenaBaseActivity | [使用示例][HyenaBaseActivity.md]
 
-* ###### [使用示例][HyenaToolbarActivity.md] | HyenaToolbarActivity
+* ###### HyenaToolbarActivity | [使用示例][HyenaToolbarActivity.md]
 
 ## 通用
 
-* ###### [InputFilterAdapter.md][InputFilterAdapter.md] | 输入过滤适配器
+* ###### 输入过滤适配器 | [InputFilterAdapter.md][InputFilterAdapter.md]
 
 ```
 filterReverse       | 设置反选（反过滤
@@ -87,14 +87,14 @@ filterAlphabet      | 过滤字母
 filterChinese       | 过滤中文
 ```
 
-* ###### [DoubleClickListener.md][DoubleClickListener.md] | 防止双击监听
+* ###### 防止双击监听 | [DoubleClickListener.md][DoubleClickListener.md]
 
 ```
 checkDoubleClick    | 拿到双击
 onNoDoubleClick     | 过滤双击
 ```
 
-* ###### [TextWatcherAdapter.md][TextWatcherAdapter.md] | 文本变化监听适配器
+* ###### 文本变化监听适配器 | [TextWatcherAdapter.md][TextWatcherAdapter.md]
 
 ```
 beforeTextChanged   | 文本改变之前
@@ -104,7 +104,7 @@ afterTextChanged    | 文本改变之后
 
 ## 词典
 
-* ###### [proguard-rules.md][proguard-rules.md] | 混淆
+* ###### 混淆 | [proguard-rules.md][proguard-rules.md]
 
 ```
 release {
@@ -120,21 +120,25 @@ release {
 * ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
 
 ```
-推荐星数 ★★★★★
-工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率，每当构建新项目，只需要一行代码就可以使用这得益于AndroidUtilCode，而且更多的人在参与进去，开源的力量让AndroidUtilCode变得愈加强大。
+工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率.
+```
+
+* ###### 黄油刀 | [butterknife][butterknife] & 一键生成插件 | [zelezny][zelezny]
+
+```
+依赖注入框架，减少大量的findViewById以及setOnClickListener代码
 ```
 
 * ###### multidex | [dex分包][multidex]
 
 ```
-推荐星数 ★★★★
 Google提供的android-support-multidex.jar
+解决方法65536瓶颈
 ```
 
 * ###### 滑动退出 | [Slidr][Slidr]
 
 ```
-推荐星数 ★★★★
 轻松添加滑动到Activity的功能
 ```
 
@@ -148,6 +152,8 @@ Google提供的android-support-multidex.jar
 [蒲公英下载地址]:https://www.pgyer.com/72qN
 
 [AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
+[butterknife]:https://github.com/JakeWharton/butterknife
+[zelezny]:https://github.com/avast/android-butterknife-zelezny
 [Slidr]:https://github.com/r0adkll/Slidr
 [multidex]:http://blog.csdn.net/gaozhan_csdn/article/details/51992100
 

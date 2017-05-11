@@ -14,12 +14,12 @@ import android.widget.TextView;
 import com.knifestone.hyena.R;
 
 /**
- * 简介:自带工具栏Activity
+ * 简介:可以快速设置Toolbar的Activity
  * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/3.
  */
-public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
+public abstract class HyenaActivity extends HyenaBaseActivity {
 
     protected Toolbar toolbar;
     protected FrameLayout viewContent;
@@ -29,6 +29,16 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
     private int rightResId;
     private String rightStr;
+
+    /**
+     * 不需要快速集成Toolbar return 0
+     */
+    protected abstract int bindLayout();
+
+    /**
+     * 绑定内容布局
+     */
+    protected abstract int getContentLayout();
 
     @Override
     protected void setContentView() {
@@ -47,11 +57,8 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         }else{
             setContentView(getContentLayout());
         }
+        //重写后可以设置ButterKnife.bind(this);等方法
     }
-
-    protected abstract int bindLayout();
-
-    protected abstract int getContentLayout();
 
     protected void initToolbar() {
         setTitle(getTitle());

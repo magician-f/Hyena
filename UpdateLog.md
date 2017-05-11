@@ -1,5 +1,11 @@
 
-#### 17/05/10
+#### 17/05/11
+
+* 新增推荐类库-ButterKnife
+* 新增推荐插件-zelezny
+* HyenaToolbarActivity改名为HyenaActivity
+
+#### 17/05/10 发布版本1.0.0
 
 * 新增鬣狗Logo
 * 新增通用-InputFilterAdapter
@@ -18,7 +24,7 @@
 * 更新了md文档说明
 * 构建BaseActivity
 
-#### 17/05/05 发布版本0.8.0
+#### 17/05/05
 
 * 新增view-EyesEditText 带眼睛的输入框
 * 新增词典-混淆
@@ -26,13 +32,13 @@
 * 完善View-ClearEditText 带清除输入框
 * 完善view-EyesEditText 带眼睛的输入框
 
-#### 17/05/04 发布版本0.7.0
+#### 17/05/04
 
 * 新增currency-DoubleClickListener 防止双击监听
 * 新增currency-TextWatcherAdapter-文本变化监听适配器
 * 新增View-ClearEditText 带清除输入框
 
-#### 17/05/02 发布版本0.2.0
+#### 17/05/02
 
 * 新增View-MarqueeTextView 横向跑马灯控件
 * 新增View-CountDownButton 倒计时按钮
