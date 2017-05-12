@@ -74,7 +74,7 @@ isCountDown()       | 是否在倒计时中
 * ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
 
 ```
-工具类终于解放了双手，这得益于AndroidUtilCode，极大提高了工作效率.
+工具类解放了双手，得益于AndroidUtilCode，极大提高了工作效率
 ```
 
 * ###### 黄油刀 | [butterknife][butterknife] & 好基友 | [zelezny][zelezny]
@@ -86,8 +86,8 @@ isCountDown()       | 是否在倒计时中
 * ###### dex分包 | [multidex][multidex]
 
 ```
-Google提供的android-support-multidex.jar
-解决方法65536瓶颈
+Google提供的android-support-multidex。解决方法65536瓶颈
+
 ```
 
 * ###### 滑动退出 | [Slidr][Slidr]
@@ -138,7 +138,7 @@ release {
 
 ## Base类
 
-* ###### HyenaBaseActivity | [使用示例][HyenaBaseActivity.md]
+* ###### HyenaActivity | [使用示例][HyenaActivity.md]
 
 * ###### HyenaBaseActivity | [使用示例][HyenaBaseActivity.md]
 
@@ -167,7 +167,7 @@ release {
 [MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
 [CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
 
-[HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
+[HyenaActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaActivity.md
 [HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
 
 [InputFilterAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/InputFilterAdapter.md
