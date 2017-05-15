@@ -83,6 +83,18 @@ isCountDown()       | 是否在倒计时中
 依赖注入框架，减少大量的findViewById以及setOnClickListener代码
 ```
 
+* ###### 图片加载 | [glide][glide]
+
+```
+ Google推荐的图片加载库
+```
+
+* ###### 组件、线程通信 | [EventBus][EventBus]
+
+```
+简而言之，EventBus是一个事件发布和订阅的框架。
+```
+
 * ###### dex分包 | [multidex][multidex]
 
 ```
@@ -94,6 +106,12 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 
 ```
 轻松添加滑动到Activity的功能
+```
+
+* ###### JSON解析 | [gson][gson]
+
+```
+序列化Java对象为JSON字符串，或反序列化JSON字符串成Java对象。
 ```
 
 ## 通用
@@ -155,8 +173,11 @@ release {
 [AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
 [butterknife]:https://github.com/JakeWharton/butterknife
 [zelezny]:https://github.com/avast/android-butterknife-zelezny
-[Slidr]:https://github.com/r0adkll/Slidr
+[glide]:https://github.com/bumptech/glide
+[EventBus]:https://github.com/greenrobot/EventBus
 [multidex]:http://blog.csdn.net/gaozhan_csdn/article/details/51992100
+[Slidr]:https://github.com/r0adkll/Slidr
+[gson]:https://github.com/google/gson
 
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
