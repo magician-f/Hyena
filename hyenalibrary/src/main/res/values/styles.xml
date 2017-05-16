@@ -24,6 +24,24 @@
     <!-- 跟随焦点 -->
     <attr name="drawable_follow_focus" format="boolean" />
 
+    <!-- 菜单item属性 -->
+    <declare-styleable name="MenuItemViewStyle">
+        <attr name="layout_background" format="reference|integer" />
+        <attr name="iv_icon_src" format="reference|integer" />
+        <attr name="tv_title_string" format="string" />
+        <attr name="tv_title_color" format="color" />
+        <attr name="tv_title_drawable" format="reference|integer" />
+        <attr name="tv_content_text" format="string" />
+        <attr name="tv_content_text_color" format="color" />
+        <attr name="tv_content_drawable" format="reference|integer" />
+        <attr name="tv_content_gravity" format="integer">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="iv_right_src" format="reference|integer" />
+        <attr name="v_line_visibility" format="boolean" />
+    </declare-styleable>
+
 
 
 

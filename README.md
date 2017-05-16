@@ -69,51 +69,6 @@ isCountDown()       | 是否在倒计时中
     .../>
 ```
 
-## 推荐类库
-
-* ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
-
-```
-工具类解放了双手，得益于AndroidUtilCode，极大提高了工作效率
-```
-
-* ###### 黄油刀 | [butterknife][butterknife] & 好基友 | [zelezny][zelezny]
-
-```
-依赖注入框架，减少大量的findViewById以及setOnClickListener代码
-```
-
-* ###### 图片加载 | [glide][glide]
-
-```
- Google推荐的图片加载库
-```
-
-* ###### 组件、线程通信 | [EventBus][EventBus]
-
-```
-简而言之，EventBus是一个事件发布和订阅的框架。
-```
-
-* ###### dex分包 | [multidex][multidex]
-
-```
-Google提供的android-support-multidex。解决方法65536瓶颈
-
-```
-
-* ###### 滑动退出 | [Slidr][Slidr]
-
-```
-轻松添加滑动到Activity的功能
-```
-
-* ###### JSON解析 | [gson][gson]
-
-```
-序列化Java对象为JSON字符串，或反序列化JSON字符串成Java对象。
-```
-
 ## 通用
 
 * ###### 输入过滤适配器 | [InputFilterAdapter.md][InputFilterAdapter.md]
@@ -154,6 +109,56 @@ release {
 }
 ```
 
+## 推荐类库
+
+* ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
+
+```
+工具类解放了双手，得益于AndroidUtilCode，极大提高了工作效率
+```
+
+* ###### 黄油刀 | [butterknife][butterknife] & 好基友 | [zelezny][zelezny]
+
+```
+依赖注入框架，减少大量的findViewById以及setOnClickListener代码
+```
+
+* ###### 图片加载 | [glide][glide]
+
+```
+ Google推荐的图片加载库
+```
+
+* ###### JSON解析 | [gson][gson]
+
+```
+序列化Java对象为JSON字符串，或反序列化JSON字符串成Java对象。
+```
+
+* ###### 组件、线程通信 | [EventBus][EventBus]
+
+```
+简而言之，EventBus是一个事件发布和订阅的框架。
+```
+
+* ###### dex分包 | [multidex][multidex]
+
+```
+Google提供的android-support-multidex。解决方法65536瓶颈
+```
+
+* ###### 滑动退出 | [Slidr][Slidr]
+
+```
+轻松添加滑动到Activity的功能
+```
+
+* ###### 消息显示 | [BadgeView][BadgeView]
+
+```
+可以自由定制外观、支持拖拽消除的MaterialDesign风格
+```
+
 ## Base类
 
 * ###### HyenaActivity | [使用示例][HyenaActivity.md]
@@ -174,11 +179,11 @@ release {
 [butterknife]:https://github.com/JakeWharton/butterknife
 [zelezny]:https://github.com/avast/android-butterknife-zelezny
 [glide]:https://github.com/bumptech/glide
+[gson]:https://github.com/google/gson
 [EventBus]:https://github.com/greenrobot/EventBus
 [multidex]:http://blog.csdn.net/gaozhan_csdn/article/details/51992100
 [Slidr]:https://github.com/r0adkll/Slidr
-[gson]:https://github.com/google/gson
-
+[BadgeView]:https://github.com/qstumn/BadgeView
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md

@@ -9,10 +9,18 @@ InputFilterAdapter的灵感来源于这篇文章[原文地址](http://www.jiansh
 ```
 InputFilterAdapter inputFilter;
 //设置过滤数字和中文
-inputFilter = new InputFilterAdapter.Builder().filterNumber(true).filterChinese(true).builder();
+inputFilter = new InputFilterAdapter
+    .Builder()
+    .filterNumber(true)
+    .filterChinese(true)
+    .builder();
 edittext.setFilters(new InputFilter[]{inputFilter});
 //设置反过滤（只允许输入）数字
-inputFilter = new InputFilterAdapter.Builder().filterReverse(true).filterNumber(true).builder();
+inputFilter = new InputFilterAdapter
+    .Builder()
+    .filterReverse(true)
+    .filterNumber(true)
+    .builder();
 edittext.setFilters(new InputFilter[]{inputFilter});
 ```
 
@@ -27,5 +35,5 @@ filterChinese       | 过滤中文
 ```
 
 [file]: https://github.com/KnifeStone/Hyena/blob/master/hyenalibrary/src/main/java/com/knifestone/hyena/currency/InputFilterAdapter.java
-[blog]:http://www.jianshu.com/u/6e6858f18e58
+[blog]:http://www.jianshu.com/p/e2ee337dacb3
 
