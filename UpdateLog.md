@@ -1,4 +1,9 @@
 
+#### 17/05/17 发布版本1.1.0
+
+* 新增view-MenuItemView   菜单选项
+* 新增推荐类库-BaseRecyclerViewAdapterHelper
+
 #### 17/05/16
 
 * 新增推荐类库-BadgeView

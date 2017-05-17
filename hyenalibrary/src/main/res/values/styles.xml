@@ -26,23 +26,47 @@
 
     <!-- 菜单item属性 -->
     <declare-styleable name="MenuItemViewStyle">
-        <attr name="layout_background" format="reference|integer" />
-        <attr name="iv_icon_src" format="reference|integer" />
-        <attr name="tv_title_string" format="string" />
+
+        <attr name="iv_left_src" format="reference" />
+        <attr name="iv_left_size" format="dimension" />
+        <attr name="iv_left_margin_left" format="dimension" />
+
+        <attr name="tv_title_text" format="string" />
         <attr name="tv_title_color" format="color" />
-        <attr name="tv_title_drawable" format="reference|integer" />
-        <attr name="tv_content_text" format="string" />
-        <attr name="tv_content_text_color" format="color" />
-        <attr name="tv_content_drawable" format="reference|integer" />
-        <attr name="tv_content_gravity" format="integer">
+        <attr name="tv_title_size" format="dimension" />
+        <attr name="tv_title_margin_left" format="dimension" />
+        <attr name="tv_title_margin_right" format="dimension" />
+
+        <attr name="tv_subtitle_text" format="string" />
+        <attr name="tv_subtitle_color" format="color" />
+        <attr name="tv_subtitle_size" format="dimension" />
+        <attr name="tv_subtitle_margin_left" format="dimension" />
+        <attr name="tv_subtitle_margin_right" format="dimension" />
+        <attr name="tv_subtitle_gravity" format="integer">
             <enum name="left" value="0" />
             <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
         </attr>
-        <attr name="iv_right_src" format="reference|integer" />
-        <attr name="v_line_visibility" format="boolean" />
+
+        <attr name="iv_right_src" format="reference" />
+        <attr name="iv_right_size" format="dimension" />
+        <attr name="iv_right_margin_right" format="dimension" />
+
+        <attr name="switch_visibility" format="boolean" />
+        <attr name="switch_checked" format="boolean" />
+
+        <attr name="v_line_color" format="color" />
+
+        <attr name="v_line_top_visibility" format="boolean" />
+        <attr name="v_line_top_margin_left" format="dimension" />
+        <attr name="v_line_top_margin_right" format="dimension" />
+        <attr name="v_line_top_margin_height" format="dimension" />
+
+        <attr name="v_line_bottom_visibility" format="boolean" />
+        <attr name="v_line_bottom_margin_left" format="dimension" />
+        <attr name="v_line_bottom_margin_right" format="dimension" />
+        <attr name="v_line_bottom_margin_height" format="dimension" />
     </declare-styleable>
-
-
 
 
 </resources>

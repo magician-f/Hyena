@@ -27,12 +27,16 @@ allprojects {
 ```
 dependencies {
     //根据实际引用的版本自行调整版本号
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.github.KnifeStone:Hyena:最新版本'//如1.0.0
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.github.KnifeStone:Hyena:1.1.0'
 }
 ```
 
 ## 常用View
+
+* ###### 菜单选项View   |   [MenuItemView.md][MenuItemView.md]
+
+[MenuItemView.png][MenuItemView.png]
 
 * ###### 带眼睛的输入框 | [EyesEditText.md][EyesEditText.md]
 
@@ -109,7 +113,7 @@ release {
 }
 ```
 
-## 推荐类库
+## 一句话推荐一个类库
 
 * ###### 工具类库 | [AndroidUtilCode][AndroidUtilCode]
 
@@ -153,6 +157,12 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 轻松添加滑动到Activity的功能
 ```
 
+* ###### 强大的适配器 | [BaseRecyclerViewAdapterHelper][BaseRecyclerViewAdapterHelper]
+
+```
+和原始的adapter相对比，减少70%的代码量。
+```
+
 * ###### 消息显示 | [BadgeView][BadgeView]
 
 ```
@@ -183,11 +193,13 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 [EventBus]:https://github.com/greenrobot/EventBus
 [multidex]:http://blog.csdn.net/gaozhan_csdn/article/details/51992100
 [Slidr]:https://github.com/r0adkll/Slidr
+[BaseRecyclerViewAdapterHelper]:https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 [BadgeView]:https://github.com/qstumn/BadgeView
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
 
+[MenuItemView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MenuItemView.md
 [EyesEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EyesEditText.md
 [ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/ClearEditText.md
 [MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
@@ -202,3 +214,4 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 
 [proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/proguard-rules.md
 
+[MenuItemView.png]:https://github.com/KnifeStone/Hyena/blob/master/files/images/MenuItemView.png

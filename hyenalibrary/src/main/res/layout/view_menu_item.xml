@@ -3,43 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/itemIvIcon"
+        android:id="@+id/ivIconLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true" />
 
     <TextView
-        android:id="@+id/itemTvTitle"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/itemIvIcon"
+        android:layout_toRightOf="@+id/ivIconLeft"
+        android:ellipsize="end"
         android:lines="1"
-        tools:text="标题" />
+        android:padding="0dp"
+        android:textSize="16sp"
+        tools:text="tvTitle" />
+
+    <View
+        android:id="@+id/viewCenter"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:layout_centerVertical="true" />
 
     <TextView
-        android:id="@+id/itemTvContent"
+        android:id="@+id/tvSubTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/itemIvRight"
-        android:layout_toRightOf="@+id/itemTvTitle"
+        android:layout_toRightOf="@+id/tvTitle"
+        android:layout_toLeftOf="@+id/ivIconRight"
+        android:ellipsize="end"
         android:lines="1"
-        tools:text="内容" />
+        android:padding="0dp"
+        android:textSize="14sp"
+        tools:text="tvSubTitle" />
 
-    <ImageView
-        android:id="@+id/itemIvRight"
+    <Switch
+        android:id="@+id/aSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="10dp" />
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ivIconRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
 
     <View
-        android:id="@+id/itemViewLine"
+        android:id="@+id/viewLineTop"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentTop="true" />
+
+    <View
+        android:id="@+id/viewLineBottom"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentBottom="true" />

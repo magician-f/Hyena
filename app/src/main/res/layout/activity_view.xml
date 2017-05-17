@@ -16,6 +16,71 @@
 
             <com.knifestone.hyena.view.textview.MarqueeTextView
                 style="@style/TextViewTitleSmallLow"
+                android:text="MenuItemView 自定义菜单项" />
+
+            <com.knifestone.hyena.view.viewgroup.MenuItemView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:iv_left_size="35dp"
+                app:iv_left_src="@mipmap/ic_launcher"
+                app:iv_right_src="@drawable/ic_chevron_right_black_24dp"
+                app:tv_title_color="#000"
+                app:tv_title_margin_left="10dp"
+                app:tv_title_text="鬣狗"
+                app:v_line_bottom_visibility="true" />
+
+            <com.knifestone.hyena.view.viewgroup.MenuItemView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:tv_title_color="#000"
+                app:tv_title_text="取消USB调试授权"
+                app:v_line_bottom_visibility="true" />
+
+            <com.knifestone.hyena.view.viewgroup.MenuItemView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:tv_subtitle_gravity="2"
+                app:tv_subtitle_size="12sp"
+                app:tv_subtitle_text="尚未设置模拟位置信息应用"
+                app:tv_title_color="#000"
+                app:tv_title_text="选择模拟位置信息应用"
+                app:v_line_bottom_visibility="true" />
+
+            <com.knifestone.hyena.view.viewgroup.MenuItemView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:switch_visibility="true"
+                app:tv_title_color="#000"
+                app:tv_title_text="启用视图工具检查功能"
+                app:v_line_bottom_visibility="true" />
+
+            <com.knifestone.hyena.view.viewgroup.MenuItemView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:iv_right_src="@drawable/ic_chevron_right_black_24dp"
+                app:tv_subtitle_gravity="right"
+                app:tv_subtitle_margin_right="10dp"
+                app:tv_subtitle_text="未设置任何调试应用"
+                app:tv_title_color="#000"
+                app:tv_title_text="选择调试应用"
+                app:v_line_bottom_visibility="true" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
                 android:text="CountDownButton 倒计时按钮" />
 
             <com.knifestone.hyena.view.button.CountDownButton
@@ -79,8 +144,8 @@
                 style="@style/EditTextDefault"
                 android:hint="自定着色"
                 android:inputType="textVisiblePassword"
-                app:drawable_tint="@color/colorAccent"
-                android:text="自定着色" />
+                android:text="自定着色"
+                app:drawable_tint="@color/colorAccent" />
         </LinearLayout>
 
     </LinearLayout>

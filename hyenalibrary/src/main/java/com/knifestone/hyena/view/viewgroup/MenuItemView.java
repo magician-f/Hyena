@@ -2,6 +2,7 @@ package com.knifestone.hyena.view.viewgroup;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -9,46 +10,56 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.knifestone.hyena.R;
 
 /**
- * 简介:菜单视图
+ * 简介:菜单选项View
  * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/16.
  */
 public class MenuItemView extends RelativeLayout {
 
-    private ImageView itemIvIcon;
-    private TextView itemTvTitle;
-    private TextView itemTvContent;
-    private ImageView itemIvRight;
-    private View itemViewLine;
+    private ImageView ivIconLeft;
+    private TextView tvTitle;
+    private TextView tvSubTitle;
+    private ImageView ivIconRight;
+    private Switch aSwitch;
+    private View viewLineTop;
+    private View viewLineBottom;
+    private View viewCenter;
 
     private MenuItemView(Context context) {
         super(context);
     }
 
     public MenuItemView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public MenuItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
+        initStyle(attrs);
     }
 
     private void init() {
         Context context = getContext();
         LayoutInflater.from(context).inflate(R.layout.view_menu_item, this, true);
-        itemIvIcon = (ImageView) findViewById(R.id.itemIvIcon);
-        itemTvTitle = (TextView) findViewById(R.id.itemTvTitle);
-        itemTvContent = (TextView) findViewById(R.id.itemTvContent);
-        itemIvRight = (ImageView) findViewById(R.id.itemIvRight);
-        itemViewLine = findViewById(R.id.itemViewLine);
+        ivIconLeft = (ImageView) findViewById(R.id.ivIconLeft);
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
+        tvSubTitle = (TextView) findViewById(R.id.tvSubTitle);
+        ivIconRight = (ImageView) findViewById(R.id.ivIconRight);
+        aSwitch = (Switch) findViewById(R.id.aSwitch);
+        viewLineTop = findViewById(R.id.viewLineTop);
+        viewLineBottom = findViewById(R.id.viewLineBottom);
+        viewCenter = findViewById(R.id.viewCenter);
     }
 
     private void initStyle(AttributeSet attrs) {
@@ -56,63 +67,246 @@ public class MenuItemView extends RelativeLayout {
         if (attributes == null) {
             return;
         }
-        //layoutBackground
-        int layoutBackground = attributes.getResourceId(R.styleable.MenuItemViewStyle_layout_background, android.R.attr.selectableItemBackground);
-        if (layoutBackground != -1) {
-            TypedValue typedValue = new TypedValue();
-            getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, typedValue, true);
-            setBackgroundResource(typedValue.resourceId);
+
+        /*
+             左边icon
+         */
+        int leftSrc = attributes.getResourceId(R.styleable.MenuItemViewStyle_iv_left_src, -1);
+        if (leftSrc == -1) {
+            removeView(ivIconLeft);
+            ivIconLeft = null;
         } else {
-            setBackgroundResource(layoutBackground);
+            ivIconLeft.setImageResource(leftSrc);
+            //设置大小
+            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_left_size, -1);
+            if (size != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) ivIconLeft.getLayoutParams();
+                params.width = size;
+                params.height = size;
+            }
+            //设置左边距
+            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_left_margin_left, -1);
+            if (marginLeft != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) ivIconLeft.getLayoutParams();
+                params.leftMargin = marginLeft;
+            }
         }
-        //iconSrc
-        int iconSrc = attributes.getResourceId(R.styleable.MenuItemViewStyle_iv_icon_src, -1);
-        if (iconSrc == -1) {
-            itemIvIcon.setVisibility(View.GONE);
+
+        /*
+            标题
+         */
+        String titleText = attributes.getString(R.styleable.MenuItemViewStyle_tv_title_text);
+        if (TextUtils.isEmpty(titleText)) {
+            tvTitle.setVisibility(GONE);
         } else {
-            itemIvIcon.setVisibility(View.VISIBLE);
-            itemIvIcon.setImageResource(iconSrc);
+            tvTitle.setText(titleText);
+            //设置颜色
+            int color = attributes.getColor(R.styleable.MenuItemViewStyle_tv_title_color, -1);
+            if (color != -1) {
+                tvTitle.setTextColor(color);
+            }
+            //设置大小
+            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_title_size, -1);
+            if (size != -1) {
+                size = px2sp(getContext(), size);
+                tvTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+            }
+            //设置左边距
+            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_title_margin_left, -1);
+            if (marginLeft != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) tvTitle.getLayoutParams();
+                params.leftMargin = marginLeft;
+            }
         }
-        //itemTvTitle
-        String titleStr = attributes.getString(R.styleable.MenuItemViewStyle_tv_title_string);
-        if (!TextUtils.isEmpty(titleStr)) {
-            itemTvTitle.setText(titleStr);
-            //设置左边按钮文字颜色
-//            int leftButtonTextColor = attributes.getColor(R.styleable.CustomTitleBar_left_button_text_color, Color.WHITE);
-//            titleBarLeftBtn.setTextColor(leftButtonTextColor);
-        }
-        //itemTvContent
-        String contentStr = attributes.getString(R.styleable.MenuItemViewStyle_tv_content_text);
-        if (!TextUtils.isEmpty(contentStr)) {
-            itemTvContent.setText(titleStr);
-        }
-        int gravity = attributes.getInteger(R.styleable.MenuItemViewStyle_tv_content_gravity,0);
-        if (gravity==1){
-            itemTvContent.setGravity(Gravity.RIGHT);
-        }
-        //ivRight
+        /*
+            右边icon
+         */
         int rightSrc = attributes.getResourceId(R.styleable.MenuItemViewStyle_iv_right_src, -1);
         if (rightSrc == -1) {
-            itemIvRight.setVisibility(View.GONE);
+            removeView(ivIconRight);
+            ivIconRight = null;
         } else {
-            itemIvRight.setVisibility(View.VISIBLE);
-            itemIvRight.setImageResource(rightSrc);
+            ivIconRight.setImageResource(rightSrc);
+            //设置大小
+            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_right_size, -1);
+            if (size != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) ivIconRight.getLayoutParams();
+                params.width = size;
+                params.height = size;
+            }
+            //设置右边距
+            int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_right_margin_right, -1);
+            if (marginRight != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) ivIconRight.getLayoutParams();
+                params.rightMargin = marginRight;
+            }
         }
-        //itemViewLine
-        boolean isLine = attributes.getBoolean(R.styleable.MenuItemViewStyle_v_line_visibility, false);
-        itemViewLine.setVisibility(isLine ? VISIBLE : GONE);
+
+        /*
+            Switch
+         */
+        boolean switchVisibility = attributes.getBoolean(R.styleable.MenuItemViewStyle_switch_visibility, false);
+        if (!switchVisibility) {
+            removeView(aSwitch);
+            aSwitch = null;
+        } else {
+            aSwitch.setVisibility(VISIBLE);
+            boolean checked = attributes.getBoolean(R.styleable.MenuItemViewStyle_switch_checked, false);
+            aSwitch.setChecked(checked);
+        }
+        /*
+            副标题
+         */
+        String subtitleText = attributes.getString(R.styleable.MenuItemViewStyle_tv_subtitle_text);
+        if (TextUtils.isEmpty(subtitleText)) {
+            tvSubTitle.setVisibility(GONE);
+        } else {
+            tvSubTitle.setText(subtitleText);
+            //设置颜色
+            int color = attributes.getColor(R.styleable.MenuItemViewStyle_tv_subtitle_color, -1);
+            if (color != -1) {
+                tvSubTitle.setTextColor(color);
+            }
+            //设置大小
+            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_size, -1);
+            if (size != -1) {
+                size = px2sp(getContext(), size);
+                tvSubTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+            }
+            //设置左边距
+            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_margin_left, -1);
+            if (marginLeft != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
+                params.leftMargin = marginLeft;
+            }
+            //设置右边距
+            int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_margin_right, -1);
+            if (marginRight != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
+                params.rightMargin = marginRight;
+            }
+            //设置位置
+            int gravity = attributes.getInteger(R.styleable.MenuItemViewStyle_tv_subtitle_gravity, 0);
+            RelativeLayout.LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
+            if (aSwitch != null) {
+                params.addRule(RelativeLayout.RIGHT_OF, aSwitch.getId());
+            }
+            switch (gravity) {
+                //左 默认
+                case 0:
+
+                    break;
+                //右
+                case 1:
+                    tvSubTitle.setGravity(Gravity.RIGHT);
+                    break;
+                //下
+                case 2:
+                    if (findViewById(R.id.tvTitle) != null) {
+                        ((RelativeLayout.LayoutParams) tvTitle.getLayoutParams()).addRule(RelativeLayout.ABOVE, viewCenter.getId());
+                        params.addRule(RelativeLayout.BELOW, viewCenter.getId());
+                        params.addRule(RelativeLayout.ALIGN_LEFT, tvTitle.getId());
+                    }
+                    break;
+            }
+        }
+        /*
+            线
+         */
+        int lineColor = attributes.getColor(R.styleable.MenuItemViewStyle_v_line_color, Color.GRAY);
+        boolean isLineTop = attributes.getBoolean(R.styleable.MenuItemViewStyle_v_line_top_visibility, false);
+        if (!isLineTop) {
+            removeView(viewLineTop);
+        } else {
+            viewLineTop.setBackgroundColor(lineColor);
+            //设置左边距
+            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_top_margin_left, -1);
+            if (marginLeft != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) viewLineTop.getLayoutParams();
+                params.leftMargin = marginLeft;
+            }
+            //设置右边距
+            int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_top_margin_right, -1);
+            if (marginRight != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) viewLineTop.getLayoutParams();
+                params.rightMargin = marginRight;
+            }
+            //设置高度
+            ((LayoutParams) viewLineTop.getLayoutParams()).height = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_top_margin_height, 1);
+        }
+        boolean isLineBottom = attributes.getBoolean(R.styleable.MenuItemViewStyle_v_line_bottom_visibility, false);
+        if (!isLineBottom) {
+            removeView(viewLineBottom);
+        } else {
+            viewLineBottom.setBackgroundColor(lineColor);
+            //设置左边距
+            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_bottom_margin_left, -1);
+            if (marginLeft != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) viewLineBottom.getLayoutParams();
+                params.leftMargin = marginLeft;
+            }
+            //设置右边距
+            int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_bottom_margin_right, -1);
+            if (marginRight != -1) {
+                RelativeLayout.LayoutParams params = (LayoutParams) viewLineBottom.getLayoutParams();
+                params.rightMargin = marginRight;
+            }
+            //设置高度
+            ((LayoutParams) viewLineTop.getLayoutParams()).height = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_bottom_margin_height, 1);
+        }
+
         attributes.recycle();
     }
 
-    //设置内容
-    public void setItemContent(@NonNull String msg){
-        if (TextUtils.isEmpty(msg)){
+    //设置标题
+    public void setTitle(@NonNull String msg) {
+        if (TextUtils.isEmpty(msg)) {
             return;
         }
-        if (itemTvContent.getVisibility()!=VISIBLE) {
-            itemTvContent.setVisibility(VISIBLE);
+        if (tvTitle.getVisibility() != VISIBLE) {
+            tvTitle.setVisibility(VISIBLE);
         }
-        itemTvContent.setText(msg);
+        tvTitle.setText(msg);
+    }
+
+    //设置副标题
+    public void setSubTitle(@NonNull String msg) {
+        if (TextUtils.isEmpty(msg)) {
+            return;
+        }
+        if (tvSubTitle.getVisibility() != VISIBLE) {
+            tvSubTitle.setVisibility(VISIBLE);
+        }
+        tvSubTitle.setText(msg);
+    }
+
+    //设置Switch监听
+    public void setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener listener) {
+        if (aSwitch == null) {
+            return;
+        }
+        aSwitch.setOnCheckedChangeListener(listener);
+    }
+
+    //设置Switch
+    public void setChecked(boolean checked) {
+        if (aSwitch == null) {
+            return;
+        }
+        aSwitch.setChecked(checked);
+    }
+
+    //获得Switch
+    public boolean getChecked() {
+        if (aSwitch == null) {
+            return false;
+        }
+        return aSwitch.isChecked();
+    }
+
+    private int px2sp(Context context, float pxValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
     }
 
 }
