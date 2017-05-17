@@ -36,7 +36,7 @@ dependencies {
 
 * ###### 菜单选项View   |   [MenuItemView.md][MenuItemView.md]
 
-[MenuItemView.png][MenuItemView.png]
+![MenuItemView.png][MenuItemView.png]
 
 * ###### 带眼睛的输入框 | [EyesEditText.md][EyesEditText.md]
 
