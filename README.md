@@ -130,7 +130,7 @@ release {
 * ###### 图片加载 | [glide][glide]
 
 ```
- Google推荐的图片加载库
+ Google推荐的图片加载库 & 好基友 | [查看图片][PhotoView]
 ```
 
 * ###### JSON解析 | [gson][gson]
@@ -189,6 +189,7 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 [butterknife]:https://github.com/JakeWharton/butterknife
 [zelezny]:https://github.com/avast/android-butterknife-zelezny
 [glide]:https://github.com/bumptech/glide
+[PhotoView]:https://github.com/chrisbanes/PhotoView
 [gson]:https://github.com/google/gson
 [EventBus]:https://github.com/greenrobot/EventBus
 [multidex]:http://blog.csdn.net/gaozhan_csdn/article/details/51992100

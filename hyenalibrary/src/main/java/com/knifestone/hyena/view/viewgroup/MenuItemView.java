@@ -2,7 +2,6 @@ package com.knifestone.hyena.view.viewgroup;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -40,11 +39,7 @@ public class MenuItemView extends RelativeLayout {
     }
 
     public MenuItemView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public MenuItemView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+        super(context, attrs);
         init();
         initStyle(attrs);
     }
@@ -60,6 +55,7 @@ public class MenuItemView extends RelativeLayout {
         viewLineTop = findViewById(R.id.viewLineTop);
         viewLineBottom = findViewById(R.id.viewLineBottom);
         viewCenter = findViewById(R.id.viewCenter);
+
     }
 
     private void initStyle(AttributeSet attrs) {
@@ -67,34 +63,20 @@ public class MenuItemView extends RelativeLayout {
         if (attributes == null) {
             return;
         }
+        initIvLeft(attributes);
+        initTitle(attributes);
+        initIvRight(attributes);
+        initSwitch(attributes);
+        initSubTitle(attributes);
+        initLine(attributes);
 
-        /*
-             左边icon
-         */
-        int leftSrc = attributes.getResourceId(R.styleable.MenuItemViewStyle_iv_left_src, -1);
-        if (leftSrc == -1) {
-            removeView(ivIconLeft);
-            ivIconLeft = null;
-        } else {
-            ivIconLeft.setImageResource(leftSrc);
-            //设置大小
-            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_left_size, -1);
-            if (size != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) ivIconLeft.getLayoutParams();
-                params.width = size;
-                params.height = size;
-            }
-            //设置左边距
-            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_left_margin_left, -1);
-            if (marginLeft != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) ivIconLeft.getLayoutParams();
-                params.leftMargin = marginLeft;
-            }
-        }
+        attributes.recycle();
+    }
 
-        /*
-            标题
-         */
+    /**
+     * 标题
+     */
+    private void initTitle(TypedArray attributes) {
         String titleText = attributes.getString(R.styleable.MenuItemViewStyle_tv_title_text);
         if (TextUtils.isEmpty(titleText)) {
             tvTitle.setVisibility(GONE);
@@ -114,13 +96,42 @@ public class MenuItemView extends RelativeLayout {
             //设置左边距
             int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_title_margin_left, -1);
             if (marginLeft != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) tvTitle.getLayoutParams();
+                LayoutParams params = (LayoutParams) tvTitle.getLayoutParams();
                 params.leftMargin = marginLeft;
             }
         }
-        /*
-            右边icon
-         */
+    }
+
+    /**
+     * 左边icon
+     */
+    private void initIvLeft(TypedArray attributes) {
+        int leftSrc = attributes.getResourceId(R.styleable.MenuItemViewStyle_iv_left_src, -1);
+        if (leftSrc == -1) {
+            removeView(ivIconLeft);
+            ivIconLeft = null;
+        } else {
+            ivIconLeft.setImageResource(leftSrc);
+            //设置大小
+            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_left_size, -1);
+            if (size != -1) {
+                LayoutParams params = (LayoutParams) ivIconLeft.getLayoutParams();
+                params.width = size;
+                params.height = size;
+            }
+            //设置左边距
+            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_left_margin_left, -1);
+            if (marginLeft != -1) {
+                LayoutParams params = (LayoutParams) ivIconLeft.getLayoutParams();
+                params.leftMargin = marginLeft;
+            }
+        }
+    }
+
+    /**
+     * 右边icon
+     */
+    private void initIvRight(TypedArray attributes) {
         int rightSrc = attributes.getResourceId(R.styleable.MenuItemViewStyle_iv_right_src, -1);
         if (rightSrc == -1) {
             removeView(ivIconRight);
@@ -130,21 +141,23 @@ public class MenuItemView extends RelativeLayout {
             //设置大小
             int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_right_size, -1);
             if (size != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) ivIconRight.getLayoutParams();
+                LayoutParams params = (LayoutParams) ivIconRight.getLayoutParams();
                 params.width = size;
                 params.height = size;
             }
             //设置右边距
             int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_iv_right_margin_right, -1);
             if (marginRight != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) ivIconRight.getLayoutParams();
+                LayoutParams params = (LayoutParams) ivIconRight.getLayoutParams();
                 params.rightMargin = marginRight;
             }
         }
+    }
 
-        /*
-            Switch
-         */
+    /**
+     * Switch
+     */
+    private void initSwitch(TypedArray attributes) {
         boolean switchVisibility = attributes.getBoolean(R.styleable.MenuItemViewStyle_switch_visibility, false);
         if (!switchVisibility) {
             removeView(aSwitch);
@@ -154,81 +167,30 @@ public class MenuItemView extends RelativeLayout {
             boolean checked = attributes.getBoolean(R.styleable.MenuItemViewStyle_switch_checked, false);
             aSwitch.setChecked(checked);
         }
-        /*
-            副标题
-         */
-        String subtitleText = attributes.getString(R.styleable.MenuItemViewStyle_tv_subtitle_text);
-        if (TextUtils.isEmpty(subtitleText)) {
-            tvSubTitle.setVisibility(GONE);
-        } else {
-            tvSubTitle.setText(subtitleText);
-            //设置颜色
-            int color = attributes.getColor(R.styleable.MenuItemViewStyle_tv_subtitle_color, -1);
-            if (color != -1) {
-                tvSubTitle.setTextColor(color);
-            }
-            //设置大小
-            int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_size, -1);
-            if (size != -1) {
-                size = px2sp(getContext(), size);
-                tvSubTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
-            }
-            //设置左边距
-            int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_margin_left, -1);
-            if (marginLeft != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
-                params.leftMargin = marginLeft;
-            }
-            //设置右边距
-            int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_margin_right, -1);
-            if (marginRight != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
-                params.rightMargin = marginRight;
-            }
-            //设置位置
-            int gravity = attributes.getInteger(R.styleable.MenuItemViewStyle_tv_subtitle_gravity, 0);
-            RelativeLayout.LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
-            if (aSwitch != null) {
-                params.addRule(RelativeLayout.RIGHT_OF, aSwitch.getId());
-            }
-            switch (gravity) {
-                //左 默认
-                case 0:
+    }
 
-                    break;
-                //右
-                case 1:
-                    tvSubTitle.setGravity(Gravity.RIGHT);
-                    break;
-                //下
-                case 2:
-                    if (findViewById(R.id.tvTitle) != null) {
-                        ((RelativeLayout.LayoutParams) tvTitle.getLayoutParams()).addRule(RelativeLayout.ABOVE, viewCenter.getId());
-                        params.addRule(RelativeLayout.BELOW, viewCenter.getId());
-                        params.addRule(RelativeLayout.ALIGN_LEFT, tvTitle.getId());
-                    }
-                    break;
-            }
-        }
-        /*
-            线
-         */
-        int lineColor = attributes.getColor(R.styleable.MenuItemViewStyle_v_line_color, Color.GRAY);
+    /**
+     * 线
+     */
+    private void initLine(TypedArray attributes) {
+        int lineColor = attributes.getColor(R.styleable.MenuItemViewStyle_v_line_color, -1);
         boolean isLineTop = attributes.getBoolean(R.styleable.MenuItemViewStyle_v_line_top_visibility, false);
         if (!isLineTop) {
             removeView(viewLineTop);
         } else {
-            viewLineTop.setBackgroundColor(lineColor);
+            if (lineColor != -1) {
+                viewLineTop.setBackgroundColor(lineColor);
+            }
             //设置左边距
             int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_top_margin_left, -1);
             if (marginLeft != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) viewLineTop.getLayoutParams();
+                LayoutParams params = (LayoutParams) viewLineTop.getLayoutParams();
                 params.leftMargin = marginLeft;
             }
             //设置右边距
             int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_top_margin_right, -1);
             if (marginRight != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) viewLineTop.getLayoutParams();
+                LayoutParams params = (LayoutParams) viewLineTop.getLayoutParams();
                 params.rightMargin = marginRight;
             }
             //设置高度
@@ -238,24 +200,81 @@ public class MenuItemView extends RelativeLayout {
         if (!isLineBottom) {
             removeView(viewLineBottom);
         } else {
-            viewLineBottom.setBackgroundColor(lineColor);
+            if (lineColor != -1) {
+                viewLineBottom.setBackgroundColor(lineColor);
+            }
             //设置左边距
             int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_bottom_margin_left, -1);
             if (marginLeft != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) viewLineBottom.getLayoutParams();
+                LayoutParams params = (LayoutParams) viewLineBottom.getLayoutParams();
                 params.leftMargin = marginLeft;
             }
             //设置右边距
             int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_bottom_margin_right, -1);
             if (marginRight != -1) {
-                RelativeLayout.LayoutParams params = (LayoutParams) viewLineBottom.getLayoutParams();
+                LayoutParams params = (LayoutParams) viewLineBottom.getLayoutParams();
                 params.rightMargin = marginRight;
             }
             //设置高度
             ((LayoutParams) viewLineTop.getLayoutParams()).height = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_v_line_bottom_margin_height, 1);
         }
+    }
 
-        attributes.recycle();
+    /**
+     * 副标题
+     */
+    private void initSubTitle(TypedArray attributes) {
+        String subtitleText = attributes.getString(R.styleable.MenuItemViewStyle_tv_subtitle_text);
+        if (!TextUtils.isEmpty(subtitleText)) {
+            tvSubTitle.setText(subtitleText);
+        }
+        //设置颜色
+        int color = attributes.getColor(R.styleable.MenuItemViewStyle_tv_subtitle_color, -1);
+        if (color != -1) {
+            tvSubTitle.setTextColor(color);
+        }
+        //设置大小
+        int size = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_size, -1);
+        if (size != -1) {
+            size = px2sp(getContext(), size);
+            tvSubTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+        }
+        //设置左边距
+        int marginLeft = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_margin_left, -1);
+        if (marginLeft != -1) {
+            LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
+            params.leftMargin = marginLeft;
+        }
+        //设置右边距
+        int marginRight = attributes.getDimensionPixelSize(R.styleable.MenuItemViewStyle_tv_subtitle_margin_right, -1);
+        if (marginRight != -1) {
+            LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
+            params.rightMargin = marginRight;
+        }
+        //设置位置
+        int gravity = attributes.getInteger(R.styleable.MenuItemViewStyle_tv_subtitle_gravity, 0);
+        LayoutParams params = (LayoutParams) tvSubTitle.getLayoutParams();
+        if (aSwitch != null) {
+            params.addRule(RelativeLayout.RIGHT_OF, aSwitch.getId());
+        }
+        switch (gravity) {
+            //左 默认
+            case 0:
+
+                break;
+            //右
+            case 1:
+                tvSubTitle.setGravity(Gravity.END);
+                break;
+            //下
+            case 2:
+                if (findViewById(R.id.tvTitle) != null) {
+                    ((LayoutParams) tvTitle.getLayoutParams()).addRule(RelativeLayout.ABOVE, viewCenter.getId());
+                    params.addRule(RelativeLayout.BELOW, viewCenter.getId());
+                    params.addRule(RelativeLayout.ALIGN_LEFT, tvTitle.getId());
+                }
+                break;
+        }
     }
 
     //设置标题

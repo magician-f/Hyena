@@ -1,6 +1,8 @@
-package com.knifestone.hyena.base.mvp;
+package com.knifestone.hyena.base;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 
 /**
  * 简介：契约类
@@ -13,25 +15,20 @@ public interface BaseContract {
 
     interface View {
         Activity getActivity();
+        Context getContext();
+        void startActivity(Intent intent);
     }
 
-    interface Model {
+    class Presenter<V extends View> {
 
-    }
-
-    class Presenter<M extends Model, V extends View> {
-
-        protected M mModel;
         protected V mView;
 
-        public void init(Object view, Object model) {
+        public void init(Object view) {
             this.mView = (V) view;
-            this.mModel = (M) model;
         }
 
         public void detachView() {
             mView = null;
-            mModel = null;
         }
 
     }
