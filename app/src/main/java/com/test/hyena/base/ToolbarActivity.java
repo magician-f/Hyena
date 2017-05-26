@@ -1,7 +1,6 @@
 package com.test.hyena.base;
 
 import com.knifestone.hyena.base.HyenaActivity;
-import com.r0adkll.slidr.Slidr;
 import com.test.hyena.R;
 
 /**
@@ -15,7 +14,6 @@ public abstract class ToolbarActivity extends HyenaActivity {
     @Override
     protected void setContentView() {
         super.setContentView();
-        Slidr.attach(this);
         initToolbar();
     }
 

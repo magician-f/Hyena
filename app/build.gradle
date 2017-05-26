@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.test.hyena"
         minSdkVersion 21
@@ -35,15 +35,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    //https://github.com/r0adkll/Slidr
-    compile 'com.r0adkll:slidableactivity:2.0.5'
-//    compile 'com.github.KnifeStone:Hyena:0.7.0'
-    compile project(':hyenalibrary')
-//    compile(name: 'hyenalibrary', ext: 'aar')
+    //引入鬣狗快速开发库 https://github.com/KnifeStone/Hyena
+    compile 'com.github.KnifeStone:Hyena:1.1.0'
+//    compile project(':hyenalibrary')
 
-//    compile 'com.jakewharton:butterknife:8.5.1'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

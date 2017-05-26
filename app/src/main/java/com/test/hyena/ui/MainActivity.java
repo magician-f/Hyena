@@ -31,4 +31,8 @@ public class MainActivity extends HyenaBaseActivity {
     public void 通用(View v) {
         startActivity(new Intent(this, CurrencyActivity.class));
     }
+
+    public void 一个优雅的登录页(View v) {
+        startActivity(new Intent(this, LoginActivity.class));
+    }
 }
