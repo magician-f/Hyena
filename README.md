@@ -169,6 +169,12 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 可以自由定制外观、支持拖拽消除的MaterialDesign风格
 ```
 
+* ###### 状态栏控制 | [ImmersionBar][ImmersionBar]
+
+```
+状态栏、导航栏、沉浸式的轻松控制
+```
+
 ## Base类
 
 * ###### HyenaActivity | [使用示例][HyenaActivity.md]
@@ -196,6 +202,7 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 [Slidr]:https://github.com/r0adkll/Slidr
 [BaseRecyclerViewAdapterHelper]:https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 [BadgeView]:https://github.com/qstumn/BadgeView
+[ImmersionBar]:https://github.com/gyf-dev/ImmersionBar
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md

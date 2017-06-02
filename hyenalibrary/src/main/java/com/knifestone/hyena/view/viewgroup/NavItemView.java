@@ -21,7 +21,7 @@ import java.util.List;
  * Created by KnifeStone on 2017-6-1.
  * https://github.com/ifmvo/BottomTabView
  */
-public class TabView extends LinearLayout {
+public class NavItemView extends LinearLayout {
 
     /**
      * 记录最新的选择位置
@@ -33,16 +33,16 @@ public class TabView extends LinearLayout {
      */
     private List<TabItemView> tabItemViews;
 
-    public TabView(Context context) {
+    public NavItemView(Context context) {
         super(context);
     }
 
-    public TabView(Context context, @Nullable AttributeSet attrs) {
+    public NavItemView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
 
-    public TabView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public NavItemView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
