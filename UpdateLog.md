@@ -1,4 +1,8 @@
 
+#### 17/06/05
+
+* 新增推荐类库-FlexboxLayout
+
 #### 17/06/02
 
 * 新增推荐类库-ImmersionBar

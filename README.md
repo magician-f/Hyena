@@ -175,6 +175,12 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 状态栏、导航栏、沉浸式的轻松控制
 ```
 
+* ###### 自动换行 | [FlexboxLayout][FlexboxLayout]
+
+```
+Google新的容器，强大自如换行
+```
+
 ## Base类
 
 * ###### HyenaActivity | [使用示例][HyenaActivity.md]
@@ -203,6 +209,7 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 [BaseRecyclerViewAdapterHelper]:https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 [BadgeView]:https://github.com/qstumn/BadgeView
 [ImmersionBar]:https://github.com/gyf-dev/ImmersionBar
+[FlexboxLayout]:https://github.com/google/flexbox-layout
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
