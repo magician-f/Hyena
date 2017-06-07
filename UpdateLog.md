@@ -1,4 +1,8 @@
 
+#### 17/06/07
+
+* 新增view-EasyPickerView
+
 #### 17/06/05
 
 * 新增推荐类库-FlexboxLayout

@@ -35,4 +35,8 @@ public class MainActivity extends HyenaBaseActivity {
     public void 一个优雅的登录页(View v) {
         startActivity(new Intent(this, LoginActivity.class));
     }
+
+    public void 简单选择器(View v) {
+        startActivity(new Intent(this, EasyPickerActivity.class));
+    }
 }

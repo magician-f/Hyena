@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".ui.EasyPickerActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goHttp"
+        android:layout_marginTop="30dp"
+        android:text="转载自\nhttps://github.com/huzenan/EasyPickerView\n点击跳转原文地址" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:text="0时0分0秒"
+        android:textColor="#8f8f8f"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.knifestone.hyena.view.picker.EasyPickerView
+            android:id="@+id/epvH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            custom:epvMaxShowNum="3"
+            custom:epvRecycleMode="true"
+            custom:epvTextColor="#4aa4a4"
+            custom:epvTextMaxScale="2.0"
+            custom:epvTextMinAlpha="0.35"
+            custom:epvTextPadding="10dp"
+            custom:epvTextSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="时"
+            android:textColor="#4aa4a4"
+            android:textSize="20sp" />
+
+        <com.knifestone.hyena.view.picker.EasyPickerView
+            android:id="@+id/epvM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            custom:epvMaxShowNum="3"
+            custom:epvRecycleMode="false"
+            custom:epvTextColor="#e98d3c"
+            custom:epvTextMaxScale="2.0"
+            custom:epvTextMinAlpha="0.35"
+            custom:epvTextPadding="10dp"
+            custom:epvTextSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="分"
+            android:textColor="#e98d3c"
+            android:textSize="20sp" />
+
+        <com.knifestone.hyena.view.picker.EasyPickerView
+            android:id="@+id/epvS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            custom:epvMaxShowNum="3"
+            custom:epvRecycleMode="false"
+            custom:epvTextColor="#56A36C"
+            custom:epvTextMaxScale="2.0"
+            custom:epvTextMinAlpha="0.35"
+            custom:epvTextPadding="10dp"
+            custom:epvTextSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="秒"
+            android:textColor="#56A36C"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_h"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:hint="h"
+            android:inputType="numberSigned"
+            android:textColor="#4aa4a4"
+            android:textColorHint="#dedede" />
+
+        <Button
+            android:id="@+id/btn_to_h"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="#4aa4a4"
+            android:text="move to"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_by_h"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="#4aa4a4"
+            android:minHeight="0dp"
+            android:text="move by"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</LinearLayout>

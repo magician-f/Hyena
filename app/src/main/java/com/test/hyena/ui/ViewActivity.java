@@ -3,7 +3,6 @@ package com.test.hyena.ui;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
@@ -48,10 +47,13 @@ public class ViewActivity extends ToolbarActivity {
 
             }
         });
+
     }
 
     @Override
     protected void initData(Bundle savedInstanceState) {
 
     }
+
+
 }

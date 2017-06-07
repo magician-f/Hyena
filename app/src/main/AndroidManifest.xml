@@ -32,6 +32,9 @@
         <activity android:name=".ui.LoginActivity"
             android:label="登录"/>
 
+        <activity android:name=".ui.EasyPickerActivity"
+            android:label="简单的选择器"/>
+
     </application>
 
 </manifest>

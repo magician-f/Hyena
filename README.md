@@ -38,6 +38,10 @@ dependencies {
 
 ![MenuItemView.png][MenuItemView.png]
 
+* ###### 简单选择器   |   [EasyPickerView.md][EasyPickerView.md]
+
+！[EasyPickerView.png][EasyPickerView.png]
+
 * ###### 带眼睛的输入框 | [EyesEditText.md][EyesEditText.md]
 
 ```
@@ -215,6 +219,7 @@ Google新的容器，强大自如换行
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
 
 [MenuItemView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MenuItemView.md
+[EasyPickerView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EasyPickerView.md
 [EyesEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EyesEditText.md
 [ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/ClearEditText.md
 [MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
@@ -230,3 +235,4 @@ Google新的容器，强大自如换行
 [proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/proguard-rules.md
 
 [MenuItemView.png]:https://github.com/KnifeStone/Hyena/blob/master/files/images/MenuItemView.png
+[EasyPickerView.png]:https://github.com/KnifeStone/Hyena/blob/master/files/images/EasyPickerView.png
