@@ -1,6 +1,6 @@
 ###### [EasyPickerView.java][file] | [介绍文章][blog]
 
-###### [转载自huzenan](https://github.com/huzenan/EasyPickerView)
+###### 转载自[github地址](https://github.com/huzenan/EasyPickerView) [文章][http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650823228&idx=1&sn=640ad01058253e9c3a73bf8a81fe0549&chksm=80b78ea2b7c007b4391a3d322aced74b27fcf25dfac15cb762e68bb4d76ef5f70446ebc779ba&mpshare=1&scene=23&srcid=06078WSjNAMmWjvmoBZDbBlU#rd]
 
 ###### 可以设置的属性
 

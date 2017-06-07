@@ -40,7 +40,7 @@ dependencies {
 
 * ###### 简单选择器   |   [EasyPickerView.md][EasyPickerView.md]
 
-！[EasyPickerView.png][EasyPickerView.png]
+![EasyPickerView.png][EasyPickerView.png]
 
 * ###### 带眼睛的输入框 | [EyesEditText.md][EyesEditText.md]
 
