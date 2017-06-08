@@ -1,4 +1,9 @@
 
+#### 17/06/08
+
+* 新增AS插件推荐-GsonFormat
+* 更新EasyPickerView的demo
+
 #### 17/06/07
 
 * 新增view-EasyPickerView

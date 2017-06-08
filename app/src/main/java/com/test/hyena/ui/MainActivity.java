@@ -36,7 +36,4 @@ public class MainActivity extends HyenaBaseActivity {
         startActivity(new Intent(this, LoginActivity.class));
     }
 
-    public void 简单选择器(View v) {
-        startActivity(new Intent(this, EasyPickerActivity.class));
-    }
 }

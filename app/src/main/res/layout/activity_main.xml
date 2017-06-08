@@ -25,10 +25,4 @@
         android:text="一个优雅的登录页"
         android:onClick="一个优雅的登录页"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="简单选择器"
-        android:onClick="简单选择器"/>
-
 </LinearLayout>

@@ -81,6 +81,90 @@
 
             <com.knifestone.hyena.view.textview.MarqueeTextView
                 style="@style/TextViewTitleSmallLow"
+                android:onClick="goHttp"
+                android:text="EasyPickerView 简单选择器(转载)(点击跳转原地址)" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.knifestone.hyena.view.picker.EasyPickerView
+                    android:id="@+id/epvH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    item:epvMaxShowNum="3"
+                    item:epvRecycleMode="true"
+                    item:epvTextColor="#4aa4a4"
+                    item:epvTextMaxScale="2.0"
+                    item:epvTextMinAlpha="0.35"
+                    item:epvTextPadding="10dp"
+                    item:epvTextSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="时"
+                    android:textColor="#4aa4a4"
+                    android:textSize="20sp" />
+
+                <com.knifestone.hyena.view.picker.EasyPickerView
+                    android:id="@+id/epvM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    item:epvMaxShowNum="3"
+                    item:epvRecycleMode="false"
+                    item:epvTextColor="#e98d3c"
+                    item:epvTextMaxScale="2.0"
+                    item:epvTextMinAlpha="0.35"
+                    item:epvTextPadding="10dp"
+                    item:epvTextSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="分"
+                    android:textColor="#e98d3c"
+                    android:textSize="20sp" />
+
+                <com.knifestone.hyena.view.picker.EasyPickerView
+                    android:id="@+id/epvS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    item:epvMaxShowNum="3"
+                    item:epvRecycleMode="false"
+                    item:epvTextColor="#56A36C"
+                    item:epvTextMaxScale="2.0"
+                    item:epvTextMinAlpha="0.35"
+                    item:epvTextPadding="10dp"
+                    item:epvTextSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="秒"
+                    android:textColor="#56A36C"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
                 android:text="CountDownButton 倒计时按钮" />
 
             <com.knifestone.hyena.view.button.CountDownButton
@@ -147,7 +231,6 @@
                 android:text="自定着色"
                 item:drawable_tint="@color/colorAccent" />
         </LinearLayout>
-
 
 
     </LinearLayout>
