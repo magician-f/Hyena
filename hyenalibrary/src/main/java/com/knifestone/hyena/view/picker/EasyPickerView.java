@@ -21,6 +21,7 @@ import java.util.ArrayList;
 /**
  * 滚轮视图，可设置是否循环模式，实现OnScrollChangedListener接口以监听滚轮变化
  * Created by huzn on 2016/10/27.
+ * 原文地址：https://github.com/huzenan/EasyPickerView
  */
 public class EasyPickerView extends View {
 
@@ -117,7 +118,7 @@ public class EasyPickerView extends View {
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     int mode = MeasureSpec.getMode(widthMeasureSpec);
     int width = MeasureSpec.getSize(widthMeasureSpec);
-    contentWidth = (int) (maxTextWidth + getPaddingLeft() + getPaddingRight());
+    contentWidth = (int) (maxTextWidth * textMaxScale + getPaddingLeft() + getPaddingRight());
     if (mode != MeasureSpec.EXACTLY) { // wrap_content
       width = contentWidth;
     }
@@ -197,7 +198,7 @@ public class EasyPickerView extends View {
               cy + contentHeight / 2
       );
 
-      // 绘制文字，从当前中间项往前2个开始，往后一共绘制5个字
+      // 绘制文字，从当前中间项往前、后一共绘制maxShowNum个字
       int size = dataList.size();
       int centerPadding = textHeight + textPadding;
       int half = maxShowNum / 2 + 1;
@@ -222,8 +223,16 @@ public class EasyPickerView extends View {
           // 根据textMaxScale，计算出tempScale值，即实际text应该放大的倍数，范围 1~textMaxScale
           float tempScale = scale * (textMaxScale - 1.0f) + 1.0f;
           tempScale = tempScale < 1.0f ? 1.0f : tempScale;
+
+          // 计算文字alpha值
+          float textAlpha = textMinAlpha;
+          if (textMaxScale != 1) {
+            float tempAlpha = (tempScale - 1) / (textMaxScale - 1);
+            textAlpha = (1 - textMinAlpha) * tempAlpha + textMinAlpha;
+          }
+
           textPaint.setTextSize(textSize * tempScale);
-          textPaint.setAlpha((int) (255 * textMinAlpha * tempScale));
+          textPaint.setAlpha((int) (255 * textAlpha));
 
           // 绘制
           Paint.FontMetrics tempFm = textPaint.getFontMetrics();
@@ -351,6 +360,7 @@ public class EasyPickerView extends View {
       curIndex = 0;
     }
     requestLayout();
+    invalidate();
   }
 
   /**
