@@ -1,4 +1,12 @@
 
+#### 17/06/15
+
+*新增推荐类库-AgentWeb
+
+#### 17/06/12 发布版本1.2.0
+
+* 更新view-EasyPickerView
+
 #### 17/06/08
 
 * 新增AS插件推荐-GsonFormat

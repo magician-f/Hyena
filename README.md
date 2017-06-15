@@ -28,7 +28,7 @@ allprojects {
 dependencies {
     //根据实际引用的版本自行调整版本号
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.github.KnifeStone:Hyena:1.1.0'
+    compile 'com.github.KnifeStone:Hyena:1.2.0'
 }
 ```
 
@@ -185,6 +185,12 @@ Google提供的android-support-multidex。解决方法65536瓶颈
 Google新的容器，强大自如换行
 ```
 
+* ###### 高度封装的WebView| [AgentWeb][AgentWeb]
+
+```
+简单易用，带有进度条、支持文件上传、下载、简化Javascript通信、链式调用、加强Web安全的库。
+```
+
 ## 开发提速利器-AS插件推荐
 
 * ###### GsonFormat | [GsonFormat][GsonFormat]
@@ -222,6 +228,7 @@ gson数据自动生成实体类
 [BadgeView]:https://github.com/qstumn/BadgeView
 [ImmersionBar]:https://github.com/gyf-dev/ImmersionBar
 [FlexboxLayout]:https://github.com/google/flexbox-layout
+[AgentWeb]:https://github.com/Justson/AgentWeb
 
 [GsonFormat]:https://github.com/zzz40500/GsonFormat
 
