@@ -21,6 +21,11 @@ public class CurrencyActivity extends ToolbarActivity {
         InputFilterAdapter();
     }
 
+    @Override
+    protected void getData() {
+
+    }
+
     /**
      * 输入过滤适配器
      */
@@ -34,11 +39,6 @@ public class CurrencyActivity extends ToolbarActivity {
         //反过滤数字和中文
         inputFilter = new InputFilterAdapter.Builder().filterReverse(true).filterNumber(true).filterChinese(true).builder();
         etIFA2.setFilters(new InputFilter[]{inputFilter});
-    }
-
-    @Override
-    protected void initData(Bundle savedInstanceState) {
-
     }
 
     @Override

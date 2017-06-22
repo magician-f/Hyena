@@ -1,7 +1,6 @@
 package com.test.hyena.ui;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
 import com.knifestone.hyena.base.HyenaBaseActivity;
@@ -20,7 +19,7 @@ public class MainActivity extends HyenaBaseActivity {
     }
 
     @Override
-    protected void initData(Bundle savedInstanceState) {
+    protected void getData() {
 
     }
 

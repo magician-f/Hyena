@@ -1,4 +1,8 @@
 
+#### 17/06/22
+
+* 优化HyenaActivity 去除initData 新增getData
+
 #### 17/06/15
 
 *新增推荐类库-AgentWeb

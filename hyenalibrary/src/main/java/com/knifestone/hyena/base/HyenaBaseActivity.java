@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 
 /**
@@ -18,6 +16,10 @@ import android.view.View;
  * Created by KnifeStone on 2017/5/3.
  */
 public abstract class HyenaBaseActivity extends AppCompatActivity {
+
+    //=====================================================================
+    //                              基 本 属 性
+    //=====================================================================
 
     /**
      * 上下文
@@ -36,8 +38,12 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
         TAG = "ClassName:" + getClass().getSimpleName() + ":TaskId:" + getTaskId();
         setContentView();
         initView();
-        initData(savedInstanceState);
+        getData();
     }
+
+    //=====================================================================
+    //                              抽 象 方 法
+    //=====================================================================
 
     /**
      * 设置Activity内容
@@ -50,9 +56,13 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
     protected abstract void initView();
 
     /**
-     * 初始化数据
+     * 获得数据
      */
-    protected abstract void initData(Bundle savedInstanceState);
+    protected abstract void getData();
+
+    //=====================================================================
+    //                              便 捷 方 法
+    //=====================================================================
 
     /**
      * 跳转到目标Activity
@@ -85,15 +95,6 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 快速log.d
-     */
-    protected void logD(String msg) {
-        if (!TextUtils.isEmpty(msg)) {
-            Log.d(TAG, msg);
-        }
-    }
-
-    /**
      * 获得颜色
      */
     public int getColor_(@ColorRes int color) {
@@ -103,6 +104,11 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
             return getResources().getColor(color);
         }
     }
+
+
+    //=====================================================================
+    //                              生命周期备注
+    //=====================================================================
 
     /**
      * Activity从后台重新回到前台时被调用
