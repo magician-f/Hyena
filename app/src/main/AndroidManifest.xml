@@ -29,8 +29,11 @@
             android:label="通用"
             android:windowSoftInputMode="stateHidden" />
 
-        <activity android:name=".ui.LoginActivity"
-            android:label="登录"/>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="登录" />
+
+        <activity android:name=".ui.TESTActivity" />
 
     </application>
 

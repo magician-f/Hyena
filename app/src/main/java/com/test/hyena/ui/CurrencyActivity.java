@@ -1,6 +1,5 @@
 package com.test.hyena.ui;
 
-import android.os.Bundle;
 import android.text.InputFilter;
 import android.widget.EditText;
 

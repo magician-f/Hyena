@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/abnormalLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/abnormalBackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/abnormalPaddingBottom">
+
+    <ImageView
+        android:id="@+id/abnormalIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/abnormalTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/abnormalTextViewMarginTop"
+        android:visibility="gone"
+        tools:text="内容"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/abnormalBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/abnormalButtonMarginTop"
+        android:background="@drawable/abnormalButtonBackground"
+        android:minHeight="40dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:text="重试"
+        android:textColor="@color/abnormalButtonTextColor"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

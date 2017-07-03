@@ -1,6 +1,6 @@
 package com.test.hyena.base;
 
-import com.knifestone.hyena.base.HyenaActivity;
+import com.knifestone.hyena.base.HyenaWhereGoActivity;
 import com.test.hyena.R;
 
 /**
@@ -9,7 +9,7 @@ import com.test.hyena.R;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/8.
  */
-public abstract class ToolbarActivity extends HyenaActivity {
+public abstract class ToolbarActivity extends HyenaWhereGoActivity {
 
     @Override
     protected void setContentView() {
@@ -21,5 +21,16 @@ public abstract class ToolbarActivity extends HyenaActivity {
     protected int bindLayout() {
         return R.layout.activity_base_toolbar;
     }
+
+    @Override
+    protected void createLoadingView() {
+
+    }
+
+    @Override
+    protected void onCancelCall() {
+
+    }
+
 
 }

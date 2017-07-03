@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 背景色-->
+    <color name="abnormalBackground">@android:color/white</color>
+    <!-- 下内间距-->
+    <dimen name="abnormalPaddingBottom">30dp</dimen>
+    <!-- 提示文字的上边距-->
+    <dimen name="abnormalTextViewMarginTop">30dp</dimen>
+    <!-- 按钮上边距 -->
+    <dimen name="abnormalButtonMarginTop">30dp</dimen>
+    <!-- 按钮样式-->
+    <drawable name="abnormalButtonBackground">@drawable/abnormal_button</drawable>
+    <!-- 按钮字体颜色-->
+    <color name="abnormalButtonTextColor">@android:color/white</color>
+
+</resources>

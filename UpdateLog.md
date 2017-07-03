@@ -1,5 +1,13 @@
 
-#### 17/06/22
+#### 17/07/03 发布版本1.2.3
+
+* 修改HyenaAbnormalActivity为HyenaWhereGoActivity
+
+#### 17/06/28
+
+* 新增HyenaAbnormalActivity 快捷切换异常页面
+
+#### 17/06/22 发布版本1.2.1
 
 * 优化HyenaActivity 去除initData 新增getData
 
