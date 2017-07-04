@@ -1,4 +1,4 @@
-package com.knifestone.hyena.base;
+package com.knifestone.hyena.base.activity;
 
 import android.content.Context;
 import android.content.Intent;

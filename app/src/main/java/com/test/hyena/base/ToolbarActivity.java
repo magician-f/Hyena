@@ -1,6 +1,6 @@
 package com.test.hyena.base;
 
-import com.knifestone.hyena.base.HyenaWhereGoActivity;
+import com.knifestone.hyena.base.activity.HyenaWhereGoActivity;
 import com.test.hyena.R;
 
 /**

@@ -3,7 +3,7 @@ package com.test.hyena.ui;
 import android.content.Intent;
 import android.view.View;
 
-import com.knifestone.hyena.base.HyenaBaseActivity;
+import com.knifestone.hyena.base.activity.HyenaBaseActivity;
 import com.test.hyena.R;
 
 public class MainActivity extends HyenaBaseActivity {

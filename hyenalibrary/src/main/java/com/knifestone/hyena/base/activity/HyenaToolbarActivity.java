@@ -1,4 +1,4 @@
-package com.knifestone.hyena.base;
+package com.knifestone.hyena.base.activity;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;

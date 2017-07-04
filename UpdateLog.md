@@ -1,4 +1,8 @@
 
+#### 17/07/04 发布版本1.2.4
+
+* 强化了base Activity、Fragment的新增快键显示loading、异常页面的功能
+
 #### 17/07/03 发布版本1.2.3
 
 * 修改HyenaAbnormalActivity为HyenaWhereGoActivity

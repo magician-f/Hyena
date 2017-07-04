@@ -2,7 +2,7 @@ package com.test.hyena.ui;
 
 import android.view.LayoutInflater;
 
-import com.knifestone.hyena.base.HyenaWhereGoActivity;
+import com.knifestone.hyena.base.activity.HyenaWhereGoActivity;
 import com.knifestone.hyena.holder.ViewLoading;
 import com.test.hyena.R;
 
