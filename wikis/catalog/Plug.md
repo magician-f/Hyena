@@ -15,7 +15,7 @@ gson数据自动生成实体类
 * ###### ECTranslation
 
 ```
-翻译插件,可以将英文翻译为中文。
+翻译插件,可以将英文翻译为中文
 ```
 
 * ###### AndroidLocalizationer
@@ -27,13 +27,13 @@ gson数据自动生成实体类
 * ###### [PermissionsDispatcher plugin][PermissionsDispatcher plugin]
 
 ```
-在类中插入实现了Parcelable接口的代码
+自动生成6.0权限的代码
 ```
 
 * ###### [methods-count][methods-count]
 
 ```
-统计Android依赖库中方法的总个数。
+统计Android依赖库中方法的总个数
 ```
 
 [GsonFormat]:https://github.com/zzz40500/GsonFormat

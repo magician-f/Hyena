@@ -32,17 +32,63 @@ dependencies {
 }
 ```
 
-## [常用View][Views.md]
+# [常用View][Views.md]
+
+```
+菜单选项View
+简单选择器
+带眼睛的输入框
+带清除的输入框
+倒计时按钮
+横向跑马灯控件
+```
 
 ## [Base][Base.md]
 
-## [通用][Currency.md]
+```
+HyenaBaseActivity
+HyenaToolbarActivity
+HyenaWhereGoActivity
+```
 
-## [一句话推荐一个类库][Library.md]
+### [通用][Currency.md]
 
-## [AndroidStudio插件][Plug.md]
+```
+输入过滤适配器
+防止双击监听
+文本变化监听适配器
+```
 
-## 词典
+#### [一句话推荐一个类库][Library.md]
+
+```
+工具类库
+黄油刀
+图片加载
+JSON解析
+组件、线程通信
+dex分包
+滑动退出
+强大的适配器
+消息显示
+状态栏控制
+自动换行布局
+高度封装的WebView
+```
+
+##### [AndroidStudio插件][Plug.md]
+
+```
+AndroidStudio插件
+gson数据自动生成实体类
+在类中插入实现了Parcelable接口的代码
+翻译插件,可以将英文翻译为中文
+将项目中的 string 资源自动翻译为其他语言
+自动生成6.0权限的代码
+统计Android依赖库中方法的总个数
+```
+
+###### 词典
 
 * ###### 混淆 | [proguard-rules.md][proguard-rules.md]
 
@@ -67,8 +113,8 @@ release {
 [Views.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Views.md
 [Base.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Base.md
 [Currency.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Currency.md
-[Librarys.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Library.md
-[Plugs.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Plugs.md
+[Library.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Library.md
+[Plug.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Plugs.md
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
