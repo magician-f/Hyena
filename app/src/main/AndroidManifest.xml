@@ -33,7 +33,7 @@
             android:name=".ui.LoginActivity"
             android:label="登录" />
 
-        <activity android:name=".ui.TESTActivity" />
+        <activity android:name=".ui.TestActivity" />
 
     </application>
 

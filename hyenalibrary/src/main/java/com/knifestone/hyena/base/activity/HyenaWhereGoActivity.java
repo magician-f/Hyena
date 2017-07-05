@@ -49,7 +49,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
     }
 
     /**
-     * 显示初始化的loading
+     * 显示初始化的loading （隐藏背景
      */
     public void showLoadingInit() {
         if (showLoading()) {

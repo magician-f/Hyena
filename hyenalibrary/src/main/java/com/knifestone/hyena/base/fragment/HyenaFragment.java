@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
+
 /**
  * <h1>懒加载Fragment</h1> 只有创建并显示的时候才会调用onCreateViewLazy方法<br>
  * <br>
@@ -25,7 +26,6 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     public static final String INTENT_BOOLEAN_LAZYLOAD = "intent_boolean_lazyLoad";
     private boolean isLazyLoad = true;
 
-    @Deprecated
     protected final void onCreateView(Bundle savedInstanceState) {
         super.onCreateView(savedInstanceState);
         this.savedInstanceState = savedInstanceState;
@@ -85,7 +85,6 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
         }
     }
 
-    @Deprecated
     @Override
     public final void onStart() {
         super.onStart();
@@ -95,9 +94,9 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
         }
     }
 
-    @Deprecated
+
     @Override
-    public final void onStop() {
+    public  void onStop() {
         super.onStop();
         if (isInit && isStart && getUserVisibleHint()) {
             isStart = false;
@@ -143,8 +142,7 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     }
 
     @Override
-    @Deprecated
-    public final void onResume() {
+    public  void onResume() {
         super.onResume();
         if (isInit) {
             onResumeLazy();
@@ -152,8 +150,7 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     }
 
     @Override
-    @Deprecated
-    public final void onPause() {
+    public  void onPause() {
         super.onPause();
         if (isInit) {
             onPauseLazy();
@@ -161,8 +158,7 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     }
 
     @Override
-    @Deprecated
-    public final void onDestroyView() {
+    public  void onDestroyView() {
         super.onDestroyView();
         if (isInit) {
             onDestroyViewLazy();

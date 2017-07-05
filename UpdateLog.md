@@ -1,4 +1,9 @@
 
+#### 17/07/05 发布版本1.2.5
+
+* 重新整理的首页
+* 优化了HyenaFragment
+
 #### 17/07/04 发布版本1.2.4
 
 * 强化了base Activity、Fragment的新增快键显示loading、异常页面的功能
