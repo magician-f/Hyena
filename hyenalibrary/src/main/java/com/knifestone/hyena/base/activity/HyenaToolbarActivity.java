@@ -71,21 +71,27 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
      */
     protected void initToolbar() {
         setTitle(getTitle());
-        setToolbarLeftButton(0, null);
     }
 
     protected void initToolbar(@StringRes int id) {
         initToolbar(getString(id));
     }
 
-    protected void initToolbar(String title) {
+    protected void initToolbar(CharSequence title) {
         setTitle(title);
         setToolbarLeftButton(0, null);
     }
 
+    /**
+     * 设置左边图片和监听事件
+     * @param iconResId -1：不要图片 0：使用默认 其它：
+     * @param onClickListener 可为null
+     */
     protected void setToolbarLeftButton(@DrawableRes int iconResId, OnClickListener onClickListener) {
         this.onClickListenerTopLeft = onClickListener;
-        if (iconResId != 0) {
+        if (iconResId == -1) {
+            toolbar.setNavigationIcon(null);
+        } else if (iconResId != 0) {
             toolbar.setNavigationIcon(iconResId);
         }
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -115,8 +121,8 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
      */
     @Override
     public void setTitle(CharSequence title) {
-        if (TextUtils.isEmpty(title)) {
-            return;
+        if (title == null) {
+            title = "";
         }
         if (tvTitle != null) {
             tvTitle.setText(title);

@@ -43,7 +43,7 @@ dependencies {
 横向跑马灯控件
 ```
 
-## [Base][Base.md]
+###### [Base][Base.md]
 
 ```
 HyenaBaseActivity
@@ -51,7 +51,7 @@ HyenaToolbarActivity
 HyenaWhereGoActivity
 ```
 
-### [通用][Currency.md]
+###### [通用][Currency.md]
 
 ```
 输入过滤适配器
@@ -59,7 +59,7 @@ HyenaWhereGoActivity
 文本变化监听适配器
 ```
 
-#### [一句话推荐一个类库][Library.md]
+###### [一句话推荐一个类库][Library.md]
 
 ```
 工具类库
@@ -76,7 +76,7 @@ dex分包
 高度封装的WebView
 ```
 
-##### [AndroidStudio插件][Plug.md]
+###### [AndroidStudio插件][Plug.md]
 
 ```
 AndroidStudio插件
@@ -90,16 +90,8 @@ gson数据自动生成实体类
 
 ###### 词典
 
-* ###### 混淆 | [proguard-rules.md][proguard-rules.md]
-
-```
-release {
-    minifyEnabled true      //开启混淆
-    shrinkResources true    //打开资源压缩（去除没有引用的资源）
-    zipAlignEnabled true    //zipAlign可以让安装包中的资源按4字节对齐，这样可以减少应用在运行时的内存消耗。
-    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-}
-```
+* ###### [混淆][proguard-rules.md]
+* ###### [gradle][gradle.md]
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
@@ -122,5 +114,6 @@ release {
 [HyenaActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaActivity.md
 [HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
 
-[proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/proguard-rules.md
+[proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/dictionary/proguard-rules.md
+[gradle.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/dictionary/gradle.md
 
