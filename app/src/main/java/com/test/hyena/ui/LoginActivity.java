@@ -16,9 +16,9 @@ import com.test.hyena.R;
 /**
  * 简介:作者有点懒
  * 描述:这个....
- * GitHub https://github.com/zapailaohei
+ * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
- * Created by 杂牌老黑 on 2017/5/26.
+ * Created by KnifeStone on 2017/5/26.
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,41 +34,39 @@ public class LoginActivity extends AppCompatActivity {
         etAccount = (EditText) findViewById(R.id.etAccount);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        //设置过滤
-        InputFilterAdapter inputFilter;
-        //设置过滤Emoji和中文
-        inputFilter = new InputFilterAdapter
+
+        //设置 账号输入框过滤emoji、中文
+        InputFilterAdapter inputFilter = new InputFilterAdapter
                 .Builder()
                 .filterEmoji(true)
                 .filterChinese(true)
                 .builder();
         etAccount.setFilters(new InputFilter[]{inputFilter});
         etPassword.setFilters(new InputFilter[]{inputFilter});
-        //设置监听
+
+        //设置文本变化监听
         etAccount.addTextChangedListener(new TextWatcherAdapter() {
             @Override
-            public void afterTextChanged(Editable editable) {
-                //选择性实现需要的方法
+            public void afterTextChanged(Editable s) {
                 checkSubmit();
             }
         });
         etPassword.addTextChangedListener(new TextWatcherAdapter() {
             @Override
-            public void afterTextChanged(Editable editable) {
-                //选择性实现需要的方法
+            public void afterTextChanged(Editable s) {
                 checkSubmit();
             }
         });
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         checkSubmit();
     }
 
     /**
-     * 检测按钮是否可用
+     * 检测是否可以提交
      */
     private void checkSubmit() {
         String msg = etAccount.getText().toString();

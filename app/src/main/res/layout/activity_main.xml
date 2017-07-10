@@ -6,6 +6,10 @@
     android:orientation="vertical"
     tools:context="com.test.hyena.ui.MainActivity">
 
+    <com.knifestone.hyena.view.textview.MarqueeTextView
+        style="@style/TextViewTitleSmallLow"
+        android:text="API演示" />
+
     <Button
         android:id="@+id/ss"
         android:layout_width="match_parent"
@@ -18,6 +22,10 @@
         android:layout_height="wrap_content"
         android:text="通用"
         android:onClick="通用"/>
+
+    <com.knifestone.hyena.view.textview.MarqueeTextView
+        style="@style/TextViewTitleSmallLow"
+        android:text="视频演示部分" />
 
     <Button
         android:layout_width="match_parent"

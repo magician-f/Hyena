@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
@@ -11,29 +11,21 @@
         android:id="@+id/ivLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ivLogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/app_name"
-        android:textSize="22sp" />
+        android:src="@mipmap/ic_launcher"/>
 
     <com.knifestone.hyena.view.edittext.ClearEditText
         android:id="@+id/etAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvName"
-        android:layout_marginTop="50dp"
-        app:drawable_tint="@color/colorAccent"
-        app:drawable_follow_focus="true"
-        android:hint="请输入账号" />
+        android:layout_marginTop="20dp"
+        app:drawable_tint="@android:color/holo_red_dark"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:drawablePadding="10dp"
+        android:hint="请输入账号"
+        android:layout_below="@+id/ivLogo"
+        android:layout_alignParentEnd="true" />
 
     <com.knifestone.hyena.view.edittext.EyesEditText
         android:id="@+id/etPassword"
@@ -42,6 +34,8 @@
         android:layout_below="@+id/etAccount"
         android:inputType="textPassword"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_https_black_24dp"
+        android:drawablePadding="10dp"
         android:hint="请输入密码" />
 
     <Button
@@ -50,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPassword"
         android:layout_marginTop="20dp"
-        android:text="登录" />
-
+        android:text="提交" />
 
 </RelativeLayout>
