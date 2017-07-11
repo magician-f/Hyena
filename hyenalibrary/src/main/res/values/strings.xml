@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- 最新版本的toast -->
+    <string name="toastNewestVersion">当前已是最新版本</string>
+
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.knifestone.hyena.base.activity.HyenaBaseActivity;
+import com.knifestone.hyena.function.update.VersionUpdateActivity;
 import com.test.hyena.R;
 
 public class MainActivity extends HyenaBaseActivity {
@@ -32,7 +33,8 @@ public class MainActivity extends HyenaBaseActivity {
     }
 
     public void 一个优雅的登录页(View v) {
-        startActivity(new Intent(this, LoginActivity.class));
+//        startActivity(new Intent(this, LoginActivity.class));
+        VersionUpdateActivity.promptUpdate(this,null);
     }
 
 }

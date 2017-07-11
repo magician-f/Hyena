@@ -1,5 +1,13 @@
-<manifest
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.knifestone.hyena">
+
+    <application>
+
+        <activity
+            android:name=".function.update.VersionUpdateActivity"
+            android:theme="@style/ThemeTransparent" />
+
+    </application>
+
 
 </manifest>

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- 透明主题 -->
+    <style name="ThemeTransparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 滑动退出需要设置为透明主题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
-
+    <!-- -->
+    <style name="ActivityAnimAlpha">
+        <!-- 用于设置打开新的Activity并进入新的Activity展示的动画 -->
+        <item name="android:activityOpenEnterAnimation">@anim/alpha_in</item>
+        <!-- 用于设置打开新的Activity并销毁之前的Activity展示的动画 -->
+        <item name="android:activityOpenExitAnimation">@anim/alpha_out</item>
+        <!-- 用于设置关闭当前Activity进入上一个Activity展示的动画 -->
+        <item name="android:activityCloseEnterAnimation">@anim/alpha_in</item>
+        <!-- 用于设置关闭当前Activity时展示的动画 -->
+        <item name="android:activityCloseExitAnimation">@anim/alpha_out</item>
+    </style>
 
 </resources>

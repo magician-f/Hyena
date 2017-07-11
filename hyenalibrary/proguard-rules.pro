@@ -77,3 +77,6 @@
 #与js交互的类
 #与反射有关的类和方法
 #第三方库
+-keep class com.blankj.utilcode.** { *; }
+-keepclassmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**
