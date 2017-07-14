@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+     path：需要临时授权访问的路径（.代表所有路径）
+     name：就是你给这个访问路径起个名字
+     -->
+
+    <!-- Context.getFilesDir() -->
+    <files-path
+        name="getFilesDir"
+        path="." />
+
+    <!-- Context.getCacheDir() -->
+    <cache-path
+        name="getCacheDir"
+        path="." />
+
+    <!-- Environment.getExternalStorageDirectory() -->
+    <external-path
+        name="getExternalStorageDirectory"
+        path="." />
+
+    <!-- Context.getExternalFilesDir() -->
+    <external-files-path
+        name="getExternalFilesDir"
+        path="." />
+
+    <!-- Context.getExternalCacheDir() -->
+    <external-cache-path
+        name="getExternalCacheDir"
+        path="." />
+
+    <!-- 对应文件系统根目录 其实还是有将来移除的可能的。使用的话需要注意一下风险-->
+    <root-path
+        name="root"
+        path="." />
+
+
+</paths>

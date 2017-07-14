@@ -33,6 +33,8 @@ public class VersionBean implements Parcelable {
     public int strategy;
     // 目标版本
     public int targetCode;
+    // 在下载器中的id
+    public int downId;
 
     public VersionBean(int versionCode, String versionName, String title, String content, String packageUrl, String packageSize, int strategy, int targetCode) {
         this.versionCode = versionCode;

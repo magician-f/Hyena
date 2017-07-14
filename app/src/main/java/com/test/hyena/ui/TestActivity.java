@@ -1,7 +1,7 @@
 package com.test.hyena.ui;
 
 import com.knifestone.hyena.base.activity.HyenaWhereGoActivity;
-import com.knifestone.hyena.holder.ViewLoading;
+import com.knifestone.hyena.view.loading.ViewLoading;
 
 /**
  * github:https://github.com/KnifeStone/Hyena

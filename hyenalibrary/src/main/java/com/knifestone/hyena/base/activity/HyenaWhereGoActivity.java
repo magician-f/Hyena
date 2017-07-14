@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.knifestone.hyena.holder.ViewLoading;
+import com.knifestone.hyena.view.loading.ViewLoading;
 
 /**
  * 简介:

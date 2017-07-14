@@ -6,10 +6,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 
-import java.io.File;
-
-import static android.R.attr.id;
-
 
 /**
  * 下载管理器
@@ -19,34 +15,42 @@ import static android.R.attr.id;
 public class DownloadAPKManager {
 
     /**
-     * 判断传入的id现在的下载状态
+     * 查询下载情况
+     *
+     * @param context
+     * @param downId
+     * @return
      */
-    public boolean checkDownState(Context context, long downId) {
-        DownBean downInfo = query(context, downId);
-        switch(downInfo.status){
-            //下载失败
-            case DownloadManager.STATUS_FAILED:
-                break;
-            //暂停
-            case DownloadManager.STATUS_PAUSED:
-                break;
-            //挂起
-            case DownloadManager.STATUS_PENDING:
-                break;
-            //下载中
-            case DownloadManager.STATUS_RUNNING:
-                break;
-            //下载成功
-            case DownloadManager.STATUS_SUCCESSFUL:
-                break;
+    public DownBean query(Context context, long downId) {
+        DownloadManager.Query query = new DownloadManager.Query();
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        Cursor cursor = downloadManager.query(query.setFilterById(downId));
+        if (cursor == null) {
+            return null;
+        } else if (cursor.moveToFirst()) {
+            //下载的文件在本地的目录
+            String localUrl = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
+            //下载的文件的下载地址
+            String url = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_URI));
+            //已经下载的字节数
+            int compeleteSize = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+            //总的字节数
+            int totalSize = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+            //下载状态
+            int status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS));
+            cursor.close();
+            DownBean downInfo = new DownBean(downId, localUrl, url, compeleteSize, totalSize, status);
+            return downInfo;
+        } else {
+            cursor.close();
         }
+        return null;
     }
 
     /**
      * 启动下载
      *
      * @param uri         下载的地址
-     * @param downId      下载的id
      * @param title       通知标题
      * @param description 通知详情
      * @return 下载的id
@@ -81,26 +85,5 @@ public class DownloadAPKManager {
         return downId;
     }
 
-    public DownBean query(Context context, long downId) {
-        DownloadManager.Query query = new DownloadManager.Query();
-        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-        Cursor cursor = downloadManager.query(query.setFilterById(downId));
-        if (cursor != null && cursor.moveToFirst()) {
-            //下载的文件在本地的目录
-            String localUrl = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
-            //下载的文件的下载地址
-            String url = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_URI));
-            //已经下载的字节数
-            int compeleteSize = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
-            //总的字节数
-            int totalSize = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
-            //下载状态
-            int status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS));
-            cursor.close();
-            DownBean downInfo = new DownBean(localUrl, url, compeleteSize, totalSize, status);
-            return downInfo;
-        }
-        return null;
-    }
 
 }

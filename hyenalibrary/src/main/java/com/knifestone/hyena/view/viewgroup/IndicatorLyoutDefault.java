@@ -1,4 +1,4 @@
-package com.knifestone.hyena.function;
+package com.knifestone.hyena.view.viewgroup;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;

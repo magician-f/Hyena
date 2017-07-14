@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.knifestone.hyena.R;
@@ -22,7 +22,7 @@ import com.knifestone.hyena.R;
 public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
     protected Toolbar toolbar;
-    protected FrameLayout viewContent;
+    protected ViewGroup viewContent;
     private TextView tvTitle;
     private OnClickListener onClickListenerTopLeft;
     private OnClickListener onClickListenerTopRight;
@@ -47,7 +47,7 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         if (bindLayout() != 0) {
             setContentView(bindLayout());
             toolbar = (Toolbar) findViewById(R.id.toolbar);
-            viewContent = (FrameLayout) findViewById(R.id.viewContent);
+            viewContent = (ViewGroup) findViewById(R.id.viewContent);
             tvTitle = (TextView) findViewById(R.id.tvTitle);
             //初始化设置 Toolbar
             setSupportActionBar(toolbar);

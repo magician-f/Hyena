@@ -35,6 +35,16 @@
             android:textSize="16sp"
             tools:text="内容" />
 
+        <ProgressBar
+            android:id="@+id/updateProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/updateTvContent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:progress="20" />
+
         <Button
             android:id="@+id/updateBtnNegative"
             android:layout_width="wrap_content"
