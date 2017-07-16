@@ -15,9 +15,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.Utils;
 import com.knifestone.hyena.R;
+import com.knifestone.hyena.bean.DownBean;
+import com.knifestone.hyena.bean.VersionBean;
+import com.knifestone.hyena.utils.AppUtils;
 
 /**
  * 简介:版本升级
@@ -28,13 +29,12 @@ import com.knifestone.hyena.R;
 public class HyenaUpdateActivity extends AppCompatActivity {
 
     /**
-     * 提示更新
-     *
+     * 启动更新
      * @param context 上下文
      * @param bean    传入版本数据
      * @param isToast 是否toast
      */
-    public static void promptUpdate(Activity context, VersionBean bean, boolean isToast, int requestCode) {
+    public static void launchUpdate(Activity context, VersionBean bean, boolean isToast, int requestCode) {
         Intent intent = new Intent(context, HyenaUpdateActivity.class);
         intent.putExtra("bean", bean);
         intent.putExtra("isToast", isToast);
@@ -83,11 +83,10 @@ public class HyenaUpdateActivity extends AppCompatActivity {
             return;
         }
         //判断是否需要更新
-        Utils.init(getApplicationContext());
-        if (AppUtils.getAppVersionCode() >= mBean.versionCode) {
+        if (AppUtils.getAppVersionCode(this) >= mBean.versionCode) {
             //不需要更新
             if (mIsToast) {
-                Toast.makeText(this, getString(R.string.toastNewestVersion), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.updateNewestVersion), Toast.LENGTH_SHORT).show();
             }
             finish();
             return;
@@ -106,7 +105,6 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         //初始化管理者
         mManager = new DownloadAPKManager();
 
-
         updateTvTitle.setText(mBean.title);
         updateTvContent.setText(mBean.content);
         //正常流程
@@ -123,14 +121,14 @@ public class HyenaUpdateActivity extends AppCompatActivity {
                 strongUpdate();
                 break;
             case 2:
-                if (AppUtils.getAppVersionCode() == mBean.targetCode) {
+                if (AppUtils.getAppVersionCode(this) == mBean.targetCode) {
                     strongUpdate();
                 } else {
                     update();
                 }
                 break;
             case 3:
-                if (AppUtils.getAppVersionCode() <= mBean.targetCode) {
+                if (AppUtils.getAppVersionCode(this) <= mBean.targetCode) {
                     strongUpdate();
                 } else {
                     update();
@@ -174,7 +172,7 @@ public class HyenaUpdateActivity extends AppCompatActivity {
      * 普通更新
      */
     private void update() {
-        updateBtnNegative.setText("不了");
+        updateBtnNegative.setText(R.string.updateNegative);
         updateBtnNegative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -182,7 +180,7 @@ public class HyenaUpdateActivity extends AppCompatActivity {
                 finish();
             }
         });
-        updateBtnPositive.setText("升级");
+        updateBtnPositive.setText(R.string.updatePositive);
         updateBtnPositive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,7 +197,7 @@ public class HyenaUpdateActivity extends AppCompatActivity {
      */
     private void strongUpdate() {
         updateBtnNegative.setVisibility(View.GONE);
-        updateBtnPositive.setText("更新");
+        updateBtnPositive.setText(R.string.updatePositive);
         updateBtnPositive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,12 +223,12 @@ public class HyenaUpdateActivity extends AppCompatActivity {
      */
     private void onLoadend(final String localUrl) {
         updateBtnNegative.setVisibility(View.GONE);
-        updateBtnPositive.setText("升级");
+        updateBtnPositive.setText(R.string.updateInstall);
         updateBtnPositive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //直接安装
-                AppUtils.installApp(localUrl, "update.fileprovider");
+                AppUtils.installApp(getApplicationContext(),localUrl, "update.fileprovider");
             }
         });
     }
@@ -243,7 +241,6 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         }
     }
 
-    @Override
     public void onBackPressed() {
         /**
          *  更新策略
@@ -256,12 +253,12 @@ public class HyenaUpdateActivity extends AppCompatActivity {
             case 1:
                 return;
             case 2:
-                if (AppUtils.getAppVersionCode() == mBean.targetCode) {
+                if (AppUtils.getAppVersionCode(this) == mBean.targetCode) {
                     return;
                 }
                 break;
             case 3:
-                if (AppUtils.getAppVersionCode() <= mBean.targetCode) {
+                if (AppUtils.getAppVersionCode(this) <= mBean.targetCode) {
                     return;
                 }
                 break;

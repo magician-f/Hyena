@@ -33,4 +33,14 @@
         android:text="一个优雅的登录页"
         android:onClick="一个优雅的登录页"/>
 
+    <com.knifestone.hyena.view.textview.MarqueeTextView
+        style="@style/TextViewTitleSmallLow"
+        android:text="功能" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="APP检测更新升级"
+        android:onClick="APP检测更新升级"/>
+
 </LinearLayout>

@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 
+import com.knifestone.hyena.bean.DownBean;
+
 
 /**
  * 下载管理器

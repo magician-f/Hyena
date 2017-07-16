@@ -1,4 +1,4 @@
-package com.knifestone.hyena.function.update;
+package com.knifestone.hyena.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 最新版本的toast -->
-    <string name="toastNewestVersion">当前已是最新版本</string>
+    <!-- 更新页面 已是最新版本的toast -->
+    <string name="updateNewestVersion">当前已是最新版本</string>
+    <!-- 更新页面 消极按钮 -->
+    <string name="updateNegative">不了</string>
+    <!-- 更新页面 积极按钮-->
+    <string name="updatePositive">更新</string>
+    <!-- 直接安装 -->
+    <string name="updateInstall">安装</string>
 
 </resources>

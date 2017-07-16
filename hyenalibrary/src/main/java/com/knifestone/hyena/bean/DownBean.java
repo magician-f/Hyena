@@ -1,4 +1,4 @@
-package com.knifestone.hyena.function.update;
+package com.knifestone.hyena.bean;
 
 /**
  * 下载实体类
