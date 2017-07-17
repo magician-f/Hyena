@@ -28,11 +28,11 @@ allprojects {
 dependencies {
     //根据实际引用的版本自行调整版本号
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.github.KnifeStone:Hyena:1.2.5'
+    compile 'com.github.KnifeStone:Hyena:1.3.0'
 }
 ```
 
-# [常用View][Views.md]
+##### [常用View][Views.md]
 
 ```
 菜单选项View
@@ -43,7 +43,7 @@ dependencies {
 横向跑马灯控件
 ```
 
-###### [Base][Base.md]
+##### [Base][Base.md]
 
 ```
 HyenaBaseActivity
@@ -51,7 +51,16 @@ HyenaToolbarActivity
 HyenaWhereGoActivity
 ```
 
-###### [通用][Currency.md]
+##### 功能
+
+###### [版本更新][VersionUpdate.md]
+
+##### 词典
+
+###### [混淆][proguard-rules.md]
+###### [gradle][gradle.md]
+
+##### [通用][Currency.md]
 
 ```
 输入过滤适配器
@@ -59,7 +68,7 @@ HyenaWhereGoActivity
 文本变化监听适配器
 ```
 
-###### [一句话推荐一个类库][Library.md]
+##### [一句话推荐一个类库][Library.md]
 
 ```
 工具类库
@@ -76,7 +85,7 @@ dex分包
 高度封装的WebView
 ```
 
-###### [AndroidStudio插件][Plug.md]
+##### [AndroidStudio插件][Plug.md]
 
 ```
 AndroidStudio插件
@@ -87,11 +96,6 @@ gson数据自动生成实体类
 自动生成6.0权限的代码
 统计Android依赖库中方法的总个数
 ```
-
-###### 词典
-
-* ###### [混淆][proguard-rules.md]
-* ###### [gradle][gradle.md]
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
 [jitPackSvg]:https://jitpack.io/v/KnifeStone/Hyena.svg
@@ -113,6 +117,8 @@ gson数据自动生成实体类
 
 [HyenaActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaActivity.md
 [HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
+
+[VersionUpdate.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/function/VersionUpdate.md
 
 [proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/dictionary/proguard-rules.md
 [gradle.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/dictionary/gradle.md

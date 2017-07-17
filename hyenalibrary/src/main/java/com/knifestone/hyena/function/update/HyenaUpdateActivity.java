@@ -9,16 +9,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.knifestone.hyena.R;
-import com.knifestone.hyena.bean.DownBean;
-import com.knifestone.hyena.bean.VersionBean;
+import com.knifestone.hyena.bean.HyenaDownBean;
+import com.knifestone.hyena.bean.HyenaVersionBean;
 import com.knifestone.hyena.utils.AppUtils;
+
 
 /**
  * 简介:版本升级
@@ -30,11 +33,13 @@ public class HyenaUpdateActivity extends AppCompatActivity {
 
     /**
      * 启动更新
+     *
      * @param context 上下文
      * @param bean    传入版本数据
      * @param isToast 是否toast
+     * @param requestCode 页面回调
      */
-    public static void launchUpdate(Activity context, VersionBean bean, boolean isToast, int requestCode) {
+    public static void launchUpdate(Activity context, HyenaVersionBean bean, boolean isToast, int requestCode) {
         Intent intent = new Intent(context, HyenaUpdateActivity.class);
         intent.putExtra("bean", bean);
         intent.putExtra("isToast", isToast);
@@ -46,12 +51,13 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         }
     }
 
-    private VersionBean mBean;
+    private HyenaVersionBean mBean;
     private boolean mIsToast;
     private DownloadAPKManager mManager;
 
     private TextView updateTvTitle;
     private TextView updateTvContent;
+    private ImageView ivClose;
     private ProgressBar updateProgressBar;
     private Button updateBtnNegative;
     private Button updateBtnPositive;
@@ -60,7 +66,7 @@ public class HyenaUpdateActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (intent != null) {
-            VersionBean item = intent.getParcelableExtra("bean");
+            HyenaVersionBean item = intent.getParcelableExtra("bean");
             if (item != null) {
                 mBean = item;
                 init();
@@ -95,6 +101,7 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_version_update);
         updateTvTitle = (TextView) findViewById(R.id.updateTvTitle);
         updateTvContent = (TextView) findViewById(R.id.updateTvContent);
+        ivClose = (ImageView) findViewById(R.id.ivClose);
         updateProgressBar = (ProgressBar) findViewById(R.id.updateProgressBar);
         updateBtnNegative = (Button) findViewById(R.id.updateBtnNegative);
         updateBtnPositive = (Button) findViewById(R.id.updateBtnPositive);
@@ -142,9 +149,9 @@ public class HyenaUpdateActivity extends AppCompatActivity {
             return;
         }
         //判断下载状态
-        DownBean downInfo = mManager.query(this, mBean.downId);
+        HyenaDownBean downInfo = mManager.query(this, mBean.downId);
         //没有下载记录
-        if (downInfo != null) {
+        if (downInfo == null) {
             //正常提示
             return;
         }
@@ -172,6 +179,15 @@ public class HyenaUpdateActivity extends AppCompatActivity {
      * 普通更新
      */
     private void update() {
+        if (ivClose!=null){
+            ivClose.setVisibility(View.VISIBLE);
+            ivClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
         updateBtnNegative.setText(R.string.updateNegative);
         updateBtnNegative.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,8 +201,9 @@ public class HyenaUpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //放到后台去下载
-                mManager.startDownload(HyenaUpdateActivity.this, mBean.packageUrl, mBean.title, mBean.content);
-                setResult(RESULT_OK);
+                mBean.downId = mManager.startDownload(HyenaUpdateActivity.this, mBean.packageUrl, mBean.title, mBean.content);
+                getIntent().putExtra("bean", mBean);
+                setResult(RESULT_OK, getIntent());
                 finish();
             }
         });
@@ -202,11 +219,14 @@ public class HyenaUpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //放到后台去下载
-                mManager.startDownload(HyenaUpdateActivity.this, mBean.packageUrl, mBean.title, mBean.content);
+                mBean.downId = mManager.startDownload(HyenaUpdateActivity.this, mBean.packageUrl, mBean.title, mBean.content);
                 onLoading();
             }
         });
     }
+
+    private Thread mThread;
+    private boolean live;
 
     /**
      * 下载中
@@ -215,20 +235,61 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         updateBtnNegative.setVisibility(View.GONE);
         updateBtnPositive.setVisibility(View.GONE);
         updateProgressBar.setVisibility(View.VISIBLE);
-        //todo
+        if (mThread == null) {
+            mThread = new Thread() {
+                @Override
+                public void run() {
+                    super.run();
+                    live = true;
+                    while (live) {
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        final HyenaDownBean downBean = mManager.query(HyenaUpdateActivity.this, mBean.downId);
+                        if (downBean != null) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Log.e("进来,",""+downBean.toString());
+                                    updateProgressBar.setMax(downBean.totalSize);
+                                    updateProgressBar.setProgress(downBean.compeleteSize);
+                                    if (downBean.status == DownloadManager.STATUS_SUCCESSFUL) {
+                                        onLoadend(downBean.localUrl);
+                                        live = false;
+                                    }
+
+                                }
+                            });
+                        }
+
+                    }
+                }
+            };
+            mThread.start();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        live = false;
     }
 
     /**
      * 下载完成
      */
     private void onLoadend(final String localUrl) {
+        updateProgressBar.setVisibility(View.GONE);
         updateBtnNegative.setVisibility(View.GONE);
+        updateBtnPositive.setVisibility(View.VISIBLE);
         updateBtnPositive.setText(R.string.updateInstall);
         updateBtnPositive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //直接安装
-                AppUtils.installApp(getApplicationContext(),localUrl, "update.fileprovider");
+                AppUtils.installApp(getApplicationContext(), localUrl.replaceAll("file://", ""), "update.fileprovider");
             }
         });
     }
@@ -265,6 +326,5 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         }
         super.onBackPressed();
     }
-
 
 }

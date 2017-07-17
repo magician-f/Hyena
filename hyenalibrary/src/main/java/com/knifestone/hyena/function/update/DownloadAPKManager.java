@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 
-import com.knifestone.hyena.bean.DownBean;
+import com.knifestone.hyena.bean.HyenaDownBean;
 
 
 /**
@@ -23,7 +23,7 @@ public class DownloadAPKManager {
      * @param downId
      * @return
      */
-    public DownBean query(Context context, long downId) {
+    public HyenaDownBean query(Context context, long downId) {
         DownloadManager.Query query = new DownloadManager.Query();
         DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
         Cursor cursor = downloadManager.query(query.setFilterById(downId));
@@ -41,7 +41,7 @@ public class DownloadAPKManager {
             //下载状态
             int status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS));
             cursor.close();
-            DownBean downInfo = new DownBean(downId, localUrl, url, compeleteSize, totalSize, status);
+            HyenaDownBean downInfo = new HyenaDownBean(downId, localUrl, url, compeleteSize, totalSize, status);
             return downInfo;
         } else {
             cursor.close();

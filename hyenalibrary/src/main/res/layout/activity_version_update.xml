@@ -23,6 +23,15 @@
             android:textSize="18sp"
             tools:text="标题" />
 
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
         <TextView
             android:id="@+id/updateTvContent"
             android:layout_width="match_parent"
@@ -39,11 +48,11 @@
             android:id="@+id/updateProgressBar"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
+            android:layout_height="5dp"
             android:layout_below="@+id/updateTvContent"
             android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:progress="20" />
+            android:progressDrawable="@drawable/update_progress_bar"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/updateBtnNegative"

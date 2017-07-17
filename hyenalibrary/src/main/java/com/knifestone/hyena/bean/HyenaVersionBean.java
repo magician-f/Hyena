@@ -8,7 +8,7 @@ import android.os.Parcelable;
  * github:https://github.com/KnifeStone/Hyena
  * Created by KnifeStone on 2017-7-11.
  */
-public class VersionBean implements Parcelable {
+public class HyenaVersionBean implements Parcelable {
 
     // 版本号
     public int versionCode;
@@ -34,9 +34,9 @@ public class VersionBean implements Parcelable {
     // 目标版本
     public int targetCode;
     // 在下载器中的id
-    public int downId;
+    public long downId;
 
-    public VersionBean(int versionCode, String versionName, String title, String content, String packageUrl, String packageSize, int strategy, int targetCode) {
+    public HyenaVersionBean(int versionCode, String versionName, String title, String content, String packageUrl, String packageSize, int strategy, int targetCode, long downId) {
         this.versionCode = versionCode;
         this.versionName = versionName;
         this.title = title;
@@ -45,6 +45,7 @@ public class VersionBean implements Parcelable {
         this.packageSize = packageSize;
         this.strategy = strategy;
         this.targetCode = targetCode;
+        this.downId = downId;
     }
 
 
@@ -63,9 +64,10 @@ public class VersionBean implements Parcelable {
         dest.writeString(this.packageSize);
         dest.writeInt(this.strategy);
         dest.writeInt(this.targetCode);
+        dest.writeLong(this.downId);
     }
 
-    protected VersionBean(Parcel in) {
+    protected HyenaVersionBean(Parcel in) {
         this.versionCode = in.readInt();
         this.versionName = in.readString();
         this.title = in.readString();
@@ -74,17 +76,18 @@ public class VersionBean implements Parcelable {
         this.packageSize = in.readString();
         this.strategy = in.readInt();
         this.targetCode = in.readInt();
+        this.downId = in.readLong();
     }
 
-    public static final Creator<VersionBean> CREATOR = new Creator<VersionBean>() {
+    public static final Creator<HyenaVersionBean> CREATOR = new Creator<HyenaVersionBean>() {
         @Override
-        public VersionBean createFromParcel(Parcel source) {
-            return new VersionBean(source);
+        public HyenaVersionBean createFromParcel(Parcel source) {
+            return new HyenaVersionBean(source);
         }
 
         @Override
-        public VersionBean[] newArray(int size) {
-            return new VersionBean[size];
+        public HyenaVersionBean[] newArray(int size) {
+            return new HyenaVersionBean[size];
         }
     };
 }
