@@ -93,24 +93,41 @@
         <attr name="roll_interpolator" format="reference"  />
     </declare-styleable>
 
+    <!-- ############ 异常页面 自定义属性 ############ -->
+
+    <!-- 背景色-->
+    <color name="abnormalBackground">@android:color/white</color>
+    <!-- 下内间距-->
+    <dimen name="abnormalPaddingBottom">30dp</dimen>
+    <!-- 提示文字的上边距-->
+    <dimen name="abnormalTextViewMarginTop">30dp</dimen>
+    <!-- 按钮上边距 -->
+    <dimen name="abnormalButtonMarginTop">30dp</dimen>
+    <!-- 按钮样式-->
+    <drawable name="abnormalButtonBackground">@drawable/abnormal_button</drawable>
+    <!-- 按钮字体颜色-->
+    <color name="abnormalButtonTextColor">@android:color/white</color>
+
+    <!-- ######################################### -->
+
     <!-- 指示器 -->
     <declare-styleable name="IndicatorLyoutDefault">
-        <attr name="ci_width" format="dimension"/>
-        <attr name="ci_height" format="dimension"/>
-        <attr name="ci_margin" format="dimension"/>
-        <attr name="ci_animator" format="reference"/>
-        <attr name="ci_animator_reverse" format="reference"/>
-        <attr name="ci_drawable" format="reference"/>
-        <attr name="ci_drawable_unselected" format="reference"/>
+        <attr name="index_width" format="dimension"/>
+        <attr name="index_height" format="dimension"/>
+        <attr name="index_margin" format="dimension"/>
+        <attr name="index_animator" format="reference"/>
+        <attr name="index_animator_reverse" format="reference"/>
+        <attr name="index_drawable" format="reference"/>
+        <attr name="index_drawable_unselected" format="reference"/>
 
-        <attr name="ci_orientation" format="enum">
+        <attr name="index_orientation" format="enum">
             <!-- Defines an horizontal widget. -->
             <enum name="horizontal" value="0"/>
             <!-- Defines a vertical widget. -->
             <enum name="vertical" value="1"/>
         </attr>
 
-        <attr name="ci_gravity">
+        <attr name="index_gravity">
             <!-- Push object to the top of its container, not changing its size. -->
             <flag name="top" value="0x30"/>
             <!-- Push object to the bottom of its container, not changing its size. -->

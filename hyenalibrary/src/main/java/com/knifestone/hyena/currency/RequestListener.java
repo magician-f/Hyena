@@ -2,17 +2,17 @@ package com.knifestone.hyena.currency;
 
 
 /**
- * 简介:作者有点懒
+ * 简介:请求监听
  * 描述:这个....
  * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/2/21.
  */
-public interface CallBackAdapter<T>{
+public interface RequestListener<T>{
 
     void onSuccess(T object);
 
-    void onFailure(String message);
+    void onFailure(int code, String message);
 
     void onCompleted();
 }
