@@ -3,21 +3,22 @@ package com.test.hyena.ui;
 import android.content.Intent;
 import android.view.View;
 
-import com.knifestone.hyena.base.activity.HyenaBaseActivity;
 import com.knifestone.hyena.bean.HyenaVersionBean;
 import com.knifestone.hyena.function.update.HyenaUpdateActivity;
 import com.test.hyena.R;
+import com.test.hyena.base.BaseActivity;
 
-public class MainActivity extends HyenaBaseActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void setContentView() {
-        setContentView(R.layout.activity_main);
+    protected int getContentLayout() {
+        return R.layout.activity_main;
     }
 
     @Override
     protected void initView() {
-
+        setToolbarLeftButton(-1,null);
+        setTitle("Hyena Android快速开发库");
     }
 
     @Override

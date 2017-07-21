@@ -1,22 +1,27 @@
-# "高效、精准，鬣狗为快速开发而生。"
+# "Hyena 一个有轻度洁癖的Android快速开发库"
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 
-###### Start Hyena 加入QQ交流群479585883
+## 简介 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
-## 说明 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
+* hyena仓库功能
+`强大彪悍的base`
+`易用方便的function`
+`常规场景的view`
+`减少冗余的currency`
 
-[Hyena鬣狗快速开发库][Hyena]核心为`快速开发`，定位`小巧精悍`，内容`简单精致`，整合`常用View`、`推荐类库`、`通用`、`词典`、`Base类`
-
+* 在线资料
+`词典、笔记`
+`一句话推荐一个类库`
+`AndroidStudio插件`
 
 ## 如何使用
 
-###### Step 1. 添加jitpack库到你的构建文件
+###### Step 1. 添加jitpack库到根目录build.gradle
 
 ```
 allprojects {
     repositories {
-        ...
         maven { url 'https://jitpack.io' }
     }
 }
@@ -26,13 +31,28 @@ allprojects {
 
 ```
 dependencies {
-    //根据实际引用的版本自行调整版本号
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'//自行调整版本
     compile 'com.github.KnifeStone:Hyena:1.3.0'
 }
 ```
 
-##### [常用View][Views.md]
+## hyena仓库功能
+
+###### [Base][Base.md]
+
+```
+HyenaBaseActivity
+HyenaToolbarActivity
+HyenaWhereGoActivity
+```
+
+###### [功能][Function.md]
+
+```
+版本更新
+```
+
+###### [常用View][Views.md]
 
 ```
 菜单选项View
@@ -43,24 +63,7 @@ dependencies {
 横向跑马灯控件
 ```
 
-##### [Base][Base.md]
-
-```
-HyenaBaseActivity
-HyenaToolbarActivity
-HyenaWhereGoActivity
-```
-
-##### 功能
-
-###### [版本更新][VersionUpdate.md]
-
-##### 词典
-
-###### [混淆][proguard-rules.md]
-###### [gradle][gradle.md]
-
-##### [通用][Currency.md]
+###### [通用][Currency.md]
 
 ```
 输入过滤适配器
@@ -68,7 +71,16 @@ HyenaWhereGoActivity
 文本变化监听适配器
 ```
 
-##### [一句话推荐一个类库][Library.md]
+## 在线资料
+
+###### [词典、笔记][Note.md]
+
+```
+混淆
+gradle
+```
+
+###### [一句话推荐一个类库][Library.md]
 
 ```
 工具类库
@@ -85,7 +97,7 @@ dex分包
 高度封装的WebView
 ```
 
-##### [AndroidStudio插件][Plug.md]
+###### [AndroidStudio插件][Plug.md]
 
 ```
 AndroidStudio插件
@@ -106,9 +118,11 @@ gson数据自动生成实体类
 [Hyena]:https://github.com/KnifeStone/Hyena
 [蒲公英下载地址]:https://www.pgyer.com/72qN
 
-[Views.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Views.md
 [Base.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Base.md
+[Function.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Function.md
+[Views.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Views.md
 [Currency.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Currency.md
+[Note.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Note.md
 [Library.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Library.md
 [Plug.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Plugs.md
 
@@ -118,8 +132,4 @@ gson数据自动生成实体类
 [HyenaActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaActivity.md
 [HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
 
-[VersionUpdate.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/function/VersionUpdate.md
-
-[proguard-rules.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/dictionary/proguard-rules.md
-[gradle.md]: https://github.com/KnifeStone/Hyena/blob/master/wikis/dictionary/gradle.md
 

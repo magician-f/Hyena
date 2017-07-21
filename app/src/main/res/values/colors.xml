@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000</color>
-    <color name="colorPrimaryDark">#d0000000</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <!-- 黄色D7A037 蓝色00B7EE-->
+    <color name="colorPrimary">#2EA9DF</color>
+    <color name="colorPrimaryDark">#2EA9DF</color>
+    <color name="colorAccent">#66327C</color>
+
+    <!-- 背景颜色 -->
+    <color name="colorwindowBackground">#fff</color>
+    <!-- 按钮字体 按下和默认的字体颜色-->
+    <!--<color name="colorTextBtnPressed">#37C6C0</color>-->
+    <color name="colorTextBtnPressed">#D0E9FF</color>
+    <color name="colorControlHighlight">#6E75A4</color>
+    <!-- 默认字体颜色 -->
+    <color name="colorTextNormal">#fff</color>
 
 </resources>

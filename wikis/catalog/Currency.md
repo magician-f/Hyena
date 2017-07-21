@@ -25,9 +25,9 @@ onTextChanged       | 文本改变
 afterTextChanged    | 文本改变之后
 ```
 
-[InputFilterAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/InputFilterAdapter.md
-[DoubleClickListener.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/DoubleClickListener.md
-[TextWatcherAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/TextWatcherAdapter.md
+[InputFilterAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/InputFilterAdapter.md
+[DoubleClickListener.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/DoubleClickListener.md
+[TextWatcherAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/TextWatcherAdapter.md
 
 
 

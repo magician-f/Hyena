@@ -5,7 +5,7 @@ import android.widget.EditText;
 
 import com.knifestone.hyena.currency.InputFilterAdapter;
 import com.test.hyena.R;
-import com.test.hyena.base.ToolbarActivity;
+import com.test.hyena.base.BaseActivity;
 
 /**
  * 简介:
@@ -13,7 +13,7 @@ import com.test.hyena.base.ToolbarActivity;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/10.
  */
-public class CurrencyActivity extends ToolbarActivity {
+public class CurrencyActivity extends BaseActivity {
 
     @Override
     protected void initView() {

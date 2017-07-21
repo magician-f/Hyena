@@ -25,7 +25,7 @@ import static android.support.v4.view.ViewPager.OnPageChangeListener;
  * github:https://github.com/KnifeStone/Hyena
  * Created by KnifeStone on 2017-7-3.
  */
-public class IndicatorLyoutDefault extends LinearLayout {
+public class IndicatorLyout extends LinearLayout {
 
     private final static int DEFAULT_INDICATOR_WIDTH = 5;
     private ViewPager mViewpager;
@@ -43,22 +43,22 @@ public class IndicatorLyoutDefault extends LinearLayout {
 
     private int mLastPosition = -1;
 
-    public IndicatorLyoutDefault(Context context) {
+    public IndicatorLyout(Context context) {
         this(context,null);
     }
 
-    public IndicatorLyoutDefault(Context context, AttributeSet attrs) {
+    public IndicatorLyout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public IndicatorLyoutDefault(Context context, AttributeSet attrs, int defStyleAttr) {
+    public IndicatorLyout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public IndicatorLyoutDefault(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public IndicatorLyout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }

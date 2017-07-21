@@ -7,9 +7,9 @@ import android.text.TextWatcher;
 import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
-import com.knifestone.hyena.view.picker.EasyPickerView;
+import com.knifestone.hyena.view.custom.EasyPickerView;
 import com.test.hyena.R;
-import com.test.hyena.base.ToolbarActivity;
+import com.test.hyena.base.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/2.
  */
-public class ViewActivity extends ToolbarActivity {
+public class ViewActivity extends BaseActivity {
 
     @Override
     protected int getContentLayout() {

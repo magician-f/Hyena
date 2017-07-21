@@ -84,7 +84,8 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
     /**
      * 设置左边图片和监听事件
-     * @param iconResId -1：不要图片 0：使用默认 其它：
+     *
+     * @param iconResId       -1：不要图片 0：使用默认 其它：
      * @param onClickListener 可为null
      */
     protected void setToolbarLeftButton(@DrawableRes int iconResId, OnClickListener onClickListener) {
@@ -126,6 +127,10 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         }
         if (tvTitle != null) {
             tvTitle.setText(title);
+            return;
+        }
+        if (getSupportActionBar() != null) {
+            super.setTitle(title);
             return;
         }
         if (toolbar != null) {

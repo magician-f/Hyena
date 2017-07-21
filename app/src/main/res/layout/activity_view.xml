@@ -90,7 +90,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.knifestone.hyena.view.picker.EasyPickerView
+                <com.knifestone.hyena.view.custom.EasyPickerView
                     android:id="@+id/epvH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     android:textColor="#4aa4a4"
                     android:textSize="20sp" />
 
-                <com.knifestone.hyena.view.picker.EasyPickerView
+                <com.knifestone.hyena.view.custom.EasyPickerView
                     android:id="@+id/epvM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                     android:textColor="#e98d3c"
                     android:textSize="20sp" />
 
-                <com.knifestone.hyena.view.picker.EasyPickerView
+                <com.knifestone.hyena.view.custom.EasyPickerView
                     android:id="@+id/epvS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

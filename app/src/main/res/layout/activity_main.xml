@@ -14,8 +14,8 @@
         android:id="@+id/ss"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="自定义View"
-        android:onClick="自定义View"/>
+        android:onClick="自定义View"
+        android:text="自定义View" />
 
     <Button
         android:layout_width="match_parent"

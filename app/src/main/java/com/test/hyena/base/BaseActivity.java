@@ -9,7 +9,7 @@ import com.test.hyena.R;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/8.
  */
-public abstract class ToolbarActivity extends HyenaWhereGoActivity {
+public abstract class BaseActivity extends HyenaWhereGoActivity {
 
     @Override
     protected void setContentView() {

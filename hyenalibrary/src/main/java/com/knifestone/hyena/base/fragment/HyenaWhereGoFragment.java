@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.knifestone.hyena.view.loading.ViewLoading;
+import com.knifestone.hyena.view.viewgroup.ViewLoading;
 
 /**
  * 简介:

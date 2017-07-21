@@ -1,4 +1,4 @@
-package com.knifestone.hyena.view.loading;
+package com.knifestone.hyena.view.viewgroup;
 
 import android.content.Context;
 import android.widget.RelativeLayout;

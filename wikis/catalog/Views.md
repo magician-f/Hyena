@@ -10,12 +10,12 @@
 
 * ###### 带眼睛的输入框 | [EyesEditText.md][EyesEditText.md]
 
-```
-app:drawable_tint="@color/..."                  | icon着色
-app:drawable_follow_focus="true|false"          | 跟随焦点
-app:drawable_visibility="@drawable/..."         | 明文图标
-app:drawable_visibility_off="@drawable/..."     | 密文图标
-```
+属性 | 类型 | 默认值 | 说明
+:- | :-- | :--- | :----
+drawable_tint           | color         | R.drawable.design_ic_visibility       | icon着色
+drawable_follow_focus   | boolean       | true                                  | 跟随焦点
+drawable_visibility     | ResourceId    | R.drawable.design_ic_visibility       | 密文图标
+drawable_visibility_off | ResourceId    | R.drawable.design_ic_visibility_off   | 密文图标
 
 * ###### 带清除的输入框 | [ClearEditText.md][ClearEditText.md]
 
@@ -43,12 +43,12 @@ isCountDown()       | 是否在倒计时中
     .../>
 ```
 
-[MenuItemView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MenuItemView.md
-[EasyPickerView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EasyPickerView.md
-[EyesEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/EyesEditText.md
-[ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/ClearEditText.md
-[MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/MarqueeTextView.md
-[CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/CountDownButton.md
+[MenuItemView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/view/MenuItemView.md
+[EasyPickerView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/view/EasyPickerView.md
+[EyesEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/view/EyesEditText.md
+[ClearEditText.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/view/ClearEditText.md
+[MarqueeTextView.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/view/MarqueeTextView.md
+[CountDownButton.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/view/CountDownButton.md
 
 [MenuItemView.png]:https://github.com/KnifeStone/Hyena/blob/master/files/images/MenuItemView.png
 [EasyPickerView.png]:https://github.com/KnifeStone/Hyena/blob/master/files/images/EasyPickerView.png

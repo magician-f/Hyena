@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/colorwindowBackground</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">#00B7EE</item>
+        <item name="colorControlNormal">#BDC0BA</item>
+
+        <item name="android:buttonStyle">@style/styleButton</item>
     </style>
 
     <style name="AppTheme.Slide">
@@ -24,9 +32,10 @@
     </style>
 
     <style name="TextViewTitleSmallLow">
-        <item name="android:textColor">#666</item>
-        <item name="android:background">#7E999999</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">#0089A7</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">30dp</item>
@@ -46,6 +55,12 @@
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="styleButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@drawable/selector_btn_textcolor</item>
+        <item name="android:minHeight">32dp</item>
+        <!--<item name="android:background">@drawable/selector_btn_background</item>-->
     </style>
 
 </resources>

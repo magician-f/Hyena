@@ -1,4 +1,4 @@
-package com.knifestone.hyena.view.loading;
+package com.knifestone.hyena.view.custom;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
