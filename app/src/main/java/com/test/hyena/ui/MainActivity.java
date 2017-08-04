@@ -19,6 +19,12 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         setToolbarLeftButton(-1,null);
         setTitle("Hyena Android快速开发库");
+        setToolbarRightButton(R.mipmap.ic_launcher, new OnClickListener() {
+            @Override
+            public void onClick() {
+
+            }
+        });
     }
 
     @Override
