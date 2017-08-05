@@ -25,7 +25,7 @@ import static android.support.v4.view.ViewPager.OnPageChangeListener;
  * github:https://github.com/KnifeStone/Hyena
  * Created by KnifeStone on 2017-7-3.
  */
-public class IndicatorLyout extends LinearLayout {
+public class HyenaIndicatorLyout extends LinearLayout {
 
     private final static int DEFAULT_INDICATOR_WIDTH = 5;
     private ViewPager mViewpager;
@@ -43,22 +43,22 @@ public class IndicatorLyout extends LinearLayout {
 
     private int mLastPosition = -1;
 
-    public IndicatorLyout(Context context) {
-        this(context,null);
+    public HyenaIndicatorLyout(Context context) {
+        this(context, null);
     }
 
-    public IndicatorLyout(Context context, AttributeSet attrs) {
+    public HyenaIndicatorLyout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public IndicatorLyout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public HyenaIndicatorLyout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public IndicatorLyout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public HyenaIndicatorLyout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
@@ -73,29 +73,29 @@ public class IndicatorLyout extends LinearLayout {
             return;
         }
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.IndicatorLyoutDefault);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HyenaIndicatorLyout);
         mIndicatorWidth =
-                typedArray.getDimensionPixelSize(R.styleable.IndicatorLyoutDefault_index_width, -1);
+                typedArray.getDimensionPixelSize(R.styleable.HyenaIndicatorLyout_index_width, -1);
         mIndicatorHeight =
-                typedArray.getDimensionPixelSize(R.styleable.IndicatorLyoutDefault_index_height, -1);
+                typedArray.getDimensionPixelSize(R.styleable.HyenaIndicatorLyout_index_height, -1);
         mIndicatorMargin =
-                typedArray.getDimensionPixelSize(R.styleable.IndicatorLyoutDefault_index_margin, -1);
+                typedArray.getDimensionPixelSize(R.styleable.HyenaIndicatorLyout_index_margin, -1);
 
-        mAnimatorResId = typedArray.getResourceId(R.styleable.IndicatorLyoutDefault_index_animator,
+        mAnimatorResId = typedArray.getResourceId(R.styleable.HyenaIndicatorLyout_index_animator,
                 R.animator.scale_with_alpha);
         mAnimatorReverseResId =
-                typedArray.getResourceId(R.styleable.IndicatorLyoutDefault_index_animator_reverse, 0);
+                typedArray.getResourceId(R.styleable.HyenaIndicatorLyout_index_animator_reverse, 0);
         mIndicatorBackgroundResId =
-                typedArray.getResourceId(R.styleable.IndicatorLyoutDefault_index_drawable,
+                typedArray.getResourceId(R.styleable.HyenaIndicatorLyout_index_drawable,
                         R.drawable.white_radius);
         mIndicatorUnselectedBackgroundResId =
-                typedArray.getResourceId(R.styleable.IndicatorLyoutDefault_index_drawable_unselected,
+                typedArray.getResourceId(R.styleable.HyenaIndicatorLyout_index_drawable_unselected,
                         mIndicatorBackgroundResId);
 
-        int orientation = typedArray.getInt(R.styleable.IndicatorLyoutDefault_index_orientation, -1);
+        int orientation = typedArray.getInt(R.styleable.HyenaIndicatorLyout_index_orientation, -1);
         setOrientation(orientation == VERTICAL ? VERTICAL : HORIZONTAL);
 
-        int gravity = typedArray.getInt(R.styleable.IndicatorLyoutDefault_index_gravity, -1);
+        int gravity = typedArray.getInt(R.styleable.HyenaIndicatorLyout_index_gravity, -1);
         setGravity(gravity >= 0 ? gravity : Gravity.CENTER);
 
         typedArray.recycle();
@@ -182,7 +182,8 @@ public class IndicatorLyout extends LinearLayout {
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }
 
-        @Override public void onPageSelected(int position) {
+        @Override
+        public void onPageSelected(int position) {
 
             if (mViewpager.getAdapter() == null || mViewpager.getAdapter().getCount() <= 0) {
                 return;
@@ -214,7 +215,8 @@ public class IndicatorLyout extends LinearLayout {
             mLastPosition = position;
         }
 
-        @Override public void onPageScrollStateChanged(int state) {
+        @Override
+        public void onPageScrollStateChanged(int state) {
         }
     };
 
@@ -223,7 +225,8 @@ public class IndicatorLyout extends LinearLayout {
     }
 
     private DataSetObserver mInternalDataSetObserver = new DataSetObserver() {
-        @Override public void onChanged() {
+        @Override
+        public void onChanged() {
             super.onChanged();
             if (mViewpager == null) {
                 return;
@@ -247,7 +250,8 @@ public class IndicatorLyout extends LinearLayout {
     /**
      * @deprecated User ViewPager addOnPageChangeListener
      */
-    @Deprecated public void setOnPageChangeListener(OnPageChangeListener onPageChangeListener) {
+    @Deprecated
+    public void setOnPageChangeListener(OnPageChangeListener onPageChangeListener) {
         if (mViewpager == null) {
             throw new NullPointerException("can not find Viewpager , setViewPager first");
         }
@@ -275,7 +279,7 @@ public class IndicatorLyout extends LinearLayout {
     }
 
     private void addIndicator(int orientation, @DrawableRes int backgroundDrawableId,
-            Animator animator) {
+                              Animator animator) {
         if (animator.isRunning()) {
             animator.end();
             animator.cancel();
@@ -296,12 +300,13 @@ public class IndicatorLyout extends LinearLayout {
 
         Indicator.setLayoutParams(lp);
 
-        animator.setTarget(Indicator); 
+        animator.setTarget(Indicator);
         animator.start();
     }
 
     private class ReverseInterpolator implements Interpolator {
-        @Override public float getInterpolation(float value) {
+        @Override
+        public float getInterpolation(float value) {
             return Math.abs(1.0f - value);
         }
     }

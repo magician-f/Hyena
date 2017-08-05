@@ -111,7 +111,7 @@
     <!-- ######################################### -->
 
     <!-- 指示器 -->
-    <declare-styleable name="IndicatorLyoutDefaultHyena">
+    <declare-styleable name="HyenaIndicatorLyout">
         <attr name="index_width" format="dimension"/>
         <attr name="index_height" format="dimension"/>
         <attr name="index_margin" format="dimension"/>

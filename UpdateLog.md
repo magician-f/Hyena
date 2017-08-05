@@ -1,3 +1,8 @@
+
+#### 17/08/05
+
+* 更新了HyenaIndicatorLyout的自定义属性命名
+
 #### 17/07/20
 
 * 重新整理README.md
