@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Hyena</string>
     <dimen name="ss">10dp</dimen>
+
+    <!-- 文件权限 -->
+    <string name="fileprovider">hyena.fileprovider</string>
 </resources>

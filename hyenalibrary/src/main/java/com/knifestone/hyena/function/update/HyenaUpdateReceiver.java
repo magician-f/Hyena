@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import com.knifestone.hyena.R;
 import com.knifestone.hyena.bean.HyenaDownBean;
 import com.knifestone.hyena.utils.AppUtils;
 
@@ -29,7 +30,7 @@ public class HyenaUpdateReceiver extends BroadcastReceiver {
                 HyenaDownBean bean = manager.query(context, downId);
                 //要去判断是否是hynea下载的文件
                 if (bean.localUrl.contains(context.getPackageName())) {
-                    AppUtils.installApp(context, bean.localUrl.replaceAll("file://", ""), "update.fileprovider");
+                    AppUtils.installApp(context, bean.localUrl.replaceAll("file://", ""), context.getString(R.string.fileprovider));
                 }
             } catch (Exception e) {
             }

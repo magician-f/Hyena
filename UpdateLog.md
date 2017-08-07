@@ -1,4 +1,8 @@
 
+#### 17/08/07
+
+* fileprovider权限需要在主app-model中声明，否者会有安装问题
+
 #### 17/08/05
 
 * 更新了HyenaIndicatorLyout的自定义属性命名

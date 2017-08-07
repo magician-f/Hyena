@@ -70,7 +70,7 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
      * 自动提取AndroidManifest.xml中lable作为Title
      */
     protected void initToolbar() {
-        setTitle(getTitle());
+        initToolbar(getTitle());
     }
 
     protected void initToolbar(@StringRes int id) {

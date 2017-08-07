@@ -12,6 +12,9 @@
     <!-- 直接安装 -->
     <string name="updateInstall">安装</string>
 
+    <!-- 文件权限 -->
+    <string name="fileprovider">update.fileprovider</string>
+
     <!-- ######################################### -->
 
 </resources>
