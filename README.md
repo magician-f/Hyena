@@ -108,6 +108,9 @@ gson数据自动生成实体类
 将项目中的 string 资源自动翻译为其他语言
 自动生成6.0权限的代码
 统计Android依赖库中方法的总个数
+一键findViewById
+代码快速定位，AS中的Minimap
+告别postman，测试接口的功能
 ```
 
 [languageSvg]:https://img.shields.io/badge/language-java-blue.svg
@@ -125,7 +128,7 @@ gson数据自动生成实体类
 [Currency.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Currency.md
 [Note.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Note.md
 [Library.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Library.md
-[Plug.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Plugs.md
+[Plug.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Plug.md
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md

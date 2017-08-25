@@ -36,10 +36,30 @@ gson数据自动生成实体类
 统计Android依赖库中方法的总个数
 ```
 
-[GsonFormat]:https://github.com/zzz40500/GsonFormat
-[PermissionsDispatcher plugin]:https://github.com/shiraji/permissions-dispatcher-plugin
+* ###### [Android Studio Prettify][Android Studio Prettify]
+
+```
+一键findViewById
+```
+
+* ###### [CodeGlance][CodeGlance]
+
+```
+代码快速定位，AS中的Minimap
+```
+
+* ###### [JSONOnlineVewer][JSONOnlineVewer]
+
+```
+告别postman，测试接口的功能
+```
+
+[GsonFormat]:https://plugins.jetbrains.com/plugin/7654-gsonformat
+[PermissionsDispatcher plugin]:https://plugins.jetbrains.com/plugin/8349-permissionsdispatcher-plugin
 [Android Parcelable Code Generator]:https://plugins.jetbrains.com/plugin/7332-android-parcelable-code-generator
 [methods-count]:https://plugins.jetbrains.com/plugin/8076-android-methods-count
-
+[Android Studio Prettify]:https://plugins.jetbrains.com/plugin/7405-android-studio-prettify
+[CodeGlance]:https://plugins.jetbrains.com/plugin/7275-codeglance
+[JSONOnlineVewer]:https://plugins.jetbrains.com/plugin/7838-jsononlineviewer
 
 
