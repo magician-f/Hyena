@@ -8,10 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:windowBackground">@color/colorwindowBackground</item>
-        <item name="colorControlHighlight">@color/colorControlHighlight</item>
-        <item name="colorButtonNormal">@color/colorPrimary</item>
-        <item name="colorControlActivated">#00B7EE</item>
-        <item name="colorControlNormal">#BDC0BA</item>
+        <!--<item name="colorControlHighlight">@color/colorControlHighlight</item>-->
+        <!--<item name="colorButtonNormal">@color/colorPrimary</item>-->
+        <!--<item name="colorControlActivated">#00B7EE</item>-->
+        <!--<item name="colorControlNormal">#BDC0BA</item>-->
 
         <item name="android:buttonStyle">@style/styleButton</item>
     </style>
@@ -59,8 +59,13 @@
 
     <style name="styleButton" parent="Base.Widget.AppCompat.Button">
         <item name="android:textColor">@drawable/selector_btn_textcolor</item>
-        <item name="android:minHeight">32dp</item>
-        <!--<item name="android:background">@drawable/selector_btn_background</item>-->
+        <item name="android:minHeight">35dp</item>
+        <item name="android:background">@drawable/selector_btn_background</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="styleButton.Main">
+        <item name="android:layout_margin">4dp</item>
     </style>
 
 </resources>

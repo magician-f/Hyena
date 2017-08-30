@@ -5,7 +5,8 @@
 
         <activity
             android:name=".function.update.HyenaUpdateActivity"
-            android:theme="@style/ThemeTransparent" />
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <receiver android:name=".function.update.HyenaUpdateReceiver">
             <intent-filter>

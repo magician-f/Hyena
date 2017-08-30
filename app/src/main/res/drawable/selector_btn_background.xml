@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <item android:state_enabled="false">
 
-    <item android:drawable="@drawable/ripple_normal" android:state_pressed="true"/>
-    <item android:drawable="@drawable/ripple_normal" android:state_focused="true"/>
-    <item android:drawable="@drawable/shape_layout" android:state_enabled="false"/>
-    <item android:drawable="@drawable/shape_edittext"/>
+        <shape>
+            <solid android:color="#979797" />
+        </shape>
+
+    </item>
+
+    <item>
+        <shape>
+            <corners android:radius="2dp" />
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
 
 </selector>

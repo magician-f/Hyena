@@ -12,6 +12,7 @@
 
     <Button
         android:id="@+id/ss"
+        style="@style/styleButton.Main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="自定义View"
@@ -20,6 +21,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/styleButton.Main"
         android:text="通用"
         android:onClick="通用"/>
 
@@ -31,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="一个优雅的登录页"
+        style="@style/styleButton.Main"
         android:onClick="一个优雅的登录页"/>
 
     <com.knifestone.hyena.view.textview.MarqueeTextView
@@ -46,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            style="@style/styleButton.Main"
             android:text="提示更新"
             android:onClick="提示更新"/>
 
@@ -53,8 +57,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            style="@style/styleButton.Main"
             android:text="强制更新"
             android:onClick="强制更新"/>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="qq一键登录"
+        style="@style/styleButton.Main"
+        android:onClick="qq一键登录"/>
 
 </LinearLayout>

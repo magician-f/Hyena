@@ -5,7 +5,13 @@
     tools:targetApi="lollipop">
 
     <item
-        android:id="@android:id/mask"
-        android:drawable="@android:color/white"/>
+        android:id="@android:id/mask">
+        <shape>
+            <corners android:radius="2dp" />
+            <solid android:color="@color/colorPrimaryDark" />
+        </shape>
+    </item>
+
+
 
 </ripple>

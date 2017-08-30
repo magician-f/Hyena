@@ -1,13 +1,11 @@
 package com.knifestone.hyena.function.update;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +27,7 @@ import com.knifestone.hyena.utils.AppUtils;
  * 邮箱 378741819@qq.com
  * Created by 杂牌老黑 on 2017/4/17.
  */
-public class HyenaUpdateActivity extends AppCompatActivity {
+public class HyenaUpdateActivity extends Activity {
 
     /**
      * 启动更新
@@ -43,12 +41,8 @@ public class HyenaUpdateActivity extends AppCompatActivity {
         Intent intent = new Intent(context, HyenaUpdateActivity.class);
         intent.putExtra("bean", bean);
         intent.putExtra("isToast", isToast);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            context.startActivityForResult(intent, requestCode, ActivityOptions.makeSceneTransitionAnimation(context).toBundle());
-        } else {
-            context.startActivityForResult(intent, requestCode);
-            context.overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
-        }
+        context.startActivityForResult(intent, requestCode);
+        context.overridePendingTransition(0, 0);
     }
 
     private HyenaVersionBean mBean;
@@ -297,9 +291,7 @@ public class HyenaUpdateActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
-        }
+        overridePendingTransition(0, 0);
     }
 
     public void onBackPressed() {
