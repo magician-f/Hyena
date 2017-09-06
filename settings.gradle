@@ -1,1 +1,1 @@
-include ':app', ':hyenalibrary', ':qq_model'
+include ':app', ':hyenalibrary'

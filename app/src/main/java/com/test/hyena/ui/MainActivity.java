@@ -2,12 +2,9 @@ package com.test.hyena.ui;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.knifestone.hyena.bean.HyenaVersionBean;
 import com.knifestone.hyena.function.update.HyenaUpdateActivity;
-import com.knifestone.qq_model.QQBean;
-import com.knifestone.qq_model.QQLoginActivity;
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
 
@@ -80,10 +77,6 @@ public class MainActivity extends BaseActivity {
         HyenaUpdateActivity.launchUpdate(this, bean, true, 1);
     }
 
-    public void qq一键登录(View v) {
-        QQLoginActivity.launch(MainActivity.this, "1105885644", 2);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -91,11 +84,6 @@ public class MainActivity extends BaseActivity {
             switch (requestCode) {
                 case 1:
                     bean = data.getParcelableExtra("bean");
-                    break;
-                case 2:
-                    //登录成功
-                    QQBean bean = (QQBean) data.getSerializableExtra("bean");
-                    Toast.makeText(this,"qq登录返回的信息：\n" + bean.toString(),Toast.LENGTH_SHORT).show();
                     break;
             }
         }

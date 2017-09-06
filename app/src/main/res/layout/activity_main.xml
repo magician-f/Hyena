@@ -62,11 +62,4 @@
             android:onClick="强制更新"/>
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="qq一键登录"
-        style="@style/styleButton.Main"
-        android:onClick="qq一键登录"/>
-
 </LinearLayout>

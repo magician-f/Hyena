@@ -1,4 +1,8 @@
 
+#### 17/09/06
+
+* 移除qq_model 至新的仓库https://github.com/KnifeStone/HyenaQQ
+
 #### 17/08/30
 
 * 新增qq_model 集成qq登录功能

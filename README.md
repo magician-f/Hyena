@@ -2,6 +2,8 @@
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 
+* 兄弟仓库[HyenaQQ(2行代码实现qq登录)][HyenaQQ]
+
 ## 简介 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
 * hyena仓库功能
@@ -119,6 +121,7 @@ gson数据自动生成实体类
 [apiSvg]: https://img.shields.io/badge/API-15+-blue.svg
 [api]: https://android-arsenal.com/api?level=15
 
+[HyenaQQ]:https://github.com/KnifeStone/HyenaQQ
 [Hyena]:https://github.com/KnifeStone/Hyena
 [蒲公英下载地址]:https://www.pgyer.com/72qN
 
