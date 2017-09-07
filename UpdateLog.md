@@ -1,4 +1,8 @@
 
+#### 17/09/07 发布版本1.3.4
+
+* 新增BottomNavigationViewEx
+
 #### 17/09/06
 
 * 移除qq_model 至新的仓库https://github.com/KnifeStone/HyenaQQ

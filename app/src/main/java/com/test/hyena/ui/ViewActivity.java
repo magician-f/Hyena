@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.knifestone.hyena.view.button.CountDownButton;
 import com.knifestone.hyena.view.custom.EasyPickerView;
+import com.knifestone.hyena.view.viewgroup.BottomNavigationViewEx;
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
 
@@ -28,6 +29,7 @@ public class ViewActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        initBottomNavigationView();
         final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
         countDownButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +59,13 @@ public class ViewActivity extends BaseActivity {
     @Override
     protected void getData() {
 
+    }
+
+    private void initBottomNavigationView() {
+        final BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNavigationViewEx);
+        bottomNavigationViewEx.enableAnimation(false);
+        bottomNavigationViewEx.enableShiftingMode(false);
+        bottomNavigationViewEx.enableItemShiftingMode(false);
     }
 
     private void initEasyPickerView() {
@@ -90,10 +99,18 @@ public class ViewActivity extends BaseActivity {
         epvS.setDataList(dataList3);
     }
 
-    public void goHttp(View view) {
+    public void goBottomNavigationViewEx(View view) {
+        goHttp("https://github.com/ittianyu/BottomNavigationViewEx");
+    }
+
+    public void goEasyPickerView(View view) {
+        goHttp("https://github.com/huzenan/EasyPickerView");
+    }
+
+    public void goHttp(String url){
         Intent intent = new Intent();
         intent.setAction("android.intent.action.VIEW");
-        Uri content_url = Uri.parse("https://github.com/huzenan/EasyPickerView");
+        Uri content_url = Uri.parse(url);
         intent.setData(content_url);
         startActivity(intent);
     }

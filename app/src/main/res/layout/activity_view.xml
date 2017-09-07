@@ -16,6 +16,24 @@
 
             <com.knifestone.hyena.view.textview.MarqueeTextView
                 style="@style/TextViewTitleSmallLow"
+                android:onClick="goBottomNavigationViewEx"
+                android:text="BottomNavigationViewEx 底部导航(转载|点击跳转原地址)" />
+
+            <com.knifestone.hyena.view.viewgroup.BottomNavigationViewEx
+                android:id="@+id/bottomNavigationViewEx"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@android:color/white"
+                item:itemIconTint="@color/selector_item_primary_color"
+                item:itemTextColor="@color/selector_item_primary_color"
+                item:menu="@menu/menu_navigation" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LayoutShapeDefault">
+
+            <com.knifestone.hyena.view.textview.MarqueeTextView
+                style="@style/TextViewTitleSmallLow"
                 android:text="MenuItemView 自定义菜单项" />
 
             <com.knifestone.hyena.view.viewgroup.MenuItemView
@@ -81,8 +99,8 @@
 
             <com.knifestone.hyena.view.textview.MarqueeTextView
                 style="@style/TextViewTitleSmallLow"
-                android:onClick="goHttp"
-                android:text="EasyPickerView 简单选择器(转载)(点击跳转原地址)" />
+                android:onClick="goEasyPickerView"
+                android:text="EasyPickerView 简单选择器(转载|点击跳转原地址)" />
 
             <LinearLayout
                 android:layout_width="match_parent"

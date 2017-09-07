@@ -2,7 +2,7 @@
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 
-* 兄弟仓库[HyenaQQ(2行代码实现qq登录)][HyenaQQ]
+* #### 兄弟仓库[HyenaQQ(2行代码实现qq登录)][HyenaQQ]
 
 ## 简介 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
@@ -34,7 +34,8 @@ allprojects {
 ```
 dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'//自行调整版本
-    compile 'com.github.KnifeStone:Hyena:1.3.3'
+    compile "com.android.support:design:25.3.1"
+    compile 'com.github.KnifeStone:Hyena:1.3.4'
 }
 ```
 
@@ -98,6 +99,8 @@ dex分包
 状态栏控制
 自动换行布局
 高度封装的WebView
+一个增强BottomNavigationView的安卓库
+NiceDialog,基于DialogFragment的扩展
 ```
 
 ###### [AndroidStudio插件][Plug.md]

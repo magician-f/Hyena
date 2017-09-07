@@ -72,6 +72,18 @@ Google新的容器，强大自如换行
 简单易用，带有进度条、支持文件上传、下载、简化Javascript通信、链式调用、加强Web安全的库。
 ```
 
+* ###### BottomNavigationViewEx| [BottomNavigationViewEx][BottomNavigationViewEx]
+
+```
+一个增强BottomNavigationView的安卓库
+```
+
+* ###### NiceDialog| [NiceDialog][NiceDialog]
+
+```
+基于DialogFragment的扩展，让dialog的使用更方便
+```
+
 [AndroidUtilCode]:https://github.com/Blankj/AndroidUtilCode
 [butterknife]:https://github.com/JakeWharton/butterknife
 [zelezny]:https://github.com/avast/android-butterknife-zelezny
@@ -86,4 +98,6 @@ Google新的容器，强大自如换行
 [ImmersionBar]:https://github.com/gyf-dev/ImmersionBar
 [FlexboxLayout]:https://github.com/google/flexbox-layout
 [AgentWeb]:https://github.com/Justson/AgentWeb
+[BottomNavigationViewEx]:https://github.com/ittianyu/BottomNavigationViewEx
+[NiceDialog]:https://github.com/Othershe/NiceDialog
 
