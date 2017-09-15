@@ -48,7 +48,6 @@ public class HyenaVersionBean implements Parcelable {
         this.downId = downId;
     }
 
-
     @Override
     public int describeContents() {
         return 0;

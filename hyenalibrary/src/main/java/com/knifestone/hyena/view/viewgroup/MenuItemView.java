@@ -40,6 +40,9 @@ public class MenuItemView extends RelativeLayout {
 
     public MenuItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (isInEditMode()) {
+            return;
+        }
         init();
         initStyle(attrs);
     }

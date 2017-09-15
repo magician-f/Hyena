@@ -76,3 +76,7 @@
 #与js交互的类
 #与反射有关的类和方法
 #第三方库
+-keep public class android.support.design.widget.BottomNavigationView { *; }
+-keep public class android.support.design.internal.BottomNavigationMenuView { *; }
+-keep public class android.support.design.internal.BottomNavigationPresenter { *; }
+-keep public class android.support.design.internal.BottomNavigationItemView { *; }

@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity {
     public void 提示更新(View v) {
         if (bean == null) {
             bean = new HyenaVersionBean(
-                    999,
+                    19202,
                     "9.9.9",
                     "简约新版本袭来",
                     "更多的可乐，鸡翅，啤酒\n特别的好",
@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
 
     public void 强制更新(View v) {
         HyenaVersionBean bean = new HyenaVersionBean(
-                999,
+                19202,
                 "9.9.9",
                 "强制更新",
                 "不升级\n就不能用\n珂珂",
@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity {
                 1,
                 0,
                 0);
-        HyenaUpdateActivity.launchUpdate(this, bean, true, 1);
+        HyenaUpdateActivity.launchUpdate(this, bean, true,true, 1);
     }
 
     @Override

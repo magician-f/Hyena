@@ -1,4 +1,8 @@
 
+#### 17/09/15 发布版本1.3.5
+
+* 更新HyenaUpdateActivity 新增了用versionName来比对版本的机制
+
 #### 17/09/07 发布版本1.3.4
 
 * 新增BottomNavigationViewEx

@@ -29,18 +29,24 @@ import com.knifestone.hyena.utils.AppUtils;
  */
 public class HyenaUpdateActivity extends Activity {
 
+    public static void launchUpdate(Activity context, HyenaVersionBean bean, boolean isToast, int requestCode) {
+        launchUpdate(context, bean, isToast, false, requestCode);
+    }
+
     /**
      * 启动更新
      *
-     * @param context 上下文
-     * @param bean    传入版本数据
-     * @param isToast 是否toast
-     * @param requestCode 页面回调
+     * @param context       上下文
+     * @param bean          传入版本数据
+     * @param isToast       是否toast
+     * @param isVersionName 用versionName来比对 如：将1.0.0 转化成10000来比对
+     * @param requestCode   页面回调
      */
-    public static void launchUpdate(Activity context, HyenaVersionBean bean, boolean isToast, int requestCode) {
+    public static void launchUpdate(Activity context, HyenaVersionBean bean, boolean isToast, boolean isVersionName, int requestCode) {
         Intent intent = new Intent(context, HyenaUpdateActivity.class);
         intent.putExtra("bean", bean);
         intent.putExtra("isToast", isToast);
+        intent.putExtra("isVersionName", isVersionName);
         context.startActivityForResult(intent, requestCode);
         context.overridePendingTransition(0, 0);
     }
@@ -83,7 +89,7 @@ public class HyenaUpdateActivity extends Activity {
             return;
         }
         //判断是否需要更新
-        if (AppUtils.getAppVersionCode(this) >= mBean.versionCode) {
+        if (getAppVersionCode() >= mBean.versionCode) {
             //不需要更新
             if (mIsToast) {
                 Toast.makeText(this, getString(R.string.updateNewestVersion), Toast.LENGTH_SHORT).show();
@@ -122,14 +128,14 @@ public class HyenaUpdateActivity extends Activity {
                 strongUpdate();
                 break;
             case 2:
-                if (AppUtils.getAppVersionCode(this) == mBean.targetCode) {
+                if (getAppVersionCode() == mBean.targetCode) {
                     strongUpdate();
                 } else {
                     update();
                 }
                 break;
             case 3:
-                if (AppUtils.getAppVersionCode(this) <= mBean.targetCode) {
+                if (getAppVersionCode() <= mBean.targetCode) {
                     strongUpdate();
                 } else {
                     update();
@@ -170,10 +176,31 @@ public class HyenaUpdateActivity extends Activity {
     }
 
     /**
+     * 获得版本号
+     *
+     * @return
+     */
+    private int getAppVersionCode() {
+        if (getIntent().getBooleanExtra("isVersionName", false)) {
+            try {
+                String[] versions = AppUtils.getAppVersionName(this).split("\\.");
+                int versionCode = Integer.parseInt(versions[0]) * 10000;
+                versionCode += Integer.parseInt(versions[1]) * 100;
+                versionCode += Integer.parseInt(versions[2]);
+                return versionCode;
+            } catch (Exception e) {
+                return AppUtils.getAppVersionCode(this);
+            }
+        } else {
+            return AppUtils.getAppVersionCode(this);
+        }
+    }
+
+    /**
      * 普通更新
      */
     private void update() {
-        if (ivClose!=null){
+        if (ivClose != null) {
             ivClose.setVisibility(View.VISIBLE);
             ivClose.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -246,7 +273,7 @@ public class HyenaUpdateActivity extends Activity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Log.e("进来,",""+downBean.toString());
+                                    Log.e("进来,", "" + downBean.toString());
                                     updateProgressBar.setMax(downBean.totalSize);
                                     updateProgressBar.setProgress(downBean.compeleteSize);
                                     if (downBean.status == DownloadManager.STATUS_SUCCESSFUL) {
@@ -306,12 +333,12 @@ public class HyenaUpdateActivity extends Activity {
             case 1:
                 return;
             case 2:
-                if (AppUtils.getAppVersionCode(this) == mBean.targetCode) {
+                if (getAppVersionCode() == mBean.targetCode) {
                     return;
                 }
                 break;
             case 3:
-                if (AppUtils.getAppVersionCode(this) <= mBean.targetCode) {
+                if (getAppVersionCode() <= mBean.targetCode) {
                     return;
                 }
                 break;

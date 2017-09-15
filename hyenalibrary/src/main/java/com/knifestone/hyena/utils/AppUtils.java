@@ -42,6 +42,22 @@ public final class AppUtils {
         }
     }
 
+
+    /**
+     * 获取App版本号
+     * @return App版本号
+     */
+    public static String getAppVersionName(Context context) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
+            return pi == null ? null : pi.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * 安装App(支持7.0)
      *
