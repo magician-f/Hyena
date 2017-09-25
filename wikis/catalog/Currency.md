@@ -25,9 +25,17 @@ onTextChanged       | 文本改变
 afterTextChanged    | 文本改变之后
 ```
 
+* ###### 过时方法适配器 | [DeprecatedAdapter.md][DeprecatedAdapter.md]
+
+```
+getColor            | 获得颜色
+getDrawable         | 获得drawable
+```
+
 [InputFilterAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/InputFilterAdapter.md
 [DoubleClickListener.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/DoubleClickListener.md
 [TextWatcherAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/TextWatcherAdapter.md
+[DeprecatedAdapter.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/currency/DeprecatedAdapter.md
 
 
 
