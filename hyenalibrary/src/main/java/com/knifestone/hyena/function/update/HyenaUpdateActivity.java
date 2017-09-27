@@ -234,7 +234,7 @@ public class HyenaUpdateActivity extends Activity {
      * 强制更新
      */
     private void strongUpdate() {
-        updateBtnNegative.setVisibility(View.GONE);
+        updateBtnNegative.setVisibility(View.INVISIBLE);
         updateBtnPositive.setText(R.string.updatePositive);
         updateBtnPositive.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -303,7 +303,7 @@ public class HyenaUpdateActivity extends Activity {
      */
     private void onLoadend(final String localUrl) {
         updateProgressBar.setVisibility(View.GONE);
-        updateBtnNegative.setVisibility(View.GONE);
+        updateBtnNegative.setVisibility(View.INVISIBLE);
         updateBtnPositive.setVisibility(View.VISIBLE);
         updateBtnPositive.setText(R.string.updateInstall);
         updateBtnPositive.setOnClickListener(new View.OnClickListener() {

@@ -14,14 +14,11 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Scroller;
 
-import com.knifestone.hyena.R;
-
 import java.util.ArrayList;
 
 /**
  * 滚轮视图，可设置是否循环模式，实现OnScrollChangedListener接口以监听滚轮变化
  * Created by huzn on 2016/10/27.
- * 原文地址：https://github.com/huzenan/EasyPickerView
  */
 public class EasyPickerView extends View {
 
@@ -90,16 +87,16 @@ public class EasyPickerView extends View {
   public EasyPickerView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
 
-    TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EasyPickerView, defStyleAttr, 0);
-    textSize = a.getDimensionPixelSize(R.styleable.EasyPickerView_epvTextSize, (int) TypedValue.applyDimension(
+    TypedArray a = context.getTheme().obtainStyledAttributes(attrs, com.knifestone.hyena.R.styleable.EasyPickerView, defStyleAttr, 0);
+    textSize = a.getDimensionPixelSize(com.knifestone.hyena.R.styleable.EasyPickerView_epvTextSize, (int) TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
-    textColor = a.getColor(R.styleable.EasyPickerView_epvTextColor, Color.BLACK);
-    textPadding = a.getDimensionPixelSize(R.styleable.EasyPickerView_epvTextPadding, (int) TypedValue.applyDimension(
+    textColor = a.getColor(com.knifestone.hyena.R.styleable.EasyPickerView_epvTextColor, Color.BLACK);
+    textPadding = a.getDimensionPixelSize(com.knifestone.hyena.R.styleable.EasyPickerView_epvTextPadding, (int) TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics()));
-    textMaxScale = a.getFloat(R.styleable.EasyPickerView_epvTextMaxScale, 2.0f);
-    textMinAlpha = a.getFloat(R.styleable.EasyPickerView_epvTextMinAlpha, 0.4f);
-    isRecycleMode = a.getBoolean(R.styleable.EasyPickerView_epvRecycleMode, true);
-    maxShowNum = a.getInteger(R.styleable.EasyPickerView_epvMaxShowNum, 3);
+    textMaxScale = a.getFloat(com.knifestone.hyena.R.styleable.EasyPickerView_epvTextMaxScale, 2.0f);
+    textMinAlpha = a.getFloat(com.knifestone.hyena.R.styleable.EasyPickerView_epvTextMinAlpha, 0.4f);
+    isRecycleMode = a.getBoolean(com.knifestone.hyena.R.styleable.EasyPickerView_epvRecycleMode, true);
+    maxShowNum = a.getInteger(com.knifestone.hyena.R.styleable.EasyPickerView_epvMaxShowNum, 3);
     a.recycle();
 
     textPaint = new TextPaint();
@@ -107,6 +104,7 @@ public class EasyPickerView extends View {
     textPaint.setTextSize(textSize);
     textPaint.setAntiAlias(true);
     fm = textPaint.getFontMetrics();
+    textHeight = (int) (fm.bottom - fm.top);
 
     scroller = new Scroller(context);
     minimumVelocity = ViewConfiguration.get(getContext()).getScaledMinimumFlingVelocity();
@@ -125,7 +123,6 @@ public class EasyPickerView extends View {
 
     mode = MeasureSpec.getMode(heightMeasureSpec);
     int height = MeasureSpec.getSize(heightMeasureSpec);
-    textHeight = (int) (fm.bottom - fm.top);
     contentHeight = textHeight * maxShowNum + textPadding * maxShowNum;
     if (mode != MeasureSpec.EXACTLY) { // wrap_content
       height = contentHeight + getPaddingTop() + getPaddingBottom();
@@ -364,12 +361,20 @@ public class EasyPickerView extends View {
   }
 
   /**
+   * 更新数据
+   */
+  public void updateDataList(ArrayList<String> dataList) {
+    this.dataList = dataList;
+    invalidate();
+  }
+
+  /**
    * 获取当前状态下，选中的下标
    *
    * @return 选中的下标
    */
   public int getCurIndex() {
-    return curIndex - offsetIndex;
+    return getNowIndex(-offsetIndex);
   }
 
   /**
@@ -378,9 +383,11 @@ public class EasyPickerView extends View {
    * @param index 需要滚动到的指定位置
    */
   public void moveTo(int index) {
-    if (index < 0 || index >= dataList.size() || curIndex == index)
+    if (index < 0 || curIndex == index || dataList.isEmpty())
       return;
-
+    if (index >= dataList.size()) {
+      curIndex = dataList.size() - 1;
+    }
     if (!scroller.isFinished())
       scroller.forceFinished(true);
 
