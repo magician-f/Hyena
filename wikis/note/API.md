@@ -25,3 +25,11 @@ singleTask
 singleInstance
 每次启动这个Activity，会创建一个新的栈
 ```
+
+###### 内TextView自动伸缩 v26支持
+```
+android:autoSizeTextType="uniform"
+android:autoSizeMaxTextSize="40sp"
+android:autoSizeMinTextSize="12sp"
+android:autoSizeStepGranularity="2sp"//步长
+```

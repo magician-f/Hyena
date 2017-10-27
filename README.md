@@ -2,7 +2,10 @@
 
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 
-* #### 兄弟仓库[HyenaQQ(2行代码实现qq登录)][HyenaQQ]
+## 兄弟仓库
+
+* #### [HyenaQQ(2行代码实现qq登录)][HyenaQQ]
+* #### [HyenaUpdate(几行代码实现自动更新)][HyenaUpdate]
 
 ## 简介 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
@@ -47,12 +50,6 @@ dependencies {
 HyenaBaseActivity
 HyenaToolbarActivity
 HyenaWhereGoActivity
-```
-
-###### [功能][Function.md]
-
-```
-版本更新
 ```
 
 ###### [常用View][Views.md]
@@ -126,11 +123,11 @@ gson数据自动生成实体类
 [api]: https://android-arsenal.com/api?level=15
 
 [HyenaQQ]:https://github.com/KnifeStone/HyenaQQ
+[HyenaUpdate]:https://github.com/KnifeStone/HyenaUpdate
 [Hyena]:https://github.com/KnifeStone/Hyena
 [蒲公英下载地址]:https://www.pgyer.com/72qN
 
 [Base.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Base.md
-[Function.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Function.md
 [Views.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Views.md
 [Currency.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Currency.md
 [Note.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Note.md

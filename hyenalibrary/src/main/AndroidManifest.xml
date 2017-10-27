@@ -3,16 +3,7 @@
 
     <application>
 
-        <activity
-            android:name=".function.update.HyenaUpdateActivity"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <receiver android:name=".function.update.HyenaUpdateReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
-            </intent-filter>
-        </receiver>
 
     </application>
 
