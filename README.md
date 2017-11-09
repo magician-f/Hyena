@@ -4,8 +4,8 @@
 
 ## 兄弟仓库
 
-* #### [HyenaQQ(2行代码实现qq登录)][HyenaQQ]
-* #### [HyenaUpdate(几行代码实现自动更新)][HyenaUpdate]
+* ##### [HyenaQQ(2行代码实现qq登录)][HyenaQQ]
+* ##### [HyenaUpdate(几行代码实现自动更新)][HyenaUpdate]
 
 ## 简介 | [更新日志][UpdateLog.md] | [demo.apk][蒲公英下载地址]
 
@@ -38,7 +38,7 @@ allprojects {
 dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'//自行调整版本
     compile "com.android.support:design:25.3.1"
-    compile 'com.github.KnifeStone:Hyena:1.5.0'
+    compile 'com.github.KnifeStone:Hyena:1.5.1'
 }
 ```
 
@@ -70,6 +70,8 @@ HyenaWhereGoActivity
 防止双击监听
 文本变化监听适配器
 过时方法适配器
+输入过滤适配器
+文件格式适配器
 ```
 
 ## 在线资料
