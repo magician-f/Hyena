@@ -24,8 +24,8 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
     protected View mViewAbnormal;
     //加载页面
     protected ViewLoading mViewLoading;
-    //初始化的loading
-    private boolean isShowInit;
+    //中断
+    private boolean isInterrupt;
 
     /**
      * 显示loading
@@ -54,7 +54,6 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
     public void showLoadingInit() {
         if (showLoading()) {
             viewContent.setVisibility(View.GONE);
-            isShowInit = true;
         }
     }
 
@@ -77,11 +76,12 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
         }
         if (mViewLoading != null) {
             mViewLoading.onStop();
-            viewContent.removeView(mViewLoading);
+            viewAbnormalContainer.removeView(mViewLoading);
             mViewLoading = null;
-            if (isShowInit) {
+            if (isInterrupt) {
+                cancelInit();
+            }else{
                 viewContent.setVisibility(View.VISIBLE);
-                isShowInit = false;
             }
         }
     }
@@ -148,6 +148,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
     @Override
     public void onBackPressed() {
         if (isLoading()) {
+            isInterrupt = true;
             cancelLoading();
             onCancelCall();
             return;
@@ -160,6 +161,9 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
 
     //事件传递下去取消请求
     protected abstract void onCancelCall();
+
+    //取消初始化
+    protected abstract void cancelInit();
 
 
 }
