@@ -23,6 +23,7 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
 
     protected Toolbar toolbar;
     protected ViewGroup viewContent;
+    protected ViewGroup viewAbnormalContainer;
     private TextView tvTitle;
     private OnClickListener onClickListenerTopLeft;
     private OnClickListener onClickListenerTopRight;
@@ -48,6 +49,7 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
             setContentView(bindLayout());
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             viewContent = (ViewGroup) findViewById(R.id.viewContent);
+            viewAbnormalContainer = (ViewGroup) findViewById(R.id.viewAbnormalContainer);
             tvTitle = (TextView) findViewById(R.id.tvTitle);
             //初始化设置 Toolbar
             setSupportActionBar(toolbar);

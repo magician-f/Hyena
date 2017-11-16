@@ -2,9 +2,7 @@ package com.knifestone.hyena.base.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,16 +24,10 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
      */
     protected Context mContext;
 
-    /**
-     * 标签（打印的时候可以用
-     */
-    protected String TAG;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        TAG = "ClassName:" + getClass().getSimpleName() + ":TaskId:" + getTaskId();
         setContentView();
         initView();
         getData();
@@ -67,15 +59,15 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
     /**
      * 跳转到目标Activity
      */
-    public void startActivity(Class<?> cl) {
+    protected void startActivity(Class<?> cl) {
         startActivity(new Intent(this, cl));
     }
 
     /**
-     * 快速findViewById
+     * 跳转到目标Activity
      */
-    protected <T extends View> T fbid(int resId) {
-        return (T) super.findViewById(resId);
+    protected void startActivity(Class<?> cl, int requestCode) {
+        startActivityForResult(new Intent(this, cl), requestCode);
     }
 
     /**
@@ -93,18 +85,6 @@ public abstract class HyenaBaseActivity extends AppCompatActivity {
             view.setOnClickListener(listener);
         }
     }
-
-    /**
-     * 获得颜色
-     */
-    public int getColor_(@ColorRes int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return getColor(color);
-        } else {
-            return getResources().getColor(color);
-        }
-    }
-
 
     //=====================================================================
     //                              生命周期备注

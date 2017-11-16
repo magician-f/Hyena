@@ -31,7 +31,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
      * 显示loading
      */
     public boolean showLoading() {
-        if (viewContent == null) {
+        if (viewContent == null || viewAbnormalContainer==null) {
             return false;
         }
         if (mViewLoading == null) {
@@ -43,7 +43,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
         if (mViewLoading.getParent() != null) {
             return false;
         }
-        viewContent.addView(mViewLoading);
+        viewAbnormalContainer.addView(mViewLoading);
         mViewLoading.onStart();
         return true;
     }
@@ -53,11 +53,8 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
      */
     public void showLoadingInit() {
         if (showLoading()) {
-            int count = viewContent.getChildCount();
-            if (count > 0) {
-                viewContent.getChildAt(0).setVisibility(View.GONE);
-                isShowInit = true;
-            }
+            viewContent.setVisibility(View.GONE);
+            isShowInit = true;
         }
     }
 
@@ -75,7 +72,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
      * 取消loading
      */
     public void cancelLoading() {
-        if (viewContent == null) {
+        if (viewContent == null || viewAbnormalContainer == null) {
             return;
         }
         if (mViewLoading != null) {
@@ -83,11 +80,8 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
             viewContent.removeView(mViewLoading);
             mViewLoading = null;
             if (isShowInit) {
-                int count = viewContent.getChildCount();
-                if (count > 0) {
-                    viewContent.getChildAt(0).setVisibility(View.VISIBLE);
-                    isShowInit = false;
-                }
+                viewContent.setVisibility(View.VISIBLE);
+                isShowInit = false;
             }
         }
     }
@@ -101,9 +95,13 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
      * @param listener 按钮监听
      */
     public void showAbnormal(@DrawableRes Integer resImgId, @StringRes Integer resStrId, @StringRes Integer resbtnId, View.OnClickListener listener) {
+        if (viewAbnormalContainer==null){
+            return;
+        }
+        viewContent.setVisibility(View.GONE);
         if (mViewAbnormal == null) {
             mViewAbnormal = LayoutInflater.from(mContext).inflate(com.knifestone.hyena.R.layout.view_abnormal, null);
-            viewContent.addView(mViewAbnormal);
+            viewAbnormalContainer.addView(mViewAbnormal);
         }
         ImageView ivViewEmpty = (ImageView) mViewAbnormal.findViewById(com.knifestone.hyena.R.id.abnormalIv);
         if (resImgId == null) {
@@ -136,12 +134,13 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
      * 移除异常页面
      */
     public void removeAbnormal() {
-        if (viewContent == null) {
+        if (viewAbnormalContainer == null) {
             return;
         }
         //移除异常页面
         if (mViewAbnormal != null) {
-            viewContent.removeView(mViewAbnormal);
+            viewContent.setVisibility(View.VISIBLE);
+            viewAbnormalContainer.removeView(mViewAbnormal);
             mViewAbnormal = null;
         }
     }
