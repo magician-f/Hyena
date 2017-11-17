@@ -1,4 +1,8 @@
 
+#### 17/11/16 发布版本1.5.4
+
+* 优化了BaseActivity 新增cancelLoadingInitFail方法
+
 #### 17/11/16 发布版本1.5.3
 
 * 优化了BaseActivity 更好的支持loadingInit

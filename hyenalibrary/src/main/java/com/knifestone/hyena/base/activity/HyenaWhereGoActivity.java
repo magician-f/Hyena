@@ -25,7 +25,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
     //加载页面
     protected ViewLoading mViewLoading;
     //中断
-    private boolean isInterrupt;
+    protected boolean isInterrupt;
 
     /**
      * 显示loading
@@ -84,6 +84,14 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
                 viewContent.setVisibility(View.VISIBLE);
             }
         }
+    }
+
+    /**
+     * 初始化加载失败的取消loading
+     */
+    public void cancelLoadingInitFail(){
+        isInterrupt = true;
+        cancelLoading();
     }
 
     /**
@@ -148,8 +156,7 @@ public abstract class HyenaWhereGoActivity extends HyenaToolbarActivity {
     @Override
     public void onBackPressed() {
         if (isLoading()) {
-            isInterrupt = true;
-            cancelLoading();
+            cancelLoadingInitFail();
             onCancelCall();
             return;
         }
