@@ -1,5 +1,6 @@
 package com.knifestone.hyena.view.viewgroup;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
@@ -31,6 +32,8 @@ import java.lang.reflect.Field;
  * 如需使用请访问原地址，如有侵权，请联系删除。感谢作者的分享
  * 引用时间：2017/09/07
  */
+
+@SuppressLint("RestrictedApi")
 public class BottomNavigationViewEx extends BottomNavigationView {
     // used for animation
     private int mShiftAmount;
@@ -52,6 +55,9 @@ public class BottomNavigationViewEx extends BottomNavigationView {
     private BottomNavigationMenuView mMenuView;
     private BottomNavigationItemView[] mButtons;
     // used for setupWithViewPager end
+
+    // detect navigation tab changes when the user clicking on navigation item
+    private static boolean isNavigationItemClicking = false;
 
     public BottomNavigationViewEx(Context context) {
         super(context);
@@ -906,7 +912,7 @@ public class BottomNavigationViewEx extends BottomNavigationView {
         @Override
         public void onPageSelected(final int position) {
             final BottomNavigationViewEx bnve = mBnveRef.get();
-            if (null != bnve)
+            if (null != bnve && !isNavigationItemClicking)
                 bnve.setCurrentItem(position);
 //            Log.d("onPageSelected", "--------- position " + position + " ------------");
         }
@@ -949,7 +955,7 @@ public class BottomNavigationViewEx extends BottomNavigationView {
             if (previousPosition == position) {
                 return true;
             }
-
+//            Log.d("onNavigationItemSelecte", "position:"  + position);
             // user listener
             if (null != listener) {
                 boolean bool = listener.onNavigationItemSelected(item);
@@ -963,7 +969,10 @@ public class BottomNavigationViewEx extends BottomNavigationView {
             if (null == viewPager)
                 return false;
 
+            // use isNavigationItemClicking flag to avoid `ViewPager.OnPageChangeListener` trigger
+            isNavigationItemClicking = true;
             viewPager.setCurrentItem(items.get(item.getItemId()), smoothScroll);
+            isNavigationItemClicking = false;
 
             // update previous position
             previousPosition = position;
