@@ -76,7 +76,7 @@ HyenaWhereGoActivity
 
 ## 在线资料
 
-###### [一句话推荐一个类库][Library.md]
+###### [推荐仓库][Library.md]
 
 ```
 工具类库
@@ -124,7 +124,7 @@ gson数据自动生成实体类
 [Base.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Base.md
 [Views.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Views.md
 [Currency.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Currency.md
-[Library.md]:https://github.com/KnifeStone/Hyena/wiki/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%BA%93
+[Library.md]:https://github.com/KnifeStone/Hyena/wiki/%E6%8E%A8%E8%8D%90%E4%BB%93%E5%BA%93
 [Plug.md]:https://github.com/KnifeStone/Hyena/wiki/AndroidStudio%E6%8F%92%E4%BB%B6
 
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg

@@ -1,7 +1,12 @@
 package com.knifestone.hyena.base.activity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -19,9 +24,9 @@ import com.knifestone.hyena.R;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/3.
  */
-public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
+public abstract class HyenaToolbarActivity extends AppCompatActivity {
 
-    protected Toolbar toolbar;
+    protected Toolbar mToolbar;
     protected ViewGroup viewContent;
     protected ViewGroup viewAbnormalContainer;
     private TextView tvTitle;
@@ -29,41 +34,41 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
     private OnClickListener onClickListenerTopRight;
 
     private int rightResId;
-    private String rightStr;
+    private CharSequence rightStr;
 
     /**
-     * 不需要快速集成Toolbar return 0
-     * 需要快速继承Toolbar return 一个完整的布局Id
+     * 上下文
      */
-    protected abstract int bindLayout();
-
-    /**
-     * 绑定内容布局
-     */
-    protected abstract int getContentLayout();
+    protected Context mContext;
 
     @Override
-    protected void setContentView() {
-        //不等于0表示启用了快速设置Toolbar功能
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mContext = this;
         if (bindLayout() != 0) {
+            //启用了HyenaToolbarActivity
             setContentView(bindLayout());
-            toolbar = (Toolbar) findViewById(R.id.toolbar);
+            mToolbar = (Toolbar) findViewById(R.id.toolbar);
             viewContent = (ViewGroup) findViewById(R.id.viewContent);
             viewAbnormalContainer = (ViewGroup) findViewById(R.id.viewAbnormalContainer);
             tvTitle = (TextView) findViewById(R.id.tvTitle);
             //初始化设置 Toolbar
-            setSupportActionBar(toolbar);
-            if (tvTitle != null) {
+            setSupportActionBar(mToolbar);
+            if (tvTitle != null && getSupportActionBar() != null) {
+                //去掉toolbar左边的图标的间距
                 getSupportActionBar().setDisplayShowTitleEnabled(false);
             }
-            //将继承 TopBarBaseActivity 的布局解析到 FrameLayout 里面
+            //将继承 ToolBarBaseActivity 的布局解析到 FrameLayout 里面
             LayoutInflater.from(this).inflate(getContentLayout(), viewContent);
         }
-        //否则整个ToolbarActvity的代码全部垮掉 请忽略
         else {
+            //否则整个ToolbarActvity的代码全部垮掉 请忽略
             setContentView(getContentLayout());
         }
         //重写后可以设置ButterKnife.bind(this);等方法
+        initViewBefore();
+        initView();
+        getData();
     }
 
     /**
@@ -87,17 +92,17 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
     /**
      * 设置左边图片和监听事件
      *
-     * @param iconResId       -1：不要图片 0：使用默认 其它：
-     * @param onClickListener 可为null
+     * @param iconResId     -1：不要图片 0：使用默认 其它：
+     * @param listener      可为null
      */
-    protected void setToolbarLeftButton(@DrawableRes int iconResId, OnClickListener onClickListener) {
-        this.onClickListenerTopLeft = onClickListener;
+    protected void setToolbarLeftButton(@DrawableRes int iconResId, OnClickListener listener) {
+        this.onClickListenerTopLeft = listener;
         if (iconResId == -1) {
-            toolbar.setNavigationIcon(null);
+            mToolbar.setNavigationIcon(null);
         } else if (iconResId != 0) {
-            toolbar.setNavigationIcon(iconResId);
+            mToolbar.setNavigationIcon(iconResId);
         }
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (onClickListenerTopLeft != null) {
@@ -109,7 +114,7 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         });
     }
 
-    protected void setToolbarRightButton(String menuStr, OnClickListener onClickListener) {
+    protected void setToolbarRightButton(CharSequence menuStr, OnClickListener onClickListener) {
         this.rightStr = menuStr;
         this.onClickListenerTopRight = onClickListener;
     }
@@ -119,9 +124,6 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         this.onClickListenerTopRight = onClickListener;
     }
 
-    /**
-     * 重写设置title
-     */
     @Override
     public void setTitle(CharSequence title) {
         if (title == null) {
@@ -135,8 +137,8 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
             super.setTitle(title);
             return;
         }
-        if (toolbar != null) {
-            toolbar.setTitle(title);
+        if (mToolbar != null) {
+            mToolbar.setTitle(title);
             return;
         }
         super.setTitle(title);
@@ -169,7 +171,30 @@ public abstract class HyenaToolbarActivity extends HyenaBaseActivity {
         return false;
     }
 
+    protected void startActivity(Class<?> cl) {
+        startActivity(new Intent(this, cl));
+    }
+
+    protected void startActivity(Class<?> cl, int requestCode) {
+        startActivityForResult(new Intent(this, cl), requestCode);
+    }
+
+    /**
+     * 不需要快速集成Toolbar return 0
+     * 需要快速继承Toolbar return 一个完整的布局Id
+     */
+    protected abstract int bindLayout();
+
+    protected abstract int getContentLayout();
+
+    protected abstract void initViewBefore();
+
+    protected abstract void initView();
+
+    protected abstract void getData();
+
     public interface OnClickListener {
         void onClick();
     }
+
 }

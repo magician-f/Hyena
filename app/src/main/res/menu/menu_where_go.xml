@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu1"
+        android:checked="true"
+        android:title="显示内容" />
+
+    <item
+        android:id="@+id/menu2"
+        android:title="显示没有内容" />
+
+    <item
+        android:id="@+id/menu3"
+        android:title="显示loading" />
+
+    <item
+        android:id="@+id/menu4"
+        android:title="显示初始化loading" />
+
+    <item
+        android:id="@+id/menu5"
+        android:title="显示重试" />
+
+</menu>

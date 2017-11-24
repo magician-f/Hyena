@@ -30,6 +30,10 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    public void HyenaWhereGoActivity(View v) {
+        startActivity(WhereGoActivity.class);
+    }
+
     public void 自定义View(View v) {
         startActivity(new Intent(this, ViewActivity.class));
     }

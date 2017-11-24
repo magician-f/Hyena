@@ -29,8 +29,8 @@ public class CurrencyActivity extends BaseActivity {
      * 输入过滤适配器
      */
     private void InputFilterAdapter() {
-        EditText etIFA1 = fbid(R.id.etIFA1);
-        EditText etIFA2 = fbid(R.id.etIFA2);
+        EditText etIFA1 = findViewById(R.id.etIFA1);
+        EditText etIFA2 = findViewById(R.id.etIFA2);
         InputFilterAdapter inputFilter;
         //过滤数字和中文
         inputFilter = new InputFilterAdapter.Builder().filterNumber(true).filterChinese(true).builder();

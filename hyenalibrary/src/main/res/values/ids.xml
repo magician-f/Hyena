@@ -3,5 +3,6 @@
 
     <item name="toolbar" type="id" />
     <item name="viewContent" type="id" />
+    <item name="viewAbnormalContainer" type="id" />
 
 </resources>
