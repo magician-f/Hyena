@@ -26,7 +26,7 @@ public abstract class BaseActivity extends HyenaWhereGoActivity {
 
     @Override
     protected void createLoadingView() {
-        setMViewLoading(new ViewLoading(mContext) {
+        mViewLoading = (new ViewLoading(mContext) {
             @Override
             public void bingLayout() {
                 LayoutInflater.from(mContext).inflate(R.layout.layout_loading, this);
