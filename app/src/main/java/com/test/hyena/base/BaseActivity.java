@@ -26,12 +26,12 @@ public abstract class BaseActivity extends HyenaWhereGoActivity {
 
     @Override
     protected void createLoadingView() {
-        mViewLoading = new ViewLoading(mContext) {
+        setMViewLoading(new ViewLoading(mContext) {
             @Override
             public void bingLayout() {
                 LayoutInflater.from(mContext).inflate(R.layout.layout_loading, this);
             }
-        };
+        });
     }
 
     @Override

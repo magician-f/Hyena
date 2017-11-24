@@ -1,4 +1,8 @@
 
+#### 17/11/24 发布版本1.6.0
+
+* 重构了base下的Activity 支持多种布局切换的activity
+
 #### 17/11/16 发布版本1.5.4
 
 * 优化了BaseActivity 新增cancelLoadingInitFail方法
