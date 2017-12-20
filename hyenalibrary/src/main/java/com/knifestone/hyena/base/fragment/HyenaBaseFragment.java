@@ -14,6 +14,7 @@ import java.lang.reflect.Field;
  * github:https://github.com/KnifeStone/Hyena
  * Created by KnifeStone on 2017-6-27.
  */
+@Deprecated
 public abstract class HyenaBaseFragment extends Fragment {
 
     protected FrameLayout viewContent;

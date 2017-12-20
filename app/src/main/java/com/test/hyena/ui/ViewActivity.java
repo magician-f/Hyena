@@ -2,6 +2,7 @@ package com.test.hyena.ui;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -27,8 +28,14 @@ public class ViewActivity extends BaseActivity {
         return R.layout.activity_view;
     }
 
+
     @Override
-    protected void initView() {
+    public void initData(Bundle bundle) {
+
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
         initBottomNavigationView();
         final CountDownButton countDownButton = (CountDownButton) findViewById(R.id.countDownButton);
         countDownButton.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +64,12 @@ public class ViewActivity extends BaseActivity {
     }
 
     @Override
-    protected void getData() {
+    public void doBusiness() {
+
+    }
+
+    @Override
+    public void onWidgetClick(View view) {
 
     }
 
@@ -114,6 +126,7 @@ public class ViewActivity extends BaseActivity {
         intent.setData(content_url);
         startActivity(intent);
     }
+
 
 
 }

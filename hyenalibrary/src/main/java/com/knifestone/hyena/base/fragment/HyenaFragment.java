@@ -20,6 +20,7 @@ import android.view.View;
  * <p>
  * LuckyJayce
  */
+@Deprecated
 public abstract class HyenaFragment extends HyenaBaseFragment {
     private boolean isInit = false;
     private Bundle savedInstanceState;

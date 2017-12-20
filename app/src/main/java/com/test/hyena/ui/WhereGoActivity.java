@@ -1,7 +1,9 @@
 package com.test.hyena.ui;
 
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
@@ -18,12 +20,22 @@ public class WhereGoActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    public void initData(Bundle bundle) {
 
     }
 
     @Override
-    protected void getData() {
+    public void initView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void doBusiness() {
+
+    }
+
+    @Override
+    public void onWidgetClick(View view) {
 
     }
 
@@ -43,15 +55,14 @@ public class WhereGoActivity extends BaseActivity {
                 showEmpty();
                 break;
             case R.id.menu3:
-                showLoading();
-                break;
-            case R.id.menu4:
                 showLoadingInit();
                 break;
-            case R.id.menu5:
-                showRetry();
+            case R.id.menu4:
+                showError();
                 break;
         }
         return false;
     }
+
+
 }

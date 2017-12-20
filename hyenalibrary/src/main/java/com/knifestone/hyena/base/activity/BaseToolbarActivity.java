@@ -1,19 +1,14 @@
 package com.knifestone.hyena.base.activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.DrawableRes;
-import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.knifestone.hyena.R;
@@ -24,51 +19,34 @@ import com.knifestone.hyena.R;
  * 邮箱 378741819@qq.com
  * Created by KnifeStone on 2017/5/3.
  */
-public abstract class HyenaToolbarActivity extends AppCompatActivity {
+public abstract class BaseToolbarActivity extends BaseActivity {
 
+    /**
+     * 当前 Activity 渲染的视图 View
+     */
+    protected View contentView;
     protected Toolbar mToolbar;
-    protected ViewGroup viewContent;
-    protected ViewGroup viewAbnormalContainer;
-    private TextView tvTitle;
+    protected TextView tvTitle;
     private OnClickListener onClickListenerTopLeft;
     private OnClickListener onClickListenerTopRight;
 
     private int rightResId;
     private CharSequence rightStr;
 
-    /**
-     * 上下文
-     */
-    protected Context mContext;
-
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mContext = this;
-        if (bindLayout() != 0) {
-            //启用了HyenaToolbarActivity
-            setContentView(bindLayout());
-            mToolbar = (Toolbar) findViewById(R.id.toolbar);
-            viewContent = (ViewGroup) findViewById(R.id.viewContent);
-            viewAbnormalContainer = (ViewGroup) findViewById(R.id.viewAbnormalContainer);
-            tvTitle = (TextView) findViewById(R.id.tvTitle);
-            //初始化设置 Toolbar
+    protected void initContentView() {
+        //启用了HyenaToolbarActivity
+        setContentView(contentView = LayoutInflater.from(this).inflate(bindLayout(), null));
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
+        //初始化设置 Toolbar
+        if (mToolbar != null) {
             setSupportActionBar(mToolbar);
-            if (tvTitle != null && getSupportActionBar() != null) {
-                //去掉toolbar左边的图标的间距
-                getSupportActionBar().setDisplayShowTitleEnabled(false);
-            }
-            //将继承 ToolBarBaseActivity 的布局解析到 FrameLayout 里面
-            LayoutInflater.from(this).inflate(getContentLayout(), viewContent);
         }
-        else {
-            //否则整个ToolbarActvity的代码全部垮掉 请忽略
-            setContentView(getContentLayout());
+        if (tvTitle != null && getSupportActionBar() != null) {
+            //去掉toolbar左边的图标的间距
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
-        //重写后可以设置ButterKnife.bind(this);等方法
-        initViewBefore();
-        initView();
-        getData();
     }
 
     /**
@@ -92,8 +70,8 @@ public abstract class HyenaToolbarActivity extends AppCompatActivity {
     /**
      * 设置左边图片和监听事件
      *
-     * @param iconResId     -1：不要图片 0：使用默认 其它：
-     * @param listener      可为null
+     * @param iconResId -1：不要图片 0：使用默认 其它：
+     * @param listener  可为null
      */
     protected void setToolbarLeftButton(@DrawableRes int iconResId, OnClickListener listener) {
         this.onClickListenerTopLeft = listener;
@@ -178,20 +156,6 @@ public abstract class HyenaToolbarActivity extends AppCompatActivity {
     protected void startActivity(Class<?> cl, int requestCode) {
         startActivityForResult(new Intent(this, cl), requestCode);
     }
-
-    /**
-     * 不需要快速集成Toolbar return 0
-     * 需要快速继承Toolbar return 一个完整的布局Id
-     */
-    protected abstract int bindLayout();
-
-    protected abstract int getContentLayout();
-
-    protected abstract void initViewBefore();
-
-    protected abstract void initView();
-
-    protected abstract void getData();
 
     public interface OnClickListener {
         void onClick();

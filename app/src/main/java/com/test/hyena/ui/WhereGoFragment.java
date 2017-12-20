@@ -1,32 +1,45 @@
-package com.test.hyena.base;
+package com.test.hyena.ui;
 
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.knifestone.hyena.base.activity.AbnormalActivity;
+import com.knifestone.hyena.base.fragment.AbnormalFragment;
 import com.knifestone.hyena.view.viewgroup.ViewLoading;
 import com.test.hyena.R;
 
 /**
- * 简介:
- * GitHub https://github.com/KnifeStone
- * 邮箱 378741819@qq.com
- * Created by KnifeStone on 2017/5/8.
+ * github:https://github.com/KnifeStone/Hyena
+ * Created by KnifeStone on 2017-11-23.
  */
-public abstract class BaseActivity extends AbnormalActivity {
+public class WhereGoFragment extends AbnormalFragment {
 
     @Override
-    protected void initContentView() {
-        super.initContentView();
-        initToolbar();
+    public void initData(Bundle bundle) {
+
     }
 
     @Override
     public int bindLayout() {
-        return R.layout.activity_base_toolbar;
+        return R.layout.activity_where_go;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void doBusiness() {
+
+    }
+
+    @Override
+    public void onWidgetClick(View view) {
+
     }
 
     @Override
@@ -41,7 +54,7 @@ public abstract class BaseActivity extends AbnormalActivity {
 
     @Override
     protected View createEmptyView() {
-        TextView textView = new TextView(this);
+        TextView textView = new TextView(mContext);
         textView.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         textView.setText("没有内容");
         textView.setGravity(Gravity.CENTER);
@@ -50,11 +63,10 @@ public abstract class BaseActivity extends AbnormalActivity {
 
     @Override
     protected View createErrorView() {
-        TextView textView = new TextView(this);
+        TextView textView = new TextView(mContext);
         textView.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         textView.setText("错误页面");
         textView.setGravity(Gravity.CENTER);
         return textView;
     }
-
 }

@@ -40,6 +40,10 @@
             android:name=".ui.WhereGoActivity"
             android:label="多种布局切换" />
 
+        <activity
+            android:name=".ui.WhereGoFragmentActivity"
+            android:label="多种布局切换Fragment" />
+
     </application>
 
 </manifest>

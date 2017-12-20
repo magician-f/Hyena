@@ -1,6 +1,7 @@
 package com.test.hyena.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 
 import com.test.hyena.R;
@@ -13,8 +14,14 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
+
     @Override
-    protected void initView() {
+    public void initData(Bundle bundle) {
+
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
         setToolbarLeftButton(-1, null);
         setTitle("Hyena Android快速开发库");
         setToolbarRightButton(R.mipmap.ic_launcher, new OnClickListener() {
@@ -26,12 +33,21 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void getData() {
+    public void doBusiness() {
+
+    }
+
+    @Override
+    public void onWidgetClick(View view) {
 
     }
 
     public void HyenaWhereGoActivity(View v) {
         startActivity(WhereGoActivity.class);
+    }
+
+    public void HyenaWhereGoFragmentActivity(View v) {
+        startActivity(WhereGoFragmentActivity.class);
     }
 
     public void 自定义View(View v) {
@@ -46,5 +62,4 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(this, LoginActivity.class));
 
     }
-
 }

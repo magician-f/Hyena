@@ -1,6 +1,8 @@
 package com.test.hyena.ui;
 
+import android.os.Bundle;
 import android.text.InputFilter;
+import android.view.View;
 import android.widget.EditText;
 
 import com.knifestone.hyena.currency.InputFilterAdapter;
@@ -16,12 +18,27 @@ import com.test.hyena.base.BaseActivity;
 public class CurrencyActivity extends BaseActivity {
 
     @Override
-    protected void initView() {
+    protected int getContentLayout() {
+        return R.layout.activity_currency;
+    }
+
+    @Override
+    public void initData(Bundle bundle) {
+
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
         InputFilterAdapter();
     }
 
     @Override
-    protected void getData() {
+    public void doBusiness() {
+
+    }
+
+    @Override
+    public void onWidgetClick(View view) {
 
     }
 
@@ -39,10 +56,4 @@ public class CurrencyActivity extends BaseActivity {
         inputFilter = new InputFilterAdapter.Builder().filterReverse(true).filterNumber(true).filterChinese(true).builder();
         etIFA2.setFilters(new InputFilter[]{inputFilter});
     }
-
-    @Override
-    protected int getContentLayout() {
-        return R.layout.activity_currency;
-    }
-
 }

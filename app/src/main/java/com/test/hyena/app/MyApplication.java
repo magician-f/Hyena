@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
+import com.blankj.utilcode.util.Utils;
+import com.lzy.okgo.OkGo;
+
 /**
  * 简介:
  * GitHub https://github.com/KnifeStone
@@ -15,6 +18,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Utils.init(this);
+        OkGo.getInstance().init(this);
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {

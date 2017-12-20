@@ -38,7 +38,7 @@ allprojects {
 dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'//自行调整版本
     compile "com.android.support:design:26.1.0"
-    compile 'com.github.KnifeStone:Hyena:1.6.1'
+    compile 'com.github.KnifeStone:Hyena:1.6.2'
 }
 ```
 
