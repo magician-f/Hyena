@@ -3,6 +3,7 @@ package com.knifestone.hyena.base.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.knifestone.hyena.base.IBaseView;
@@ -18,6 +19,10 @@ import com.knifestone.hyena.base.IBaseView;
 public abstract class BaseActivity extends AppCompatActivity
         implements IBaseView {
 
+    /**
+     * 当前 Activity 渲染的视图 View
+     */
+    protected View contentView;
     /**
      * 上次点击时间
      */
@@ -39,7 +44,9 @@ public abstract class BaseActivity extends AppCompatActivity
         doBusiness();
     }
 
-    protected abstract void initContentView();
+    protected void initContentView(){
+        setContentView(contentView = LayoutInflater.from(this).inflate(bindLayout(), null));
+    }
 
     /**
      * 判断是否快速点击

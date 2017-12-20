@@ -21,10 +21,7 @@ import com.knifestone.hyena.R;
  */
 public abstract class BaseToolbarActivity extends BaseActivity {
 
-    /**
-     * 当前 Activity 渲染的视图 View
-     */
-    protected View contentView;
+
     protected Toolbar mToolbar;
     protected TextView tvTitle;
     private OnClickListener onClickListenerTopLeft;

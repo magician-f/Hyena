@@ -44,8 +44,4 @@
         android:text="一个优雅的登录页"
         android:onClick="一个优雅的登录页"/>
 
-    <com.knifestone.hyena.view.textview.MarqueeTextView
-        style="@style/TextViewTitleSmallLow"
-        android:text="功能" />
-
 </LinearLayout>
