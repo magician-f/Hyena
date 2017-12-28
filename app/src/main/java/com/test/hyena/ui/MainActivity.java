@@ -1,13 +1,19 @@
 package com.test.hyena.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
+import com.test.hyena.ui.scroller.ScrollerActivity;
 
 public class MainActivity extends BaseActivity {
+
+    private ListView listView;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected int getContentLayout() {
@@ -30,6 +36,35 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+        listView = findViewById(R.id.listView);
+        String[] list = getResources().getStringArray(R.array.array_menu_main);
+        adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, list);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                switch (position) {
+                    case 0:
+                        startActivity(WhereGoActivity.class);
+                        break;
+                    case 1:
+                        startActivity(WhereGoFragmentActivity.class);
+                        break;
+                    case 2:
+                        startActivity(ViewActivity.class);
+                        break;
+                    case 3:
+                        startActivity(CurrencyActivity.class);
+                        break;
+                    case 4:
+                        startActivity(LoginActivity.class);
+                        break;
+                    case 5:
+                        startActivity(ScrollerActivity.class);
+                        break;
+                }
+            }
+        });
     }
 
     @Override
@@ -42,24 +77,4 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void HyenaWhereGoActivity(View v) {
-        startActivity(WhereGoActivity.class);
-    }
-
-    public void HyenaWhereGoFragmentActivity(View v) {
-        startActivity(WhereGoFragmentActivity.class);
-    }
-
-    public void 自定义View(View v) {
-        startActivity(new Intent(this, ViewActivity.class));
-    }
-
-    public void 通用(View v) {
-        startActivity(new Intent(this, CurrencyActivity.class));
-    }
-
-    public void 一个优雅的登录页(View v) {
-        startActivity(new Intent(this, LoginActivity.class));
-
-    }
 }

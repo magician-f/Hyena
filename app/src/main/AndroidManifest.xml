@@ -44,6 +44,9 @@
             android:name=".ui.WhereGoFragmentActivity"
             android:label="多种布局切换Fragment" />
 
+        <activity android:name=".ui.scroller.ScrollerActivity"
+            android:label="Scroller知识"/>
+
     </application>
 
 </manifest>

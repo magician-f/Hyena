@@ -6,42 +6,9 @@
     android:orientation="vertical"
     tools:context="com.test.hyena.ui.MainActivity">
 
-    <com.knifestone.hyena.view.textview.MarqueeTextView
-        style="@style/TextViewTitleSmallLow"
-        android:text="API演示" />
-
-    <Button
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="HyenaWhereGoActivity"
-        android:text="多种布局切换" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="HyenaWhereGoFragmentActivity"
-        android:text="多种布局切换Fragment" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="自定义View"
-        android:text="自定义View" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="通用"
-        android:onClick="通用"/>
-
-    <com.knifestone.hyena.view.textview.MarqueeTextView
-        style="@style/TextViewTitleSmallLow"
-        android:text="视频演示部分" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="一个优雅的登录页"
-        android:onClick="一个优雅的登录页"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

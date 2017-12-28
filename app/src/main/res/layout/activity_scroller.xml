@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary10"
+            android:padding="8dp"
+            android:text="scrollTo() 是将View滚动到指定的一个位置A(x,y)\nscrollBy() 是将View从上次滚动的位置 继续滚动一定的距离\n这两个函数一般都是作用于ViewGroup的，滚动其内部子View"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary20"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnScrollTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AppTheme.ButtonDefault"
+                android:text="scrollTo" />
+
+            <Button
+                android:id="@+id/btnScrollBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AppTheme.ButtonDefault"
+                android:text="scrollBy" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary10"
+            android:padding="8dp"
+            android:text="理解Scoller"
+            android:textSize="12sp" />
+
+        <com.test.hyena.ui.scroller.SimpleScrollerView
+            android:id="@+id/simpleScrollerView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary20">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorPrimary"
+                android:clickable="false" />
+
+        </com.test.hyena.ui.scroller.SimpleScrollerView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary10"
+            android:padding="8dp"
+            android:text="一个简易的ViewPager"
+            android:textSize="12sp" />
+
+        <com.test.hyena.ui.scroller.ScrollerGroup
+            android:id="@+id/scrollerGroup"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary20"
+                android:gravity="center"
+                android:text="第一个（向右滑动）"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary30"
+                android:gravity="center"
+                android:text="第二个(左右滑动)"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary40"
+                android:gravity="center"
+                android:text="第三个(向左滑动)"
+                android:textSize="22sp" />
+
+        </com.test.hyena.ui.scroller.ScrollerGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="array_menu_main">
+        <item>多布局切换</item>
+        <item>多布局切换Fragment</item>
+        <item>自定义View</item>
+        <item>通用</item>
+        <item>一个优雅的登录页</item>
+        <item>Scroll知识</item>
+    </array>
+
+</resources>

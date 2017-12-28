@@ -6,6 +6,16 @@
     <color name="colorPrimaryDark">#2EA9DF</color>
     <color name="colorAccent">#66327C</color>
 
+    <color name="colorPrimary10">#1A2EA9DF</color>
+    <color name="colorPrimary20">#332EA9DF</color>
+    <color name="colorPrimary30">#4D2EA9DF</color>
+    <color name="colorPrimary40">#662EA9DF</color>
+    <color name="colorPrimary50">#802EA9DF</color>
+    <color name="colorPrimary60">#992EA9DF</color>
+    <color name="colorPrimary70">#B32EA9DF</color>
+    <color name="colorPrimary80">#CC2EA9DF</color>
+    <color name="colorPrimary90">#E62EA9DF</color>
+
     <!-- 背景颜色 -->
     <color name="colorwindowBackground">#fff</color>
     <!-- 按钮字体 按下和默认的字体颜色-->
