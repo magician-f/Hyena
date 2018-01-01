@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.test.hyena.ui.viewpage.ViewPageIndexWeiBo
+        android:id="@+id/viewPageIndex"
+        android:layout_width="match_parent"
+        app:background_content_color="@android:color/white"
+        app:line_start_color="@android:color/holo_red_dark"
+        app:line_end_color="@android:color/white"
+        android:layout_height="48dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/viewPageIndex" />
+
+</RelativeLayout>

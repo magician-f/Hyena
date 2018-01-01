@@ -59,4 +59,16 @@
         <item name="android:paddingRight">10dp</item>
     </style>
 
+    <declare-styleable name="ViewPagerTitle">
+        <attr name="background_content_color" format="color"/>
+        <attr name="defaultTextViewColor" format="color"></attr>
+        <attr name="selectedTextViewColor" format="color"></attr>
+        <attr name="defaultTextViewSize" format="dimension"/>
+        <attr name="selectedTextViewSize" format="dimension"/>
+        <attr name="item_margins" format="dimension"/>
+        <attr name="line_start_color" format="color"/>
+        <attr name="line_end_color" format="color"/>
+        <attr name="line_height" format="integer"/>
+    </declare-styleable>
+
 </resources>
