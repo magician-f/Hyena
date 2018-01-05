@@ -23,3 +23,17 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    supportLibraryVersion = '26.1.0'
+}
+
+ext.deps = [
+        appcompatV7       : "com.android.support:appcompat-v7:$ext.supportLibraryVersion",
+        supportV4         : "com.android.support:support-v4:$ext.supportLibraryVersion",
+        supportV13        : "com.android.support:support-v13:$ext.supportLibraryVersion",
+        cardViewV7        : "com.android.support:cardview-v7:$ext.supportLibraryVersion",
+        recyclerviewV7    : "com.android.support:recyclerview-v7:$ext.supportLibraryVersion",
+        supportDesign     : "com.android.support:design:$ext.supportLibraryVersion",
+        supportAnnotations: "com.android.support:support-annotations:$ext.supportLibraryVersion",
+]

@@ -60,15 +60,35 @@
     </style>
 
     <declare-styleable name="ViewPagerTitle">
-        <attr name="background_content_color" format="color"/>
+        <attr name="background_content_color" format="color" />
         <attr name="defaultTextViewColor" format="color"></attr>
         <attr name="selectedTextViewColor" format="color"></attr>
-        <attr name="defaultTextViewSize" format="dimension"/>
-        <attr name="selectedTextViewSize" format="dimension"/>
-        <attr name="item_margins" format="dimension"/>
-        <attr name="line_start_color" format="color"/>
-        <attr name="line_end_color" format="color"/>
-        <attr name="line_height" format="integer"/>
+        <attr name="defaultTextViewSize" format="dimension" />
+        <attr name="selectedTextViewSize" format="dimension" />
+        <attr name="item_margins" format="dimension" />
+        <attr name="line_start_color" format="color" />
+        <attr name="line_end_color" format="color" />
+        <attr name="line_height" format="integer" />
+    </declare-styleable>
+
+    <attr name="hyena_text_color_checked" format="reference" />
+    <attr name="hyena_text_size_checked" format="dimension" />
+    <attr name="hyena_text_size_normal" format="dimension" />
+    <attr name="hyena_text_margin" format="dimension" />
+    <attr name="hyena_custom_layout" format="reference" />
+
+    <declare-styleable name="HyenaViewPagerIndex">
+        <attr name="hyena_text_color_checked" />
+        <attr name="hyena_text_size_checked" />
+        <attr name="hyena_text_size_normal" />
+        <attr name="hyena_text_margin" />
+        <attr name="hyena_index_model" format="enum">
+            <!--均分-->
+            <enum name="split" value="0" />
+            <!--随性-->
+            <enum name="casual" value="1" />
+        </attr>
+        <attr name="hyena_custom_layout" />
     </declare-styleable>
 
 </resources>

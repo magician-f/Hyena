@@ -1,8 +1,6 @@
 package com.knifestone.hyena.base.fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 
 
 /**
@@ -28,7 +26,6 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     private boolean isLazyLoad = true;
 
     protected final void onCreateView(Bundle savedInstanceState) {
-        super.onCreateView(savedInstanceState);
         this.savedInstanceState = savedInstanceState;
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -97,7 +94,7 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
 
 
     @Override
-    public  void onStop() {
+    public void onStop() {
         super.onStop();
         if (isInit && isStart && getUserVisibleHint()) {
             isStart = false;
@@ -131,19 +128,8 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
 
     }
 
-    public void setContentView(int layoutResID) {
-        viewContent.removeAllViews();
-        View view = LayoutInflater.from(mContext).inflate(layoutResID, viewContent, false);
-        viewContent.addView(view);
-    }
-
-    public void setContentView(View view) {
-        viewContent.removeAllViews();
-        viewContent.addView(view);
-    }
-
     @Override
-    public  void onResume() {
+    public void onResume() {
         super.onResume();
         if (isInit) {
             onResumeLazy();
@@ -151,7 +137,7 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     }
 
     @Override
-    public  void onPause() {
+    public void onPause() {
         super.onPause();
         if (isInit) {
             onPauseLazy();
@@ -159,7 +145,7 @@ public abstract class HyenaFragment extends HyenaBaseFragment {
     }
 
     @Override
-    public  void onDestroyView() {
+    public void onDestroyView() {
         super.onDestroyView();
         if (isInit) {
             onDestroyViewLazy();

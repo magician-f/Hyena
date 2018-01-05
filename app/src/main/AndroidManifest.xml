@@ -52,6 +52,10 @@
             android:name=".ui.viewpage.ViewPageIndexWeiBoActivity"
             android:label="仿微博导航条" />
 
+        <activity
+            android:name=".ui.banner.BannerActivity"
+            android:label="广告" />
+
     </application>
 
 </manifest>

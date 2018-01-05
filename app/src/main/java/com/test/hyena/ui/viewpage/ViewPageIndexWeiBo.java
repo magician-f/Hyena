@@ -161,7 +161,6 @@ public class ViewPageIndexWeiBo extends HorizontalScrollView {
         contentLl.setOrientation(LinearLayout.VERTICAL);
         addView(contentLl);
 
-
         LinearLayout textViewLl = new LinearLayout(getContext());
         textViewLl.setLayoutParams(contentParams);
         textViewLl.setOrientation(LinearLayout.HORIZONTAL);

@@ -8,6 +8,7 @@ import android.widget.ListView;
 
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
+import com.test.hyena.ui.banner.BannerActivity;
 import com.test.hyena.ui.scroller.ScrollerActivity;
 import com.test.hyena.ui.viewpage.ViewPageIndexWeiBoActivity;
 
@@ -65,6 +66,9 @@ public class MainActivity extends BaseActivity {
                         break;
                     case 6:
                         startActivity(ViewPageIndexWeiBoActivity.class);
+                        break;
+                    case 7:
+                        startActivity(BannerActivity.class);
                         break;
                 }
             }

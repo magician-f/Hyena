@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
-    <com.test.hyena.ui.viewpage.ViewPageIndexWeiBo
+    <com.test.hyena.ui.viewpage.ViewPagerIndex
         android:id="@+id/viewPageIndex"
         android:layout_width="match_parent"
-        app:background_content_color="@android:color/white"
-        app:line_start_color="@android:color/holo_red_dark"
-        app:line_end_color="@android:color/white"
-        android:layout_height="48dp" />
+        android:layout_height="48dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        app:hyena_custom_layout="@layout/view_index_custom"
+        app:hyena_index_model="casual"
+        app:hyena_text_color_checked="@color/checked_index_text"
+        app:hyena_text_margin="16dp"
+        app:hyena_text_size_checked="18sp"
+        app:hyena_text_size_normal="16sp" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/viewPageIndex" />
+        android:layout_height="200dp"
+        android:background="#20ffffff" />
 
-</RelativeLayout>
+    <com.test.hyena.ui.viewpage.ViewPagerIndex
+        android:id="@+id/viewPageIndex2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        app:hyena_custom_layout="@layout/view_index_custom"
+        app:hyena_index_model="casual"
+        app:hyena_text_color_checked="@color/checked_index_text"
+        app:hyena_text_margin="16dp"
+        app:hyena_text_size_checked="18sp"
+        app:hyena_text_size_normal="16sp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#20ffffff" />
+
+</LinearLayout>
