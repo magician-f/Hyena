@@ -27,7 +27,7 @@ public class BannerViewGroup extends RelativeLayout {
     public BannerViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         LayoutInflater.from(context).inflate(R.layout.layout_banner, this, true);
-        viewPager = findViewById(R.id.viewPager);
+//        viewPager = findViewById(R.id.viewPager);
     }
 
     private void initAttr(AttributeSet attrs) {

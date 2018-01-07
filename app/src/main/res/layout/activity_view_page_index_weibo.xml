@@ -1,46 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.test.hyena.ui.viewpage.ViewPagerIndex
-        android:id="@+id/viewPageIndex"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@android:color/white"
-        android:elevation="4dp"
-        app:hyena_custom_layout="@layout/view_index_custom"
-        app:hyena_index_model="casual"
-        app:hyena_text_color_checked="@color/checked_index_text"
-        app:hyena_text_margin="16dp"
-        app:hyena_text_size_checked="18sp"
-        app:hyena_text_size_normal="16sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#20ffffff" />
+        <com.test.hyena.ui.viewpage.ViewPagerIndicator
+            android:id="@+id/viewPageIndex1"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@android:color/white"
+            android:elevation="2dp" />
 
-    <com.test.hyena.ui.viewpage.ViewPagerIndex
-        android:id="@+id/viewPageIndex2"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@android:color/white"
-        android:elevation="4dp"
-        app:hyena_custom_layout="@layout/view_index_custom"
-        app:hyena_index_model="casual"
-        app:hyena_text_color_checked="@color/checked_index_text"
-        app:hyena_text_margin="16dp"
-        app:hyena_text_size_checked="18sp"
-        app:hyena_text_size_normal="16sp" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorPrimary30" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager2"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#20ffffff" />
+        <com.test.hyena.ui.viewpage.ViewPagerIndicator
+            android:id="@+id/viewPageIndex2"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            app:hyena_block_color="@color/colorAccent" />
 
-</LinearLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorPrimary30" />
+
+        <com.test.hyena.ui.viewpage.ViewPagerIndicator
+            android:id="@+id/viewPageIndex3"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            app:hyena_block_color="#ff0000"
+            app:hyena_block_end_color="@color/colorPrimary"
+            app:hyena_block_height="4dp"
+            app:hyena_block_margin_bottom="2dp"
+            app:hyena_block_rounded="4dp"
+            app:hyena_index_model="casual"
+            app:hyena_item_layout="@layout/hyena_view_indicator_item"
+            app:hyena_item_margin="16dp"
+            app:hyena_block_margin_left_right="8dp"
+            app:hyena_text_color_checked="@color/hyena_selector_text_color_indicator"
+            app:hyena_text_size_checked="14sp"
+            app:hyena_text_size_normal="14sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager3"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorPrimary30" />
+
+    </LinearLayout>
+
+
+</ScrollView>

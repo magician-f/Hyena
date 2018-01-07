@@ -18,7 +18,9 @@ import com.test.hyena.R;
  * 描述:这个....
  * GitHub https://github.com/KnifeStone
  * 邮箱 378741819@qq.com
- * Created by KnifeStone on 2017/5/26.
+ *
+ * @author KnifeStone
+ * @date 2017/5/26
  */
 public class LoginActivity extends AppCompatActivity {
 

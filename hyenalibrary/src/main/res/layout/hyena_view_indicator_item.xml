@@ -6,7 +6,7 @@
     android:gravity="center"
     android:paddingLeft="4dp"
     android:paddingRight="4dp"
-    android:textColor="@color/checked_index_text"
-    android:textSize="16sp">
+    android:textColor="@color/hyena_selector_text_color_indicator"
+    android:textSize="14sp">
 
 </CheckedTextView>

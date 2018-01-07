@@ -3,7 +3,7 @@ package com.test.hyena.ui.viewpage;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -22,81 +22,90 @@ import com.test.hyena.R;
 import java.util.ArrayList;
 
 /**
- * 部分思路参考：https://github.com/xujianhui404/ViewPagerFlexTitle/tree/dev-1.0.1
- * github:https://github.com/KnifeStone/Hyena
- * Created by KnifeStone on 2018-1-4.
+ * 简介:指示器
+ * GitHub https://github.com/KnifeStone.Hyena
+ * 邮箱 378741819@qq.com
+ *
+ * @author KnifeStone
+ * @date 2018/01/06
  */
-public class ViewPagerIndex extends HorizontalScrollView {
+public class ViewPagerIndicator extends HorizontalScrollView {
 
     private ViewPager viewPager;
+    private ViewPagerIndicatorBlock indicatorBlock;
     private String[] titles;
     private ArrayList<CheckedTextView> textViews = new ArrayList<>();
-    private DynamicLineCopy dynamicLine;
-    private ColorStateList text_color_checked = null;
-    private int text_size_checked;
-    private int text_size_normal;
-    private int text_margin = 0;
-    private int hyena_custom_layout = 0;
-    private int model = MODEL_SPLIT;
 
+    private ColorStateList textColorChecked = null;
+    private int textSizeChecked = 0;
+    private int textSizeNormal = 0;
+    private int itemMargin = 4;
+    private int itemLayout = 0;
+
+    private int blockHeight = 8;
+    private int blockRounded = 0;
+    private int blockMarginBottom = 0;
+    private int blockMarginLeftAndRight = 0;
+    private int blockColor = 0;
+    private int blockEndColor = 0;
+
+    private int model = MODEL_SPLIT;
     private final static int MODEL_SPLIT = 0;
     private final static int MODEL_CASUAL = 1;
-
-    private int lastPosition;
 
     private OnClickListener onClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-//            setCurrentItem((int) v.getTag());
             viewPager.setCurrentItem((int) v.getTag());
         }
     };
 
-    public ViewPagerIndex(Context context) {
+    public ViewPagerIndicator(Context context) {
         this(context, null);
     }
 
-    public ViewPagerIndex(Context context, AttributeSet attrs) {
+    public ViewPagerIndicator(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ViewPagerIndex(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ViewPagerIndicator(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initAttributeSet(context, attrs);
     }
 
     private void initAttributeSet(Context context, AttributeSet attrs) {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.HyenaViewPagerIndex);
-        text_color_checked = array.getColorStateList(R.styleable.HyenaViewPagerIndex_hyena_text_color_checked);
-        if (text_color_checked == null) {
-            text_color_checked = getResources().getColorStateList(R.color.checked_index_text);
+        textColorChecked = array.getColorStateList(R.styleable.HyenaViewPagerIndex_hyena_text_color_checked);
+        if (textColorChecked == null) {
+            textColorChecked = ContextCompat.getColorStateList(getContext(), R.color.hyena_selector_text_color_indicator);
         }
-        text_size_checked = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_size_checked, 16);
-        text_size_normal = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_size_normal, 16);
-        text_margin = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_margin, text_margin);
-        hyena_custom_layout = array.getResourceId(R.styleable.HyenaViewPagerIndex_hyena_custom_layout, R.layout.view_index_custom);
+        textSizeChecked = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_size_checked, textSizeChecked);
+        textSizeNormal = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_size_normal, textSizeNormal);
+        itemMargin = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_item_margin, itemMargin);
+        itemLayout = array.getResourceId(R.styleable.HyenaViewPagerIndex_hyena_item_layout, R.layout.hyena_view_indicator_item);
+        blockHeight = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_block_height, blockHeight);
+        blockRounded = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_block_rounded, blockRounded);
+        blockMarginBottom = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_block_margin_bottom, blockMarginBottom);
+        blockMarginLeftAndRight = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_block_margin_left_right, blockMarginLeftAndRight);
+        blockColor = array.getColor(R.styleable.HyenaViewPagerIndex_hyena_block_color, blockColor);
+        blockEndColor = array.getColor(R.styleable.HyenaViewPagerIndex_hyena_block_end_color, blockEndColor);
         model = array.getInt(R.styleable.HyenaViewPagerIndex_hyena_index_model, model);
 
-//        backgroundColor = array.getColor(R.styleable.ViewPagerTitle_background_content_color, Color.WHITE);
-//        itemMargins = array.getDimension(R.styleable.ViewPagerTitle_item_margins, 30);
-//
-//        shaderColorStart = array.getColor(R.styleable.ViewPagerTitle_line_start_color, Color.parseColor("#ffc125"));
-//        shaderColorEnd = array.getColor(R.styleable.ViewPagerTitle_line_end_color, Color.parseColor("#ff4500"));
-//        lineHeight = array.getInteger(R.styleable.ViewPagerTitle_line_height, 20);
         array.recycle();
     }
 
-    public ViewPagerIndex newData(String[] titles) {
+    public ViewPagerIndicator newData(String[] titles) {
         this.titles = titles;
-        createTextViews(titles);
+        initItems();
         setCurrentItem(0);
         return this;
     }
 
-    public ViewPagerIndex setViewPager(final ViewPager viewPager) {
+    public ViewPagerIndicator setViewPager(final ViewPager viewPager) {
         this.viewPager = viewPager;
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+            private int lastPosition;
             private int width = 0;
             private int widthNext = 0;
             private int left = 0;
@@ -132,14 +141,16 @@ public class ViewPagerIndex extends HorizontalScrollView {
                     if (positionOffset <= 0.5f) {
                         //向右延伸
                         start = left;
-                        end = left + width + positionOffset * 2 * (widthNext + text_margin);
+                        end = left + width + positionOffset * 2 * (widthNext + itemMargin);
                     } else {
                         //左边收缩
-                        start = left + (positionOffset - 0.5f) * 2 * (width + text_margin);
-                        end = left + width + widthNext + text_margin;
+                        start = left + (positionOffset - 0.5f) * 2 * (width + itemMargin);
+                        end = left + width + widthNext + itemMargin;
                     }
                 }
-                dynamicLine.updateView(start, end);
+                start += blockMarginLeftAndRight;
+                end -= blockMarginLeftAndRight;
+                indicatorBlock.updateView(start, end);
             }
 
             /**
@@ -177,11 +188,14 @@ public class ViewPagerIndex extends HorizontalScrollView {
                     case ViewPager.SCROLL_STATE_SETTLING:
                         width = textViews.get(viewPager.getCurrentItem()).getWidth();
                         textViews.get(viewPager.getCurrentItem()).getLocationInWindow(location);
-                        if (location[0] + width >= getWidth() - text_margin) {
+                        if (location[0] + width >= getWidth() - itemMargin) {
                             smoothScrollBy(getWidth() / 2, 0);
-                        } else if (location[0] <= text_margin) {
+                        } else if (location[0] <= itemMargin) {
                             smoothScrollBy(-getWidth() / 2, 0);
                         }
+                        break;
+                    default:
+
                         break;
                 }
             }
@@ -189,15 +203,16 @@ public class ViewPagerIndex extends HorizontalScrollView {
         return this;
     }
 
-    private void createTextViews(String[] titles) {
+    private void initItems() {
         removeAllViews();
-
+        if (titles == null || titles.length == 0) {
+            throw new NullPointerException("ViewPagerIndicator:titles不能是空的");
+        }
         FrameLayout layout = new FrameLayout(getContext());
 
         LinearLayout layoutText = new LinearLayout(getContext());
         layoutText.setHorizontalGravity(LinearLayout.HORIZONTAL);
 
-        dynamicLine = new DynamicLineCopy(getContext(), Color.BLACK, 20);
         switch (model) {
             case MODEL_SPLIT:
                 setFillViewport(true);
@@ -215,28 +230,35 @@ public class ViewPagerIndex extends HorizontalScrollView {
                         ViewGroup.LayoutParams.MATCH_PARENT));
                 layoutText.setGravity(Gravity.CENTER_VERTICAL);
                 break;
+            default:
+
+                break;
         }
-        FrameLayout.LayoutParams paramsFrame = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.WRAP_CONTENT);
-        paramsFrame.gravity = Gravity.BOTTOM;
-        dynamicLine.setLayoutParams(paramsFrame);
         layout.addView(layoutText);
-        layout.addView(dynamicLine);
+
+        indicatorBlock = new ViewPagerIndicatorBlock(getContext(), blockColor, blockEndColor, blockHeight, blockRounded);
+        FrameLayout.LayoutParams paramsBlock = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.WRAP_CONTENT);
+        paramsBlock.gravity = Gravity.BOTTOM;
+        paramsBlock.setMargins(0, 0, 0, blockMarginBottom);
+        indicatorBlock.setLayoutParams(paramsBlock);
+        layout.addView(indicatorBlock);
+
         addView(layout);
 
         LinearLayout.LayoutParams params;
         CheckedTextView textView;
         for (int i = 0; i < titles.length; i++) {
-            textView = (CheckedTextView) LayoutInflater.from(getContext()).inflate(hyena_custom_layout, null);
+            textView = (CheckedTextView) LayoutInflater.from(getContext()).inflate(itemLayout, null);
             params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
             if (i == titles.length - 1) {
-                params.setMargins(text_margin, 0, text_margin, 0);
+                params.setMargins(itemMargin, 0, itemMargin, 0);
             } else {
-                params.setMargins(text_margin, 0, 0, 0);
+                params.setMargins(itemMargin, 0, 0, 0);
             }
             textView.setText(titles[i]);
             textView.setTag(i);
-            textView.setTextColor(text_color_checked);
+            textView.setTextColor(textColorChecked);
             textView.setOnClickListener(onClickListener);
             textViews.add(textView);
             layoutText.addView(textView, params);
@@ -247,10 +269,14 @@ public class ViewPagerIndex extends HorizontalScrollView {
         for (int i = 0; i < textViews.size(); i++) {
             if (i == index) {
                 textViews.get(i).setChecked(true);
-                textViews.get(i).setTextSize(TypedValue.COMPLEX_UNIT_PX, text_size_checked);
+                if (textSizeChecked != 0) {
+                    textViews.get(i).setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizeChecked);
+                }
             } else {
                 textViews.get(i).setChecked(false);
-                textViews.get(i).setTextSize(TypedValue.COMPLEX_UNIT_PX, text_size_normal);
+                if (textSizeNormal != 0) {
+                    textViews.get(i).setTextSize(TypedValue.COMPLEX_UNIT_PX, textSizeNormal);
+                }
             }
         }
     }

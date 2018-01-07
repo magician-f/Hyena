@@ -166,4 +166,37 @@
 
     </declare-styleable>
 
+    <attr name="hyena_text_color_checked" format="reference" />
+    <attr name="hyena_text_size_checked" format="dimension" />
+    <attr name="hyena_text_size_normal" format="dimension" />
+    <attr name="hyena_item_margin" format="dimension" />
+    <attr name="hyena_item_layout" format="reference" />
+    <attr name="hyena_block_height" format="dimension" />
+    <attr name="hyena_block_rounded" format="dimension" />
+    <attr name="hyena_block_margin_bottom" format="dimension" />
+    <attr name="hyena_block_margin_left_right" format="dimension" />
+    <attr name="hyena_block_color" format="color" />
+    <attr name="hyena_block_end_color" format="color" />
+
+    <declare-styleable name="HyenaViewPagerIndex">
+        <attr name="hyena_text_color_checked" />
+        <attr name="hyena_text_size_checked" />
+        <attr name="hyena_text_size_normal" />
+        <attr name="hyena_item_margin" />
+        <attr name="hyena_item_layout" />
+
+        <attr name="hyena_block_height" />
+        <attr name="hyena_block_rounded" />
+        <attr name="hyena_block_margin_bottom" />
+        <attr name="hyena_block_margin_left_right" />
+        <attr name="hyena_block_color" />
+        <attr name="hyena_block_end_color" />
+        <attr name="hyena_index_model" format="enum">
+            <!--均分-->
+            <enum name="split" value="0" />
+            <!--随性-->
+            <enum name="casual" value="1" />
+        </attr>
+    </declare-styleable>
+
 </resources>
