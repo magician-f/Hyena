@@ -10,7 +10,7 @@ import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
 import com.test.hyena.ui.banner.BannerActivity;
 import com.test.hyena.ui.scroller.ScrollerActivity;
-import com.test.hyena.ui.viewpage.ViewPageIndexWeiBoActivity;
+import com.test.hyena.ui.viewpage.ViewPageIndicatorActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
                         startActivity(ScrollerActivity.class);
                         break;
                     case 6:
-                        startActivity(ViewPageIndexWeiBoActivity.class);
+                        startActivity(ViewPageIndicatorActivity.class);
                         break;
                     case 7:
                         startActivity(BannerActivity.class);

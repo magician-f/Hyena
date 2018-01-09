@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.test.hyena.ui.viewpage.ViewPagerIndicator
+        <com.knifestone.hyena.indicator.HyenaViewPagerIndicator
             android:id="@+id/viewPageIndex1"
             android:layout_width="match_parent"
             android:layout_height="36dp"
@@ -21,46 +21,48 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager1"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="80dp"
             android:background="@color/colorPrimary30" />
 
-        <com.test.hyena.ui.viewpage.ViewPagerIndicator
+        <com.knifestone.hyena.indicator.HyenaViewPagerIndicator
             android:id="@+id/viewPageIndex2"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@android:color/white"
-            android:elevation="2dp"
-            app:hyena_block_color="@color/colorAccent" />
+            android:elevation="2dp" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager2"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="80dp"
             android:background="@color/colorPrimary30" />
 
-        <com.test.hyena.ui.viewpage.ViewPagerIndicator
+        <com.knifestone.hyena.indicator.HyenaViewPagerIndicator
             android:id="@+id/viewPageIndex3"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@android:color/white"
             android:elevation="2dp"
-            app:hyena_block_color="#ff0000"
-            app:hyena_block_end_color="@color/colorPrimary"
-            app:hyena_block_height="4dp"
-            app:hyena_block_margin_bottom="2dp"
-            app:hyena_block_rounded="4dp"
-            app:hyena_index_model="casual"
-            app:hyena_item_layout="@layout/hyena_view_indicator_item"
-            app:hyena_item_margin="16dp"
-            app:hyena_block_margin_left_right="8dp"
-            app:hyena_text_color_checked="@color/hyena_selector_text_color_indicator"
-            app:hyena_text_size_checked="14sp"
-            app:hyena_text_size_normal="14sp" />
+            app:hyena_index_model="center" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager3"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary30" />
+
+        <com.knifestone.hyena.indicator.HyenaViewPagerIndicator
+            android:id="@+id/viewPageIndex4"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            app:hyena_index_model="sort" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager4"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:background="@color/colorPrimary30" />
 
     </LinearLayout>

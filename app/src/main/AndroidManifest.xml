@@ -49,8 +49,8 @@
             android:label="Scroller知识" />
 
         <activity
-            android:name=".ui.viewpage.ViewPageIndexWeiBoActivity"
-            android:label="仿微博导航条" />
+            android:name=".ui.viewpage.ViewPageIndicatorActivity"
+            android:label="ViewPager指示器" />
 
         <activity
             android:name=".ui.banner.BannerActivity"
