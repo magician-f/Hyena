@@ -37,12 +37,16 @@
             android:label="登录" />
 
         <activity
-            android:name=".ui.WhereGoActivity"
-            android:label="多种布局切换" />
+            android:name=".ui.base.ToolbarActivityDemo"
+            android:label="BaseToolbarActivity演示" />
 
         <activity
-            android:name=".ui.WhereGoFragmentActivity"
-            android:label="多种布局切换Fragment" />
+            android:name=".ui.base.AbnormalActivityDemo"
+            android:label="AbnormalActivity演示" />
+
+        <activity
+            android:name=".ui.base.AbnormalFragmentActivityDemo"
+            android:label="AbnormalFragment演示" />
 
         <activity
             android:name=".ui.scroller.ScrollerActivity"

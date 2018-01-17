@@ -66,6 +66,7 @@ public class ViewPageIndicatorActivity extends BaseActivity {
         viewPager = findViewById(R.id.viewPager3);
         str = new String[]{"局中的", "滑动块", "的样式"};
         ViewPagerInit(viewPager, indicator, str);
+
         block = new HyenaIndicatorBlockFlexible.Builder(mContext)
                 .setHeight(ConvertUtils.dp2px(2))
                 .builder();
@@ -87,6 +88,7 @@ public class ViewPageIndicatorActivity extends BaseActivity {
 
     @Override
     public void doBusiness() {
+
 
     }
 

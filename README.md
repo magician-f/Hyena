@@ -38,19 +38,15 @@ allprojects {
 dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'//自行调整版本
     compile "com.android.support:design:26.1.0"
-    compile 'com.github.KnifeStone:Hyena:1.6.3'
+    compile 'com.github.KnifeStone:Hyena:1.7.0'
 }
 ```
 
 ## hyena仓库功能
 
-###### [Base][Base.md]
+###### 自定义View
 
-```
-HyenaBaseActivity
-HyenaToolbarActivity
-HyenaWhereGoActivity
-```
+
 
 ###### [常用View][Views.md]
 
@@ -121,7 +117,6 @@ gson数据自动生成实体类
 [Hyena]:https://github.com/KnifeStone/Hyena
 [蒲公英下载地址]:https://www.pgyer.com/72qN
 
-[Base.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Base.md
 [Views.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Views.md
 [Currency.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/catalog/Currency.md
 [Library.md]:https://github.com/KnifeStone/Hyena/wiki/%E6%8E%A8%E8%8D%90%E4%BB%93%E5%BA%93
@@ -130,7 +125,5 @@ gson数据自动生成实体类
 [Hyena.jpg]:https://github.com/KnifeStone/Hyena/blob/master/images/Hyena.jpg
 [UpdateLog.md]: https://github.com/KnifeStone/Hyena/blob/master/UpdateLog.md
 
-[HyenaActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaActivity.md
-[HyenaBaseActivity.md]:https://github.com/KnifeStone/Hyena/blob/master/wikis/HyenaBaseActivity.md
 
 

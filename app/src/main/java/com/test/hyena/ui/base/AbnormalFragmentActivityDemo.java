@@ -1,4 +1,4 @@
-package com.test.hyena.ui;
+package com.test.hyena.ui.base;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,18 +11,18 @@ import com.test.hyena.base.BaseActivity;
  * github:https://github.com/KnifeStone/Hyena
  * Created by KnifeStone on 2017-11-23.
  */
-public class WhereGoFragmentActivity extends BaseActivity {
+public class AbnormalFragmentActivityDemo extends BaseActivity {
 
-    private WhereGoFragment fragment;
+    private AbnormalFragmentDemo fragment;
 
     @Override
     protected int getContentLayout() {
-        return R.layout.activity_where_go_fragment;
+        return R.layout.activity_abnormal_fragment;
     }
 
     @Override
     public void initData(Bundle bundle) {
-        fragment = new WhereGoFragment();
+        fragment = new AbnormalFragmentDemo();
     }
 
     @Override

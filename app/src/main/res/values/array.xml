@@ -2,8 +2,9 @@
 <resources>
 
     <array name="array_menu_main">
-        <item>多布局切换</item>
-        <item>多布局切换Fragment</item>
+        <item>BaseToolbarActivity演示</item>
+        <item>AbnormalActivity演示</item>
+        <item>AbnormalFragment演示</item>
         <item>自定义View</item>
         <item>通用</item>
         <item>一个优雅的登录页</item>

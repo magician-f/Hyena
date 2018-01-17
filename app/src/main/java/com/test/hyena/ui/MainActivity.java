@@ -9,6 +9,9 @@ import android.widget.ListView;
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
 import com.test.hyena.ui.banner.BannerActivity;
+import com.test.hyena.ui.base.AbnormalActivityDemo;
+import com.test.hyena.ui.base.AbnormalFragmentActivityDemo;
+import com.test.hyena.ui.base.ToolbarActivityDemo;
 import com.test.hyena.ui.scroller.ScrollerActivity;
 import com.test.hyena.ui.viewpage.ViewPageIndicatorActivity;
 
@@ -47,27 +50,30 @@ public class MainActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position) {
                     case 0:
-                        startActivity(WhereGoActivity.class);
+                        startActivity(ToolbarActivityDemo.class);
                         break;
                     case 1:
-                        startActivity(WhereGoFragmentActivity.class);
+                        startActivity(AbnormalActivityDemo.class);
                         break;
                     case 2:
-                        startActivity(ViewActivity.class);
+                        startActivity(AbnormalFragmentActivityDemo.class);
                         break;
                     case 3:
-                        startActivity(CurrencyActivity.class);
+                        startActivity(ViewActivity.class);
                         break;
                     case 4:
-                        startActivity(LoginActivity.class);
+                        startActivity(CurrencyActivity.class);
                         break;
                     case 5:
-                        startActivity(ScrollerActivity.class);
+                        startActivity(LoginActivity.class);
                         break;
                     case 6:
-                        startActivity(ViewPageIndicatorActivity.class);
+                        startActivity(ScrollerActivity.class);
                         break;
                     case 7:
+                        startActivity(ViewPageIndicatorActivity.class);
+                        break;
+                    case 8:
                         startActivity(BannerActivity.class);
                         break;
                 }

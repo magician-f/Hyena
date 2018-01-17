@@ -1,4 +1,4 @@
-package com.test.hyena.ui;
+package com.test.hyena.ui.base;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,11 +12,11 @@ import com.test.hyena.base.BaseActivity;
  * github:https://github.com/KnifeStone/Hyena
  * Created by KnifeStone on 2017-11-23.
  */
-public class WhereGoActivity extends BaseActivity {
+public class AbnormalActivityDemo extends BaseActivity {
 
     @Override
     protected int getContentLayout() {
-        return R.layout.activity_where_go;
+        return R.layout.activity_abnormal;
     }
 
     @Override
