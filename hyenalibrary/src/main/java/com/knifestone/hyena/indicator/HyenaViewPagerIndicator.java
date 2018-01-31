@@ -78,6 +78,9 @@ public class HyenaViewPagerIndicator extends HorizontalScrollView {
         }
         textSizeChecked = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_size_checked, textSizeChecked);
         textSizeNormal = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_text_size_normal, textSizeNormal);
+        if (textSizeChecked==0 && textSizeNormal!=0){
+            textSizeChecked = textSizeNormal;
+        }
         itemMargin = array.getDimensionPixelSize(R.styleable.HyenaViewPagerIndex_hyena_item_margin, itemMargin);
         itemLayout = array.getResourceId(R.styleable.HyenaViewPagerIndex_hyena_item_layout, R.layout.hyena_view_indicator_item);
         model = array.getInt(R.styleable.HyenaViewPagerIndex_hyena_index_model, model);

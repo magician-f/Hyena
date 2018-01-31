@@ -25,7 +25,7 @@ public abstract class BaseFragment extends BaseIViewFragment {
     public static final String INTENT_BOOLEAN_LAZYLOAD = "intent_boolean_lazyLoad";
     private boolean isLazyLoad = true;
 
-    protected final void onCreateView(Bundle savedInstanceState) {
+    protected void onCreateView(Bundle savedInstanceState) {
         this.savedInstanceState = savedInstanceState;
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -45,14 +45,15 @@ public abstract class BaseFragment extends BaseIViewFragment {
         if (isLazyLoad) {
             if (isVisibleToUser && !isInit) {
                 isInit = true;
-                onCreateView(savedInstanceState);
+                onCreateView();
             } else {
                 //todo
             }
         } else {
             isInit = true;
-            onCreateView(savedInstanceState);
+            onCreateView();
         }
+
     }
 
     protected int isVisibleToUserState = VISIBLE_STATE_NOTSET;
@@ -69,7 +70,7 @@ public abstract class BaseFragment extends BaseIViewFragment {
         isVisibleToUserState = isVisibleToUser ? VISIBLE_STATE_VISIABLE : VISIBLE_STATE_GONE;
         if (isVisibleToUser && !isInit && contentView != null) {
             isInit = true;
-            onCreateView(savedInstanceState);
+            onCreateView();
             onFragmentResume();
         }
         if (isInit && contentView != null) {
@@ -103,6 +104,12 @@ public abstract class BaseFragment extends BaseIViewFragment {
     }
 
     private boolean isStart = false;
+
+    protected void onCreateView() {
+        initView(savedInstanceState);
+        initData(savedInstanceState);
+        doBusiness();
+    }
 
     protected void onFragmentStart() {
 

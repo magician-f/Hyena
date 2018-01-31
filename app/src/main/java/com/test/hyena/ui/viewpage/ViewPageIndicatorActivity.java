@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.ConvertUtils;
 import com.knifestone.hyena.indicator.HyenaIndicatorBlockFlexible;
 import com.knifestone.hyena.indicator.HyenaIndicatorBlockSimple;
+import com.knifestone.hyena.indicator.HyenaIndicatorBlockTriangle;
 import com.knifestone.hyena.indicator.HyenaViewPagerIndicator;
 import com.test.hyena.R;
 import com.test.hyena.base.BaseActivity;
@@ -84,6 +85,17 @@ public class ViewPageIndicatorActivity extends BaseActivity {
                 .setMargin(ConvertUtils.dp2px(12), 0, ConvertUtils.dp2px(12), ConvertUtils.dp2px(2))
                 .builder();
         indicator.setBlock(block);
+
+        indicator = findViewById(R.id.viewPageIndex5);
+        viewPager = findViewById(R.id.viewPager5);
+        str = new String[]{"三角形", "滑动块"};
+        ViewPagerInit(viewPager, indicator, str);
+        HyenaIndicatorBlockTriangle block2 = new HyenaIndicatorBlockTriangle.Builder(mContext)
+                .setColor(Color.RED)
+                .setHeight(ConvertUtils.dp2px(8))
+                .setWidth(ConvertUtils.dp2px(16))
+                .builder();
+        indicator.setBlock(block2);
     }
 
     @Override

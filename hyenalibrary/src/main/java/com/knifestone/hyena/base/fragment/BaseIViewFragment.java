@@ -71,19 +71,11 @@ public abstract class BaseIViewFragment extends Fragment
 
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        Bundle bundle = getArguments();
-        initData(bundle);
-    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = getActivity();
-        initView(savedInstanceState);
-        doBusiness();
     }
 
     /**
