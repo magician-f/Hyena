@@ -1,5 +1,5 @@
 # "Hyena 一个有轻度洁癖的Android快速开发库"
-
+# 已停止维护 2019/02/25
 [![language][languageSvg]]() [![jitPack][jitPackSvg]][jitPack] [![api][apiSvg]][api]
 
 ## 兄弟仓库
